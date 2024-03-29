@@ -85,7 +85,7 @@ Please do not document required libraries (e.g., React, Azure serverless functio
 * Zamzar: https://www.zamzar.com/convert/pdf-to-csv/
 This was used to convert the Daily Crime Log data from a PDF to a CSV that we could manipulate with Python.
 
-* Pandas Library
+* Pandas Library:
 There was a good amount of columns and data that we did not need for our app. Moreover, there was data that was missing like city, state, and country. To Geocode this data, adding these columns was necessary. Pandas helped us to manipulate and shape our dataframe to one that was perfect for our project.
 
 * GeoPy/OpenStreetMaps/Nominatim: https://geopy.readthedocs.io/en/stable/#nominatim
