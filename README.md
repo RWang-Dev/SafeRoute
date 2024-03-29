@@ -38,9 +38,10 @@ Which (if any) progressive web app feature(s) does your app support?
 
 https://app.moqups.com/abx4pEKNdH0metME5E7IDc1ecnt1kwx1/view/page/ad64222d5
 
-![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/7ed79210-c6f9-4f7d-a7f6-c16842250cfe)
-
-
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/eb1eddac-5a2c-4ac1-bfe5-208374bc1c93)
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/181c0069-f49d-43a5-b251-aadd7c785879)
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/9ae3c281-79c2-497a-b146-6eea1eead63c)
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/d5de5e41-877b-44a4-8d2d-026bf9db2b25)
 
 ## Testing Notes
 
