@@ -78,7 +78,23 @@ along with a very brief caption:**
 Please do not document required libraries (e.g., React, Azure serverless functions, Azure nosql).**
 
 * Library or service name: description of use
-* ...
+
+* UMN Department of Public Safety; Daily Crime Log; https://publicsafety.umn.edu/campus-safety/daily-crime-log
+  This was used to inform our app of where crime is happenning on campus. The data provides the case #, the nature of the crime, the date/time it occurred, date reported, incident       location, and disposition/status of the case. 
+
+* Zamzar: https://www.zamzar.com/convert/pdf-to-csv/
+This was used to convert the Daily Crime Log data from a PDF to a CSV that we could manipulate with Python.
+
+* Pandas Library
+There was a good amount of columns and data that we did not need for our app. Moreover, there was data that was missing like city, state, and country. To Geocode this data, adding these columns was necessary. Pandas helped us to manipulate and shape our dataframe to one that was perfect for our project.
+
+* GeoPy/OpenStreetMaps/Nominatim: https://geopy.readthedocs.io/en/stable/#nominatim
+This is the open source software that we used in order to add the longitude and latitude to the CSV file; it takes each line of data (focuses on incident location, city, state, and country columns) and adds the associated longitude and latitude to each address. This is necessary to map the se crime data points onto a map.
+
+* Leaflet/React Leaflet: https://react-leaflet.js.org/docs/start-introduction/
+This software enables us to visualize our data onto maps; this is crucial for empowering users to see high crime areas. It also provides a ton of functionalities such as making our map draggable, adding dialogue messages, etc.
+
+
 
 **If there's anything else you would like to disclose about how your project
 relied on external code, expertise, or anything else, please disclose that
