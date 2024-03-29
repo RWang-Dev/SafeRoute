@@ -1,4 +1,4 @@
-# Module 2 Group Assignment
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/682f005b-ea76-4fe8-9fa9-a5f43aaabcb8)# Module 2 Group Assignment
 
 CSCI 5117, Spring 2024, [assignment description](https://canvas.umn.edu/courses/413159/pages/project-2)
 
@@ -38,10 +38,11 @@ Which (if any) progressive web app feature(s) does your app support?
 
 https://app.moqups.com/abx4pEKNdH0metME5E7IDc1ecnt1kwx1/view/page/ad64222d5
 
-![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/eb1eddac-5a2c-4ac1-bfe5-208374bc1c93)
-![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/181c0069-f49d-43a5-b251-aadd7c785879)
-![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/9ae3c281-79c2-497a-b146-6eea1eead63c)
-![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/d5de5e41-877b-44a4-8d2d-026bf9db2b25)
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/c7f5a3a8-402b-42b3-82e0-c9531dca828b)
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/7afb5b4e-a9fa-47c8-87cf-36308b79b8d5)
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/880c3883-fcad-49fc-b4a2-ae7bf07a45d3)
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/01db546e-1881-46e9-8079-8cb502020d56)
+
 
 ## Testing Notes
 
