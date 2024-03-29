@@ -4,14 +4,17 @@ CSCI 5117, Spring 2024, [assignment description](https://canvas.umn.edu/courses/
 
 ## App Info:
 
-* Team Name: TODO
-* App Name: TODO
+* Team Name: The Forge
+* App Name: SafeRoute
 * App Link: <https://TODO.com/>
 
 ### Students
 
-* First Last, x500@umn.edu
-* ...
+* Ariel Larin, larin006@umn.edu
+* Stephen Ma, ma000094@umn.edu
+* Robert Wang, wan00379@umn.edu
+* Benjamin Lindeen, lind1669@umn.edu
+* Justin Lee, lee03360@umn.edu
 
 
 ## Key Features
@@ -33,9 +36,10 @@ Which (if any) progressive web app feature(s) does your app support?
 
 ## Mockup images
 
-**[Add images/photos that show your mockup](https://stackoverflow.com/questions/10189356/how-to-add-screenshot-to-readmes-in-github-repository) along with a very brief caption:**
+https://app.moqups.com/abx4pEKNdH0metME5E7IDc1ecnt1kwx1/view/page/ad64222d5
 
-![](https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif)
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/7ed79210-c6f9-4f7d-a7f6-c16842250cfe)
+
 
 
 ## Testing Notes
