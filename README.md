@@ -1,4 +1,4 @@
-![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/682f005b-ea76-4fe8-9fa9-a5f43aaabcb8)# Module 2 Group Assignment
+# Module 2 Group Assignment
 
 CSCI 5117, Spring 2024, [assignment description](https://canvas.umn.edu/courses/413159/pages/project-2)
 
