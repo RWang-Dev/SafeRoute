@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-file_path = 'UMPD_Daily_Crime_with_Coordinates.csv'
+file_path = '../public/data/UMPD_Daily_Crime_with_Coordinates_Google.csv'
 df = pd.read_csv(file_path)
 
 crime_severity = {
@@ -47,7 +47,7 @@ aggregated_data = df.groupby(['Latitude', 'Longitude', 'Incident Location']).agg
 }).rename(columns={'Severity Score': 'Total Severity Score', 'Nature of Offense': 'Crime Count'}).reset_index()
 
 
-output_file_path = 'UMPD_Daily_Crime_Aggregated_with_Location.csv'
+output_file_path = '../public/data/Google_UMPD_Daily_Crime_Aggregated_with_Location.csv'
 aggregated_data.to_csv(output_file_path, index=False)
 
 print(f"Aggregated dataset with location saved to {output_file_path}.")

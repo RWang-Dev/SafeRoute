@@ -1,5 +1,5 @@
 Nature of Offense,Incident Location,City,State,Country
-Assault,08/28/23 2450 Riverside Ave S,Minneapolis,Minnesota,United States of America
+Assault,2450 Riverside Ave S,Minneapolis,Minnesota,United States of America
 Overdose,1 Washington Ave SE,Minneapolis,Minnesota,United States of America
 Bike Theft,1 Washington Ave SE,Minneapolis,Minnesota,United States of America
 Bike Theft,1 Washington Ave SE,Minneapolis,Minnesota,United States of America
@@ -40,6 +40,7 @@ Bike Theft,1122 University Ave SE,Minneapolis,Minnesota,United States of America
 Discharge Weapon,1122 University Ave SE,Minneapolis,Minnesota,United States of America
 Bike Theft,1122 University Ave SE,Minneapolis,Minnesota,United States of America
 Bike Theft,1122 University Ave SE,Minneapolis,Minnesota,United States of America
+Stalking,1122 University Ave SE,Minneapolis,Minnesota,United States of America
 Bike Theft,115 Union St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,116 Church St,Minneapolis,Minnesota,United States of America
 Theft,116 Church St SE,Minneapolis,Minnesota,United States of America
@@ -58,9 +59,10 @@ Indecent Conduct,117 Pleasant St SE,Minneapolis,Minnesota,United States of Ameri
 Indecent Conduct,117 Pleasant St SE,Minneapolis,Minnesota,United States of America
 Theft,117 Pleasant St SE,Minneapolis,Minnesota,United States of America
 Criminal Sexual Conduct-Molest,117 Pleasant St SE,Minneapolis,Minnesota,United States of America
+Fondling,117 Pleasant St SE,Minneapolis,Minnesota,United States of America
 Theft,1175 Fifield Ave,Minneapolis,Minnesota,United States of America
 Bike Theft,1180 Gibbs Ave,Minneapolis,Minnesota,United States of America
-Theft,1212 Unviersity Ave SE,Minneapolis,Minnesota,United States of America
+Theft,1212 University Ave SE,Minneapolis,Minnesota,United States of America
 Theft,123 Harvard St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,123 Harvard St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,123 Harvard St SE,Minneapolis,Minnesota,United States of America
@@ -137,12 +139,15 @@ Bike Theft,210 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,210 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,210 Delaware St SE,Minneapolis,Minnesota,United States of America
 Criminal Sexual Conduct - Rape,210 Delaware St SE,Minneapolis,Minnesota,United States of America
+Fondling,210 Delaware St SE,Minneapolis,Minnesota,United States of America
+Fondling,210 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,220 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,220 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,220 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,220 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,220 Delaware St SE,Minneapolis,Minnesota,United States of America
 Theft,220 Delaware St SE,Minneapolis,Minnesota,United States of America
+Stalking,220 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,222 21st Ave S,Minneapolis,Minnesota,United States of America
 Theft,222 Pleasant St SE,Minneapolis,Minnesota,United States of America
 Theft,2231 6th St SE,Minneapolis,Minnesota,United States of America
@@ -156,7 +161,6 @@ Criminal Sexual Conduct - Rape,229 19th Ave S,Minneapolis,Minnesota,United State
 Bike Theft,229 19th Ave S,Minneapolis,Minnesota,United States of America
 Bike Theft,229 19th Ave S,Minneapolis,Minnesota,United States of America
 Theft from Person,229 19th Ave S,Minneapolis,Minnesota,United States of America
-Theft,22H South Bound Bus,Minneapolis,Minnesota,United States of America
 Assault,2312 6th St S,Minneapolis,Minnesota,United States of America
 Assault,2312 6th St S,Minneapolis,Minnesota,United States of America
 Assault,2312 6th St S,Minneapolis,Minnesota,United States of America
@@ -272,6 +276,7 @@ Bike Theft,412 22nd Ave S,Minneapolis,Minnesota,United States of America
 Bike Theft,412 22nd Ave S,Minneapolis,Minnesota,United States of America
 Bike Theft,412 22nd Ave S,Minneapolis,Minnesota,United States of America
 Bike Theft,412 22nd Ave S,Minneapolis,Minnesota,United States of America
+Stalking x2,412 22nd Ave S,Minneapolis,Minnesota,United States of America
 Bike Theft,417 Walnut St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,417 Walnut St SE,Minneapolis,Minnesota,United States of America
 Theft,417 Walnut St SE,Minneapolis,Minnesota,United States of America
@@ -330,6 +335,8 @@ Bike Theft,614 Delaware St SE,Minneapolis,Minnesota,United States of America
 Assault,614 Delaware St SE,Minneapolis,Minnesota,United States of America
 Criminal Sexual Conduct - Rape,614 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,614 Delaware St SE,Minneapolis,Minnesota,United States of America
+Fondling,614 Delaware St SE,Minneapolis,Minnesota,United States of America
+Rape,614 Delaware St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,615 Fulton Ave SE,Minneapolis,Minnesota,United States of America
 Bike Theft,615 Fulton Ave SE,Minneapolis,Minnesota,United States of America
 Bike Theft,615 Fulton St SE,Minneapolis,Minnesota,United States of America
@@ -343,6 +350,7 @@ Criminal Sexual Conduct - Rape,615 Fulton St SE,Minneapolis,Minnesota,United Sta
 Theft from Person,615 Fulton St SE,Minneapolis,Minnesota,United States of America
 Theft,615 Fulton St SE,Minneapolis,Minnesota,United States of America
 Theft,615 Fulton St SE,Minneapolis,Minnesota,United States of America
+Rape,615 Fulton St SE,Minneapolis,Minnesota,United States of America
 Theft,615 Washington Ave SE,Minneapolis,Minnesota,United States of America
 Theft,615 Washington Ave SE,Minneapolis,Minnesota,United States of America
 Theft,615 Washington Ave SE,Minneapolis,Minnesota,United States of America
@@ -382,42 +390,22 @@ Bike Theft,909 Fulton St SE,Minneapolis,Minnesota,United States of America
 Assault,909 Fulton St SE,Minneapolis,Minnesota,United States of America
 Assault,909 Fulton St SE,Minneapolis,Minnesota,United States of America
 Theft,909 Fulton St SE,Minneapolis,Minnesota,United States of America
-Intimidation: Religion Bias,CSA Report,Minneapolis,Minnesota,United States of America
-Stalking,Carlson School of Management,Minneapolis,Minnesota,United States of America
-Assault / Narcotics Violation,Cedar Ave S to Washington Ave /,Minneapolis,Minnesota,United States of America
-Stalking,Cedar Creek Ecosystem Science Reserve CSA Report,Minneapolis,Minnesota,United States of America
-Fondling,Centennial Hall,Minneapolis,Minnesota,United States of America
-Rape; Stalking,Centennial Hall,Minneapolis,Minnesota,United States of America
+Stalking,321 S 19th Ave,Minneapolis,Minnesota,United States of America
 Bike Theft,Church St SE & Pillsbury Dr SE,Minneapolis,Minnesota,United States of America
 Bike Theft,Church St SE / Delaware St SE,Minneapolis,Minnesota,United States of America
-Aggravated Assault,Church St SE/ Pillsbury Dr SE,Minneapolis,Minnesota,United States of America
-Fondling,Coffman Memorial Union,Minneapolis,Minnesota,United States of America
-Fondling,Comstock Hall,Minneapolis,Minnesota,United States of America
-Fondling,Comstock Hall,Minneapolis,Minnesota,United States of America
+Fondling,300 Washington Ave SE,Minneapolis,Minnesota,United States of America
 Theft,Fairview Ave N / Larpenteur Ave,Minneapolis,Minnesota,United States of America
-Aggravated Assault,Fraternity House,Minneapolis,Minnesota,United States of America
-Aggravated Assault,Fraternity House,Minneapolis,Minnesota,United States of America
 Bike Theft,Huron Blvd SE & University Ave,Minneapolis,Minnesota,United States of America
-Possession of Firearm / Narcotics Violation /,LWR Heating Plant Rd,Minneapolis,Minnesota,United States of America
-Stalking x2,Middlebrook Hall,Minneapolis,Minnesota,United States of America
-Stalking x2,Minneapolis Campus (Electronic),Minneapolis,Minnesota,United States of America
-Stalking,Minneapolis Campus (Electronic),Minneapolis,Minnesota,United States of America
-Stalking,Minneapolis Campus (Electronic),Minneapolis,Minnesota,United States of America
-Fondling,Minneapolis Fraternity,Minneapolis,Minnesota,United States of America
 Indecent Conduct,Pillsbury Dr SE / Pleasant St SE,Minneapolis,Minnesota,United States of America
-Rape,Pioneer Hall,Minneapolis,Minnesota,United States of America
 Bike Theft,Pleasant St SE & Pillsbury Dr SE,Minneapolis,Minnesota,United States of America
 Assault,Pleasant St SE / Pillsbury Dr SE,Minneapolis,Minnesota,United States of America
 Theft,Pleasant St SE / Pillsbury Dr SE,Minneapolis,Minnesota,United States of America
 Bike Theft,Pleasant St SE / Pillsbury Dr SE,Minneapolis,Minnesota,United States of America
 Assault w/dangerous weapon,Pleasant St SE / Pillsbury Dr SE,Minneapolis,Minnesota,United States of America
 Robbery of Person,Riverside Ave / 19th Ave S,Minneapolis,Minnesota,United States of America
-Stalking,Sanford Hall,Minneapolis,Minnesota,United States of America
-Rape,Territorial Hall,Minneapolis,Minnesota,United States of America
-Rape,Territorial Hall,Minneapolis,Minnesota,United States of America
+Rape,417 Walnut St SE,Minneapolis,Minnesota,United States of America
+Rape,417 Walnut St SE,Minneapolis,Minnesota,United States of America
 Hit and Run,Univeristy Ave SE / Oak St SE,Minneapolis,Minnesota,United States of America
 Bike Theft,University Ave SE & Pleasant St,Minneapolis,Minnesota,United States of America
-Fondling,Walter Library,Minneapolis,Minnesota,United States of America
 Assault,Washington Ave SE & Oak St SE,Minneapolis,Minnesota,United States of America
-Stalking,Yudof Hall,Minneapolis,Minnesota,United States of America
 

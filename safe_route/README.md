@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Module 2 Group Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CSCI 5117, Spring 2024, [assignment description](https://canvas.umn.edu/courses/413159/pages/project-2)
 
-## Available Scripts
+## App Info:
 
-In the project directory, you can run:
+* Team Name: The Forge
+* App Name: SafeRoute
+* App Link: <https://TODO.com/>
 
-### `npm start`
+### Students
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Ariel Larin, larin006@umn.edu
+* Stephen Ma, ma000094@umn.edu
+* Robert Wang, wan00379@umn.edu
+* Benjamin Lindeen, lind1669@umn.edu
+* Justin Lee, lee03360@umn.edu
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Key Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Describe the most challenging features you implemented
+(one sentence per bullet, maximum 4 bullets):**
 
-### `npm run build`
+* ...
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Which (if any) device integration(s) does your app support?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* ...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Which (if any) progressive web app feature(s) does your app support?
 
-### `npm run eject`
+* ...
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Mockup images
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://app.moqups.com/abx4pEKNdH0metME5E7IDc1ecnt1kwx1/view/page/ad64222d5
 
-## Learn More
+<img width="1166" alt="Screenshot 2024-03-29 at 1 38 06 PM" src="https://github.com/csci5117s24/project-2-forge/assets/84486871/b1fd7989-7134-4044-b2ae-1beaefe97425">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img width="966" alt="Screenshot 2024-03-29 at 1 38 58 PM" src="https://github.com/csci5117s24/project-2-forge/assets/84486871/f73c0b9b-8fa9-4222-b84c-0f848b7468ec">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img width="846" alt="Screenshot 2024-03-29 at 1 39 34 PM" src="https://github.com/csci5117s24/project-2-forge/assets/84486871/f83b3ca9-2626-4fd8-93ef-2e773701bcd6">
 
-### Code Splitting
+<img width="857" alt="Screenshot 2024-03-29 at 1 39 57 PM" src="https://github.com/csci5117s24/project-2-forge/assets/84486871/4e14418a-f9c2-4e64-bc8b-2aed2f8e64de">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img width="1098" alt="Screenshot 2024-03-29 at 1 40 32 PM" src="https://github.com/csci5117s24/project-2-forge/assets/84486871/24ea72b0-b0a6-4f80-aeb7-aa7bdb9b8a75">
 
-### Making a Progressive Web App
+<img width="593" alt="Screenshot 2024-03-29 at 1 41 05 PM" src="https://github.com/csci5117s24/project-2-forge/assets/84486871/4db81f22-bdb7-4f8f-bfa8-d664516deeeb">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Testing Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Is there anything special we need to know in order to effectively test your app? (optional):**
 
-### `npm run build` fails to minify
+* ...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Screenshots of Site (complete)
+
+**[Add a screenshot of each key page](https://stackoverflow.com/questions/10189356/how-to-add-screenshot-to-readmes-in-github-repository)
+along with a very brief caption:**
+
+![](https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif)
+
+
+
+## External Dependencies
+
+**Document integrations with 3rd Party code or services here.
+Please do not document required libraries (e.g., React, Azure serverless functions, Azure nosql).**
+
+* Library or service name: description of use
+
+* UMN Department of Public Safety; Daily Crime Log; https://publicsafety.umn.edu/campus-safety/daily-crime-log
+  This was used to inform our app of where crime is happenning on campus. The data provides the case #, the nature of the crime, the date/time it occurred, date reported, incident       location, and disposition/status of the case. 
+
+* Zamzar: https://www.zamzar.com/convert/pdf-to-csv/
+This was used to convert the Daily Crime Log data from a PDF to a CSV that we could manipulate with Python.
+
+* Pandas Library:
+There was a good amount of columns and data that we did not need for our app. Moreover, there was data that was missing like city, state, and country. To Geocode this data, adding these columns was necessary. Pandas helped us to manipulate and shape our dataframe to one that was perfect for our project.
+
+* GeoPy/OpenStreetMaps/Nominatim: https://geopy.readthedocs.io/en/stable/#nominatim
+This is the open source software that we used in order to add the longitude and latitude to the CSV file; it takes each line of data (focuses on incident location, city, state, and country columns) and adds the associated longitude and latitude to each address. This is necessary to map the se crime data points onto a map.
+
+* Leaflet/React Leaflet: https://react-leaflet.js.org/docs/start-introduction/
+This software enables us to visualize our data onto maps; this is crucial for empowering users to see high crime areas. It also provides a ton of functionalities such as making our map draggable, adding dialogue messages, etc.
+
+
+
+**If there's anything else you would like to disclose about how your project
+relied on external code, expertise, or anything else, please disclose that
+here:**
+
+...
