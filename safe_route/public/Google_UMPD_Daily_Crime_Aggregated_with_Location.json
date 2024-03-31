@@ -1,0 +1,1003 @@
+[
+  {
+    "Latitude": 44.9620691,
+    "Longitude": -93.2518308,
+    "Incident Location": "2001 Bloomington Ave",
+    "Total Severity Score": 13,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.9661201,
+    "Longitude": -93.2371794,
+    "Incident Location": "2459 Riverside Ave S",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9667334,
+    "Longitude": -93.2371862,
+    "Incident Location": "2450 Riverside Ave",
+    "Total Severity Score": 48,
+    "Crime Count": 7
+  },
+  {
+    "Latitude": 44.9678352,
+    "Longitude": -93.2513557,
+    "Incident Location": "2414 7th St S",
+    "Total Severity Score": 16,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9687121,
+    "Longitude": -93.2390674,
+    "Incident Location": "525 23rd Ave S",
+    "Total Severity Score": 24,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.9691871,
+    "Longitude": -93.2430614,
+    "Incident Location": "418 21th Ave S",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9695474,
+    "Longitude": -93.2456411,
+    "Incident Location": "Riverside Ave / 19th Ave S",
+    "Total Severity Score": 10,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9696389,
+    "Longitude": -93.2405875,
+    "Incident Location": "412 22nd Ave S",
+    "Total Severity Score": 63,
+    "Crime Count": 18
+  },
+  {
+    "Latitude": 44.969677,
+    "Longitude": -93.243328,
+    "Incident Location": "400 21st Ave S",
+    "Total Severity Score": 11,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.970153,
+    "Longitude": -93.229082,
+    "Incident Location": "620 Fulton St SE",
+    "Total Severity Score": 10,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9703991,
+    "Longitude": -93.2447281,
+    "Incident Location": "321 19th Ave S",
+    "Total Severity Score": 24,
+    "Crime Count": 6
+  },
+  {
+    "Latitude": 44.9704306,
+    "Longitude": -93.2289625,
+    "Incident Location": "615 Fulton St SE",
+    "Total Severity Score": 82,
+    "Crime Count": 12
+  },
+  {
+    "Latitude": 44.9706605,
+    "Longitude": -93.2469716,
+    "Incident Location": "309 Cedar Ave S",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9707762,
+    "Longitude": -93.2248323,
+    "Incident Location": "909 Fulton St SE",
+    "Total Severity Score": 35,
+    "Crime Count": 5
+  },
+  {
+    "Latitude": 44.970807,
+    "Longitude": -93.2475296,
+    "Incident Location": "320 Cedar Ave S",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9708154,
+    "Longitude": -93.2278302,
+    "Incident Location": "701 Fulton St SE",
+    "Total Severity Score": 19,
+    "Crime Count": 5
+  },
+  {
+    "Latitude": 44.9709238,
+    "Longitude": -93.2538669,
+    "Incident Location": "2312 6th St S",
+    "Total Severity Score": 69,
+    "Crime Count": 9
+  },
+  {
+    "Latitude": 44.9709391,
+    "Longitude": -93.2435731,
+    "Incident Location": "309 19th Ave S",
+    "Total Severity Score": 14,
+    "Crime Count": 4
+  },
+  {
+    "Latitude": 44.9709416,
+    "Longitude": -93.2459544,
+    "Incident Location": "300 19th Ave S",
+    "Total Severity Score": 10,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9710574,
+    "Longitude": -93.2310298,
+    "Incident Location": "500 Harvard St SE",
+    "Total Severity Score": 93,
+    "Crime Count": 13
+  },
+  {
+    "Latitude": 44.9713188,
+    "Longitude": -93.244621,
+    "Incident Location": "301 19th Ave S",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9713233,
+    "Longitude": -93.220162,
+    "Incident Location": "515 Delaware St SE",
+    "Total Severity Score": 31,
+    "Crime Count": 9
+  },
+  {
+    "Latitude": 44.9714147,
+    "Longitude": -93.246372,
+    "Incident Location": "275 Cedar Ave S",
+    "Total Severity Score": 14,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9716633,
+    "Longitude": -93.2437341,
+    "Incident Location": "271 19th Ave S",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9717239,
+    "Longitude": -93.215684,
+    "Incident Location": "2829 University Ave SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.971863,
+    "Longitude": -93.2433118,
+    "Incident Location": "269 19th Ave S",
+    "Total Severity Score": 26,
+    "Crime Count": 5
+  },
+  {
+    "Latitude": 44.9718999,
+    "Longitude": -93.2360684,
+    "Incident Location": "220 Delaware St SE",
+    "Total Severity Score": 24,
+    "Crime Count": 7
+  },
+  {
+    "Latitude": 44.9720156,
+    "Longitude": -93.2283089,
+    "Incident Location": "417 Walnut St SE",
+    "Total Severity Score": 44,
+    "Crime Count": 6
+  },
+  {
+    "Latitude": 44.9720296,
+    "Longitude": -93.243685,
+    "Incident Location": "267 19th Ave S",
+    "Total Severity Score": 6,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9721382,
+    "Longitude": -93.2295181,
+    "Incident Location": "614 Delaware St SE",
+    "Total Severity Score": 56,
+    "Crime Count": 8
+  },
+  {
+    "Latitude": 44.9722884,
+    "Longitude": -93.2306198,
+    "Incident Location": "526 Delaware St SE",
+    "Total Severity Score": 10,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9722984,
+    "Longitude": -93.218632,
+    "Incident Location": "27th Ave SE & University Ave SE",
+    "Total Severity Score": 11,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9723802,
+    "Longitude": -93.2182802,
+    "Incident Location": "326 27th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9724446,
+    "Longitude": -93.236838,
+    "Incident Location": "210 Delaware St SE",
+    "Total Severity Score": 44,
+    "Crime Count": 8
+  },
+  {
+    "Latitude": 44.9724639,
+    "Longitude": -93.2338445,
+    "Incident Location": "Church St SE / Delaware St SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9724789,
+    "Longitude": -93.231281,
+    "Incident Location": "516 Delaware St SE",
+    "Total Severity Score": 8,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9724815,
+    "Longitude": -93.2267565,
+    "Incident Location": "401 Oak St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9725684,
+    "Longitude": -93.2336608,
+    "Incident Location": "420 Delaware St SE",
+    "Total Severity Score": 13,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.97281,
+    "Longitude": -93.2276626,
+    "Incident Location": "717 Delaware St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9728359,
+    "Longitude": -93.2306216,
+    "Incident Location": "324 Harvard St SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9728439,
+    "Longitude": -93.2342094,
+    "Incident Location": "312 Church St SE",
+    "Total Severity Score": 11,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.9729099,
+    "Longitude": -93.2351426,
+    "Incident Location": "300 Washington Ave SE",
+    "Total Severity Score": 87,
+    "Crime Count": 18
+  },
+  {
+    "Latitude": 44.9729548,
+    "Longitude": -93.2437222,
+    "Incident Location": "225 19th Ave S",
+    "Total Severity Score": 14,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.9730146,
+    "Longitude": -93.2436399,
+    "Incident Location": "229 19th Ave S",
+    "Total Severity Score": 29,
+    "Crime Count": 5
+  },
+  {
+    "Latitude": 44.9731495,
+    "Longitude": -93.2323379,
+    "Incident Location": "420 Washington Ave SE",
+    "Total Severity Score": 21,
+    "Crime Count": 4
+  },
+  {
+    "Latitude": 44.97318,
+    "Longitude": -93.233512,
+    "Incident Location": "321 Church St SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9731878,
+    "Longitude": -93.2323562,
+    "Incident Location": "308 Harvard St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9732078,
+    "Longitude": -93.2430163,
+    "Incident Location": "222 21st Ave S",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9734211,
+    "Longitude": -93.2258775,
+    "Incident Location": "880 Washington Ave SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.973503,
+    "Longitude": -93.219838,
+    "Incident Location": "2515 University Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9735239,
+    "Longitude": -93.2372397,
+    "Incident Location": "1 Washington Ave SE",
+    "Total Severity Score": 12,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.973588,
+    "Longitude": -93.2319166,
+    "Incident Location": "500 Block of Washington Ave SE",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9735932,
+    "Longitude": -93.2311148,
+    "Incident Location": "551 Washington Ave SE",
+    "Total Severity Score": 6,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9735953,
+    "Longitude": -93.2271132,
+    "Incident Location": "Washington Ave SE & Oak St SE",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9739196,
+    "Longitude": -93.2333412,
+    "Incident Location": "421 Washington Ave SE",
+    "Total Severity Score": 8,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9739246,
+    "Longitude": -93.2315077,
+    "Incident Location": "501 Washington Ave SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9742241,
+    "Longitude": -93.237246,
+    "Incident Location": "222 Pleasant St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.974278,
+    "Longitude": -93.2236876,
+    "Incident Location": "Huron Blvd SE & University Ave",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.974379,
+    "Longitude": -93.2295986,
+    "Incident Location": "615 Washington Ave SE",
+    "Total Severity Score": 66,
+    "Crime Count": 8
+  },
+  {
+    "Latitude": 44.9744394,
+    "Longitude": -93.2335608,
+    "Incident Location": "207 Church St SE",
+    "Total Severity Score": 8,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.974533,
+    "Longitude": -93.2342672,
+    "Incident Location": "206 Church St SE",
+    "Total Severity Score": 6,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9746746,
+    "Longitude": -93.2364356,
+    "Incident Location": "207 Pleasant St SE",
+    "Total Severity Score": 11,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.9747577,
+    "Longitude": -93.2325142,
+    "Incident Location": "200 Union St SE",
+    "Total Severity Score": 23,
+    "Crime Count": 7
+  },
+  {
+    "Latitude": 44.9749066,
+    "Longitude": -93.2371164,
+    "Incident Location": "128 Pleasant St SE",
+    "Total Severity Score": 30,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9750614,
+    "Longitude": -93.2314671,
+    "Incident Location": "115 Union St SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9750926,
+    "Longitude": -93.2296758,
+    "Incident Location": "123 Harvard St SE",
+    "Total Severity Score": 41,
+    "Crime Count": 11
+  },
+  {
+    "Latitude": 44.975264,
+    "Longitude": -93.2362793,
+    "Incident Location": "117 Pleasant St SE",
+    "Total Severity Score": 49,
+    "Crime Count": 8
+  },
+  {
+    "Latitude": 44.975283,
+    "Longitude": -93.2279407,
+    "Incident Location": "200 Oak St SE",
+    "Total Severity Score": 8,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9753289,
+    "Longitude": -93.2323186,
+    "Incident Location": "110 Union St SE",
+    "Total Severity Score": 6,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9754338,
+    "Longitude": -93.2345524,
+    "Incident Location": "116 Church St SE",
+    "Total Severity Score": 36,
+    "Crime Count": 8
+  },
+  {
+    "Latitude": 44.9754997,
+    "Longitude": -93.2265932,
+    "Incident Location": "Univeristy Ave SE / Oak St SE",
+    "Total Severity Score": 7,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9755,
+    "Longitude": -93.233224,
+    "Incident Location": "111 Church St SE",
+    "Total Severity Score": 10,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9756227,
+    "Longitude": -93.2257624,
+    "Incident Location": "2009 University Ave SE",
+    "Total Severity Score": 10,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9756502,
+    "Longitude": -93.2338718,
+    "Incident Location": "200 Church St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9757911,
+    "Longitude": -93.2481214,
+    "Incident Location": "1300 2nd St S",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9761936,
+    "Longitude": -93.2330712,
+    "Incident Location": "89 Church St SE",
+    "Total Severity Score": 11,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.9762376,
+    "Longitude": -93.2316035,
+    "Incident Location": "500 Pillsbury Dr SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9763483,
+    "Longitude": -93.2348827,
+    "Incident Location": "84 Church St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9766611,
+    "Longitude": -93.23783,
+    "Incident Location": "75 E River Pkwy",
+    "Total Severity Score": 4,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9769004,
+    "Longitude": -93.184302,
+    "Incident Location": "1175 Fifield Ave",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9769072,
+    "Longitude": -93.2335175,
+    "Incident Location": "Church St SE & Pillsbury Dr SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9770901,
+    "Longitude": -93.2283819,
+    "Incident Location": "1925 University Ave SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9772223,
+    "Longitude": -93.233627,
+    "Incident Location": "315 Pillsbury Dr SE",
+    "Total Severity Score": 15,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9772566,
+    "Longitude": -93.1868341,
+    "Incident Location": "1180 Gibbs Ave",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9773321,
+    "Longitude": -93.2294932,
+    "Incident Location": "315 19th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9774099,
+    "Longitude": -93.2321522,
+    "Incident Location": "15 Church St SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9774165,
+    "Longitude": -93.2387419,
+    "Incident Location": "2025 E River Rd",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9776789,
+    "Longitude": -93.2366901,
+    "Incident Location": "192 Pillsbury Dr SE",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.977753,
+    "Longitude": -93.2650108,
+    "Incident Location": "701 Fulton Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9777808,
+    "Longitude": -93.2361176,
+    "Incident Location": "Pleasant St SE & Pillsbury Dr SE",
+    "Total Severity Score": 26,
+    "Crime Count": 4
+  },
+  {
+    "Latitude": 44.9779021,
+    "Longitude": -93.2353227,
+    "Incident Location": "27 Pleasant St SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9779031,
+    "Longitude": -93.2334843,
+    "Incident Location": "10 Church St Bldg",
+    "Total Severity Score": 6,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9780563,
+    "Longitude": -93.2217925,
+    "Incident Location": "2231 6th St SE",
+    "Total Severity Score": 11,
+    "Crime Count": 3
+  },
+  {
+    "Latitude": 44.9780834,
+    "Longitude": -93.2325741,
+    "Incident Location": "1625 University Ave SE",
+    "Total Severity Score": 15,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9781903,
+    "Longitude": -93.2245865,
+    "Incident Location": "2010 6th St SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9782122,
+    "Longitude": -93.2343286,
+    "Incident Location": "9 Pleasant St SE",
+    "Total Severity Score": 12,
+    "Crime Count": 4
+  },
+  {
+    "Latitude": 44.9783224,
+    "Longitude": -93.2322582,
+    "Incident Location": "317 17th Ave SE",
+    "Total Severity Score": 9,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9784123,
+    "Longitude": -93.2338001,
+    "Incident Location": "16th Ave SE & University Ave SE",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9784141,
+    "Longitude": -93.1836764,
+    "Incident Location": "1237 Fifield Ave",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9784502,
+    "Longitude": -93.2313744,
+    "Incident Location": "326 17th Ave SE",
+    "Total Severity Score": 23,
+    "Crime Count": 6
+  },
+  {
+    "Latitude": 44.9784735,
+    "Longitude": -93.2609204,
+    "Incident Location": "505 Washington Ave S",
+    "Total Severity Score": 4,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9784794,
+    "Longitude": -93.1850324,
+    "Incident Location": "1269 Gibbs Ave",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9788074,
+    "Longitude": -93.2295218,
+    "Incident Location": "1815 4th St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9788556,
+    "Longitude": -93.1867316,
+    "Incident Location": "2046 Knapp St",
+    "Total Severity Score": 8,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.978929,
+    "Longitude": -93.2368291,
+    "Incident Location": "159 Pillsbury Dr SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9789636,
+    "Longitude": -93.2351825,
+    "Incident Location": "University Ave SE & Pleasant St",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9790093,
+    "Longitude": -93.2326984,
+    "Incident Location": "326 16th Ave SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.979128,
+    "Longitude": -93.232254,
+    "Incident Location": "4th St SE / 17th Ave SE",
+    "Total Severity Score": 11,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9791669,
+    "Longitude": -93.2289459,
+    "Incident Location": "1811 5th St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9792638,
+    "Longitude": -93.2252637,
+    "Incident Location": "2001 6th St SE",
+    "Total Severity Score": 6,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9794095,
+    "Longitude": -93.2350247,
+    "Incident Location": "319 15th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9794976,
+    "Longitude": -93.2319943,
+    "Incident Location": "1625 4th St SE",
+    "Total Severity Score": 16,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9803099,
+    "Longitude": -93.2392752,
+    "Incident Location": "1212 University Ave SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9804925,
+    "Longitude": -93.2357823,
+    "Incident Location": "14th Ave SE & 4th St SE",
+    "Total Severity Score": 19,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9805948,
+    "Longitude": -93.2404341,
+    "Incident Location": "1122 University Ave SE",
+    "Total Severity Score": 57,
+    "Crime Count": 11
+  },
+  {
+    "Latitude": 44.981412,
+    "Longitude": -93.2327237,
+    "Incident Location": "516 15th Ave SE",
+    "Total Severity Score": 8,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9814744,
+    "Longitude": -93.2350077,
+    "Incident Location": "5th St SE / 14th Ave SE",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9818592,
+    "Longitude": -93.2456331,
+    "Incident Location": "2nd St SE / 8th Ave SE",
+    "Total Severity Score": 9,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.983364,
+    "Longitude": -93.2320854,
+    "Incident Location": "701 15th Ave SE",
+    "Total Severity Score": 45,
+    "Crime Count": 7
+  },
+  {
+    "Latitude": 44.9835704,
+    "Longitude": -93.1845358,
+    "Incident Location": "1994 Buford Ave",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9838892,
+    "Longitude": -93.2394427,
+    "Incident Location": "1039 5th St SE",
+    "Total Severity Score": 6,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.985094,
+    "Longitude": -93.1832958,
+    "Incident Location": "1985 Buford Ave",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9855712,
+    "Longitude": -93.2372254,
+    "Incident Location": "21 11th Ave SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9856449,
+    "Longitude": -93.2120799,
+    "Incident Location": "2904 Fairmount St SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9857685,
+    "Longitude": -93.1813563,
+    "Incident Location": "1472 Gortner Ave",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9876433,
+    "Longitude": -93.2354485,
+    "Incident Location": "1100 Como Ave SE",
+    "Total Severity Score": 8,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9881909,
+    "Longitude": -93.2135836,
+    "Incident Location": "1001 29th Ave SE",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9882806,
+    "Longitude": -93.2145092,
+    "Incident Location": "1004 27th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.988562,
+    "Longitude": -93.2150044,
+    "Incident Location": "1012 27th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9889488,
+    "Longitude": -93.2147651,
+    "Incident Location": "1024 27th Ave SE",
+    "Total Severity Score": 8,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9894041,
+    "Longitude": -93.214355,
+    "Incident Location": "1028 27th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9894239,
+    "Longitude": -93.2149485,
+    "Incident Location": "1038 27th Ave SE",
+    "Total Severity Score": 6,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9897306,
+    "Longitude": -93.188342,
+    "Incident Location": "1536 Cleveland Ave N",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9903183,
+    "Longitude": -93.2116588,
+    "Incident Location": "2901 Talmage Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9907918,
+    "Longitude": -93.2142979,
+    "Incident Location": "1060 27th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9908802,
+    "Longitude": -93.2147552,
+    "Incident Location": "1066 27th Ave SE",
+    "Total Severity Score": 8,
+    "Crime Count": 2
+  },
+  {
+    "Latitude": 44.9909881,
+    "Longitude": -93.2131369,
+    "Incident Location": "1051 29th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.991173,
+    "Longitude": -93.2147615,
+    "Incident Location": "1070 27th Ave SE",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9916706,
+    "Longitude": -93.1769764,
+    "Incident Location": "Fairview Ave N / Larpenteur Ave",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 44.9918562,
+    "Longitude": -93.1769681,
+    "Incident Location": "1478 Fairview Ave",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 45.00498,
+    "Longitude": -93.261208,
+    "Incident Location": "1625 4th St S",
+    "Total Severity Score": 3,
+    "Crime Count": 1
+  },
+  {
+    "Latitude": 45.0082594,
+    "Longitude": -93.2611547,
+    "Incident Location": "1925 4th St S",
+    "Total Severity Score": 16,
+    "Crime Count": 4
+  },
+  {
+    "Latitude": 45.0592534,
+    "Longitude": -93.36774,
+    "Incident Location": "1801 Dudley Ave",
+    "Total Severity Score": 5,
+    "Crime Count": 1
+  }
+]
