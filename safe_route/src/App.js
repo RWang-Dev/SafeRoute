@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState, useEffect } from "react";
+import CrimeMap from "./CrimeMap"; // Ensure this is the correct path to your CrimeMap component
+import crimeData from "./UMPD_Daily_Crime_Aggregated_with_Location.json"; // The path to your JSON file
 
 function App() {
+  // State to store your data
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    setData(crimeData);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CrimeMap data={data} />
     </div>
   );
 }
