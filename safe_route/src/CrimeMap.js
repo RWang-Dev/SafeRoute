@@ -18,12 +18,28 @@ const center = {
 
 const CrimeMap = ({ data }) => {
   const [selectedCrime, setSelectedCrime] = useState(null);
+  const bounds = {
+    north: 44.98,
+    south: 44.96,
+    east: -93.21,
+    west: -93.24,
+  };
 
-  console.log("CrimeMap rendered with data:", data);
+  // console.log("CrimeMap rendered with data:", console.log(data.length)); checking to see if data is working/being loaded/check dev tools
 
   return (
     <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={18}>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={16}
+        options={{
+          restriction: {
+            latLngBounds: bounds,
+            strictBounds: false, // Set to true if you want to strictly restrict the map bounds
+          },
+        }}
+      >
         {data.map((crime) => (
           <Marker
             key={`${crime.Latitude}-${crime.Longitude}`} // assuming this combination is unique

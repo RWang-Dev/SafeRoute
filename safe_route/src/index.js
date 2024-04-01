@@ -8,11 +8,9 @@ const container = document.getElementById("root");
 const root = createRoot(container); // Create a root.
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
 
 reportWebVitals();
