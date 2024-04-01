@@ -32,7 +32,7 @@ const CrimeMap = ({ data }) => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={16}
+        zoom={17}
         options={{
           restriction: {
             latLngBounds: bounds,
