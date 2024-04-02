@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   GoogleMap,
   Marker,
@@ -12,37 +12,59 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 44.9733,
-  lng: -93.2277,
+  lat: 44.9765,
+  lng: -93.23,
+};
+
+const defaultZoom = 10; // Default zoom level
+
+const bounds = {
+  north: 44.99,
+  south: 44.965,
+  east: -93.21, // Adjusted for example
+  west: -93.25, // Adjusted for example
 };
 
 const CrimeMap = ({ data }) => {
   const [selectedCrime, setSelectedCrime] = useState(null);
-  const bounds = {
-    north: 44.98,
-    south: 44.96,
-    east: -93.21,
-    west: -93.24,
-  };
+  const mapRef = useRef(null);
 
-  // console.log("CrimeMap rendered with data:", console.log(data.length)); checking to see if data is working/being loaded/check dev tools
+  // Attach the event listener after the map has loaded
+  useEffect(() => {
+    if (mapRef.current) {
+      const listener = mapRef.current.addListener("zoom_changed", () => {
+        const currentZoom = mapRef.current.getZoom();
+        if (currentZoom < defaultZoom) {
+          mapRef.current.setZoom(defaultZoom);
+        }
+      });
+
+      return () => {
+        if (listener) {
+          listener.remove();
+        }
+      };
+    }
+  }, []);
 
   return (
     <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={16}
+        zoom={defaultZoom}
         options={{
           restriction: {
             latLngBounds: bounds,
-            strictBounds: false, // Set to true if you want to strictly restrict the map bounds
+            strictBounds: true,
           },
+          minZoom: defaultZoom, // This ensures users cannot zoom out further than defaultZoom
         }}
+        onLoad={(mapInstance) => (mapRef.current = mapInstance)}
       >
         {data.map((crime) => (
           <Marker
-            key={`${crime.Latitude}-${crime.Longitude}`} // assuming this combination is unique
+            key={`${crime.Latitude}-${crime.Longitude}`}
             position={{ lat: crime.Latitude, lng: crime.Longitude }}
             onClick={() => setSelectedCrime(crime)}
           />
@@ -57,9 +79,9 @@ const CrimeMap = ({ data }) => {
             onCloseClick={() => setSelectedCrime(null)}
           >
             <div>
-              <h2>Incident Location: {selectedCrime["Incident Location"]}</h2>
-              <p>Severity Score: {selectedCrime["Total Severity Score"]}</p>
-              <p>Crime Count: {selectedCrime["Crime Count"]}</p>
+              {/* <h2>Incident Location: {selectedCrime["Incident Location"]}</h2> */}
+              <h2>Severity Score: {selectedCrime["Total Severity Score"]}</h2>
+              <h2>Crime Count: {selectedCrime["Crime Count"]}</h2>
             </div>
           </InfoWindow>
         )}

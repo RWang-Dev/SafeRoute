@@ -9,7 +9,8 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${process.env.PUBLIC_URL}/Google_UMPD_Daily_Crime_Aggregated_with_Location.json`
+          `${process.env.PUBLIC_URL}/clustered_data.json`
+          // `${process.env.PUBLIC_URL}/Google_UMPD_Daily_Crime_Aggregated_with_Location.json`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
