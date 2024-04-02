@@ -1,0 +1,134 @@
+[
+    {
+        "Latitude": 44.96772275,
+        "Longitude": -93.2381268,
+        "Total Severity Score": 72,
+        "Crime Count": 10
+    },
+    {
+        "Latitude": 44.97046633333333,
+        "Longitude": -93.2286249,
+        "Total Severity Score": 111,
+        "Crime Count": 19
+    },
+    {
+        "Latitude": 44.971005600000005,
+        "Longitude": -93.24643266666668,
+        "Total Severity Score": 32,
+        "Crime Count": 5
+    },
+    {
+        "Latitude": 44.97156276,
+        "Longitude": -93.243785,
+        "Total Severity Score": 54,
+        "Crime Count": 13
+    },
+    {
+        "Latitude": 44.97224576,
+        "Longitude": -93.21851923999999,
+        "Total Severity Score": 53,
+        "Crime Count": 13
+    },
+    {
+        "Latitude": 44.97280696666667,
+        "Longitude": -93.2276949,
+        "Total Severity Score": 57,
+        "Crime Count": 8
+    },
+    {
+        "Latitude": 44.9725344,
+        "Longitude": -93.23084080000001,
+        "Total Severity Score": 21,
+        "Crime Count": 5
+    },
+    {
+        "Latitude": 44.97298425,
+        "Longitude": -93.23703885,
+        "Total Severity Score": 56,
+        "Crime Count": 11
+    },
+    {
+        "Latitude": 44.97276405000001,
+        "Longitude": -93.23380667500001,
+        "Total Severity Score": 30,
+        "Crime Count": 8
+    },
+    {
+        "Latitude": 44.97305906666666,
+        "Longitude": -93.24345946666665,
+        "Total Severity Score": 46,
+        "Crime Count": 9
+    },
+    {
+        "Latitude": 44.97348862,
+        "Longitude": -93.23184664,
+        "Total Severity Score": 45,
+        "Crime Count": 8
+    },
+    {
+        "Latitude": 44.974179500000005,
+        "Longitude": -93.233451,
+        "Total Severity Score": 16,
+        "Crime Count": 4
+    },
+    {
+        "Latitude": 44.974767325,
+        "Longitude": -93.23676932500001,
+        "Total Severity Score": 95,
+        "Crime Count": 14
+    },
+    {
+        "Latitude": 44.975291766666665,
+        "Longitude": -93.2280699,
+        "Total Severity Score": 56,
+        "Crime Count": 14
+    },
+    {
+        "Latitude": 44.975915979999996,
+        "Longitude": -93.23320062,
+        "Total Severity Score": 35,
+        "Crime Count": 9
+    },
+    {
+        "Latitude": 44.97798122,
+        "Longitude": -93.1853153,
+        "Total Severity Score": 22,
+        "Crime Count": 6
+    },
+    {
+        "Latitude": 44.978025949999996,
+        "Longitude": -93.23334538333334,
+        "Total Severity Score": 65,
+        "Crime Count": 10
+    },
+    {
+        "Latitude": 44.979211633333335,
+        "Longitude": -93.23231556666667,
+        "Total Severity Score": 32,
+        "Crime Count": 4
+    },
+    {
+        "Latitude": 44.979951,
+        "Longitude": -93.23540349999999,
+        "Total Severity Score": 22,
+        "Crime Count": 3
+    },
+    {
+        "Latitude": 44.984810966666664,
+        "Longitude": -93.18306263333334,
+        "Total Severity Score": 18,
+        "Crime Count": 3
+    },
+    {
+        "Latitude": 44.98880171666667,
+        "Longitude": -93.21452763333333,
+        "Total Severity Score": 28,
+        "Crime Count": 8
+    },
+    {
+        "Latitude": 44.990958275000004,
+        "Longitude": -93.21423787500001,
+        "Total Severity Score": 17,
+        "Crime Count": 5
+    }
+]
