@@ -19,7 +19,7 @@ const center = {
 const defaultZoom = 10; // Default zoom level
 
 const bounds = {
-  north: 44.99,
+  north: 44.989,
   south: 44.965,
   east: -93.21, // Adjusted for example
   west: -93.25, // Adjusted for example
