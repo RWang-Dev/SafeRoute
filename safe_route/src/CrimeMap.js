@@ -1,3 +1,4 @@
+/* global google */
 import React, { useState, useRef, useEffect } from "react";
 import {
   GoogleMap,
@@ -21,13 +22,29 @@ const defaultZoom = 10; // Default zoom level
 const bounds = {
   north: 44.989,
   south: 44.965,
-  east: -93.21, // Adjusted for example
-  west: -93.25, // Adjusted for example
+  east: -93.21, //bounds for campus
+  west: -93.25,
 };
 
 const CrimeMap = ({ data }) => {
   const [selectedCrime, setSelectedCrime] = useState(null);
+  const [currentUserLocation, setCurrentUserLocation] = useState(null);
   const mapRef = useRef(null);
+
+  // Get user's current location
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setCurrentUserLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+      },
+      (error) => {
+        console.log("Error getting current location: ", error);
+      }
+    );
+  }, []);
 
   // Attach the event listener after the map has loaded
   useEffect(() => {
@@ -51,7 +68,7 @@ const CrimeMap = ({ data }) => {
     <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center}
+        center={currentUserLocation || center}
         zoom={defaultZoom}
         options={{
           restriction: {
@@ -84,6 +101,20 @@ const CrimeMap = ({ data }) => {
               <h2>Crime Count: {selectedCrime["Crime Count"]}</h2>
             </div>
           </InfoWindow>
+        )}
+
+        {currentUserLocation && (
+          <Marker
+            position={currentUserLocation}
+            icon={{
+              path: google.maps.SymbolPath.CIRCLE,
+              fillColor: "green",
+              fillOpacity: 1,
+              scale: 6,
+              strokeColor: "blue",
+              strokeWeight: 2,
+            }}
+          />
         )}
       </GoogleMap>
     </LoadScript>
