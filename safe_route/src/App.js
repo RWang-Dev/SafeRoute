@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CrimeMap from "./CrimeMap";
+import CrimeMap from "./components/CrimeMap";
 
 function App() {
   const [data, setData] = useState([]);
