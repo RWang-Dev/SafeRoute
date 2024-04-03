@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import CrimeMap from "./components/CrimeMap";
+import Home from "./components/Home";
 
 function App() {
   const [data, setData] = useState([]);
@@ -30,8 +32,14 @@ function App() {
   console.log("App component rendered.");
 
   return (
-    <div className="App">
-      {loading ? <div>Loading...</div> : <CrimeMap data={data} />}
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/map"
+          element={<CrimeMap data={data} loading={loading} />}
+        />
+      </Routes>
     </div>
   );
 }
