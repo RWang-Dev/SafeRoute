@@ -1,0 +1,47 @@
+.outer-container {
+  background-color: gold;
+}
+
+.main-container {
+    justify-content: center;
+    background-color: maroon;
+    padding: 20px;
+    margin: 50px;
+  }
+  
+  .saved-locations,
+  .create-location {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .saved-locations h2 {
+    text-align: center;
+  }
+
+  .create-location {
+    text-align: center;
+  }
+  
+  .location-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .location-name {
+    flex: 1;
+  }
+  
+  .icons {
+    display: flex;
+  }
+  
+  .edit-icon,
+  .delete-icon {
+    margin-left: 10px;
+  }
+  

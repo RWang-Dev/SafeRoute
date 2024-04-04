@@ -5,6 +5,22 @@
   flex-direction: row;
 }
 
+.hamburgerButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; 
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburgerButton svg {
+  width: 22px;
+  height: 22px;
+  color: #000; 
+}
+
 .sideBar {
   width: 25%;
   display: flex;
@@ -50,4 +66,13 @@
 
 .savedLocations:hover {
   cursor: pointer;
+}
+
+.sideBarClosed {
+  width: 0; 
+  overflow: hidden; 
+}
+
+.mapContainerClosed {
+  width: 100%; 
 }
