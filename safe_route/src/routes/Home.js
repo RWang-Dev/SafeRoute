@@ -7,6 +7,8 @@ function Home() {
       <h1>Home Page</h1>
       {/* <h2>Incident Location: {selectedCrime["Incident Location"]}</h2> */}
       <Link to="/map">Go to map page </Link>
+      <br />
+      <Link to="/locations">Go to saved Locations</Link>
     </div>
   );
 }

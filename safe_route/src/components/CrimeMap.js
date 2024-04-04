@@ -1,5 +1,7 @@
 /* global google */
 import React, { useState, useRef, useEffect } from "react";
+import { FaBars } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 import {
   GoogleMap,
   Marker,
@@ -9,6 +11,8 @@ import {
 
 import nightMode from "../map-styles/NightMode";
 import classes from "./CrimeMap.module.css";
+
+{/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */}
 
 const containerStyle = {
   width: "100%",
@@ -36,6 +40,10 @@ const CrimeMap = ({ data }) => {
   const [currentUserLocation, setCurrentUserLocation] = useState(null);
   const mapRef = useRef(null);
   const [isNightMode, setIsNightMode] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   // Get user's current location
   useEffect(() => {
@@ -74,18 +82,16 @@ const CrimeMap = ({ data }) => {
 
   return (
     <>
-      <div className={classes.mapContainer}>
-        <div className={classes.sideBar}>
+      <div className={sidebarOpen ? classes.mapContainer : classes.mapContainerClosed}>
+        <button className={classes.hamburgerButton} onClick={toggleSidebar}>
+          <FaBars />
+        </button>
+        <div className={sidebarOpen ? classes.sideBar : classes.sideBarClosed}>
           <div className={classes.profile}>
             <img src="Kluver_Daniel_1.jpg"></img>
             <h2>Username</h2>
           </div>
-          <span
-            onClick={() => alert("Do something")}
-            className={classes.savedLocations}
-          >
-            Saved Locations
-          </span>
+          <Link to="/locations" className={classes.savedLocations}> Saved Locations </Link>
           <button
             className={classes.toggleButton}
             onClick={toggleNightMode}
