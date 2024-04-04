@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import CrimeMap from "./components/CrimeMap";
-import Home from "./components/Home";
+import Home from "./routes/Home";
+import ErrorPage from "./routes/ErrorPage";
 
 function App() {
   const [data, setData] = useState([]);
@@ -39,6 +40,7 @@ function App() {
           path="/map"
           element={<CrimeMap data={data} loading={loading} />}
         />
+        <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
     </div>
   );
