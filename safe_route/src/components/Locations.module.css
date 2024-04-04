@@ -1,0 +1,60 @@
+/* body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  background-color: rgb(100, 12, 12);
+  align-items: center;
+} */
+
+.outerContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  background-color: rgb(100, 12, 12);
+  align-items: center;
+}
+
+.mainContainer {
+  justify-content: center;
+  background-color: rgb(233, 209, 71);
+  padding: 20px;
+  margin: 50px;
+}
+
+.savedLocations,
+.createLocation {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.savedLocations h2 {
+  text-align: center;
+}
+
+.createLocation {
+  text-align: center;
+}
+
+.locationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.locationName {
+  flex: 1;
+}
+
+.icons {
+  display: flex;
+}
+
+.editIcon,
+.deleteIcon {
+  margin-left: 10px;
+}
