@@ -6,7 +6,7 @@ CSCI 5117, Spring 2024, [assignment description](https://canvas.umn.edu/courses/
 
 * Team Name: The Forge
 * App Name: SafeRoute
-* App Link: <https://TODO.com/>
+* App Link: https://calm-glacier-0c8e2970f.5.azurestaticapps.net
 
 ### Students
 
