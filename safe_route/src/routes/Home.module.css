@@ -1,0 +1,83 @@
+/* Navigation Bar Styles */
+.navbar {
+    background-color: rgb(100, 12, 12);
+    overflow: hidden;
+}
+
+.navbarList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbarList li {
+    float: left;
+}
+
+.navbarList li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbarList li a:hover {
+    background-color: rgb(233, 209, 71);
+    color: black;
+}
+
+.container {
+    margin: 20px;
+}
+
+/* Recent Incidents Section Styles */
+.recentIncidents {
+    margin-top: 20px;
+}
+
+.recentIncidents h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.recentIncidents ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recentIncidents li {
+    background-color: rgba(233, 209, 71, 0.8);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.recentIncidents li:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.recentIncidents li strong {
+    font-weight: bold;
+    color: rgb(100, 12, 12);
+}
+
+.recentIncidents li span {
+    display: block;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.7);
+}
