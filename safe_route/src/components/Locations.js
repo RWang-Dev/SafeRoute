@@ -1,8 +1,21 @@
 import React from "react";
 import { FaEdit, FaTrash, FaSearch } from "react-icons/fa";
 import classes from "./Locations.module.css";
+import { useState, useEffect } from "react";
 
 function Locations() {
+  const [locations, setLocations] = useState([]);
+  const user = "admin"; // Placeholder for when we get user auth working
+  useEffect(() => {
+    fetchLocations();
+  }, []);
+
+  async function fetchLocations() {
+    let response = await fetch("/api/getLocations/?user=" + user);
+
+    const data = await response.json();
+    setLocations(data);
+  }
   return (
     <div className={classes.outerContainer}>
       <div className={classes.mainContainer}>
