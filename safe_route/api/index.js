@@ -44,15 +44,9 @@ app.http("getLocations", {
       const database = client.db("SafeRoute");
       const locations = database.collection("saved_locations");
 
-      const { user } = await request.query.get("user");
-      let user_locations = [];
-      if (user == "admin") {
-        user_locations = await locations.find({});
-      } else {
-        user_locations = await locations.find({
-          user: user,
-        });
-      }
+      const userID = request.query.get("userID");
+      console.log(userID);
+      let user_locations = await locations.find({ userID: userID }).toArray();
 
       responseMessage = "location added successfully" + request.body;
       return {
@@ -60,8 +54,8 @@ app.http("getLocations", {
         status: 200,
       };
     } catch (error) {
-      console.error("Error adding location:", error);
-      responseMessage = "Failed to add location";
+      console.error("Error getting location:", error);
+      responseMessage = "Failed to get location";
       responseStatus = 500;
     } finally {
       await client.close();
@@ -89,8 +83,8 @@ app.http("addLocation", {
       const database = client.db("SafeRoute");
       const locations = database.collection("saved_locations");
 
-      const { user, location_name, location_address } = await request.json();
-      await locations.insertOne({ user, location_name, location_address });
+      const { userID, location_name, location_address } = await request.json();
+      await locations.insertOne({ userID, location_name, location_address });
 
       responseMessage = "location added successfully" + request.body;
     } catch (error) {
@@ -116,7 +110,7 @@ app.http("deleteLocation", {
     const client = new MongoClient(MONGO_URI);
     try {
       await client.connect();
-      const { location_id } = await request.json();
+      const location_id = request.query.get("loc_id");
       const result = await client
         .db("SafeRoute")
         .collection("saved_locations")

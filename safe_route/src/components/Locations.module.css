@@ -20,7 +20,9 @@
   justify-content: center;
   background-color: rgb(233, 209, 71);
   padding: 20px;
+  width: 50vw;
   margin: 50px;
+  border-radius: 10px;
 }
 
 .savedLocations,
@@ -30,8 +32,12 @@
   margin: 10px;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
+.createLocation input {
+  border-radius: 5px;
+}
 .savedLocations h2 {
   text-align: center;
 }
@@ -44,6 +50,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .locationName {
@@ -57,4 +64,20 @@
 .editIcon,
 .deleteIcon {
   margin-left: 10px;
+}
+
+button {
+  background-color: rgb(100, 12, 12);
+  border-radius: 5px;
+  border-width: 0;
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: rgb(63, 10, 10);
 }
