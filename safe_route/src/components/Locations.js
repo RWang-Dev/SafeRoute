@@ -2,12 +2,17 @@ import React from "react";
 import { FaEdit, FaTrash, FaSearch } from "react-icons/fa";
 import classes from "./Locations.module.css";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Locations() {
   const [locations, setLocations] = useState([]);
   const [username, setUsername] = useState("Guest");
   const [userID, setuserID] = useState("Guest");
+  let navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   useEffect(() => {
     fetchUser();
@@ -106,9 +111,8 @@ function Locations() {
           <br />
           <br />
           <button onClick={() => addLocation()}>Save Location</button>
-          <Link to="/">
-            <button>Back</button>
-          </Link>
+
+          <button onClick={handleBack}>Back</button>
         </div>
       </div>
     </div>

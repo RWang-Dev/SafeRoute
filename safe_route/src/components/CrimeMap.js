@@ -105,18 +105,34 @@ const CrimeMap = ({ data }) => {
           sidebarOpen ? classes.mapContainer : classes.mapContainerClosed
         }
       >
-        <button className={classes.hamburgerButton} onClick={toggleSidebar}>
+        {/* <button className={classes.hamburgerButton} onClick={toggleSidebar}>
           <FaBars />
-        </button>
+        </button> */}
         <div className={sidebarOpen ? classes.sideBar : classes.sideBarClosed}>
+          <div className={classes.navigationBar}>
+            <Link className={classes.navWidget} to="/">
+              Home
+            </Link>
+            <a className={classes.navWidget} href="/.auth/logout">
+              Logout
+            </a>
+          </div>
           <div className={classes.profile}>
-            <img src="Kluver_Daniel_1.jpg"></img>
+            <img src="user_icon.png"></img>
             <h2>{username}</h2>
           </div>
-          <Link to="/locations" className={classes.savedLocations}>
-            {" "}
-            Saved Locations{" "}
-          </Link>
+          {userID !== "Guest" ? (
+            <Link to="/locations" className={classes.savedLocations}>
+              {" "}
+              Saved Locations{" "}
+            </Link>
+          ) : (
+            <a href="/.auth/login/github" className={classes.savedLocations}>
+              {" "}
+              Login to Save Locations
+            </a>
+          )}
+
           <button
             className={classes.toggleButton}
             onClick={toggleNightMode}
