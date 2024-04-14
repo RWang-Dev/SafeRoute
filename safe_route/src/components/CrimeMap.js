@@ -1,6 +1,6 @@
 /* global google */
 import React, { useState, useRef, useEffect } from "react";
-import { FaBars } from 'react-icons/fa';
+import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import {
   GoogleMap,
@@ -12,7 +12,9 @@ import {
 import nightMode from "../map-styles/NightMode";
 import classes from "./CrimeMap.module.css";
 
-{/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */}
+{
+  /* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */
+}
 
 const containerStyle = {
   width: "100%",
@@ -41,6 +43,22 @@ const CrimeMap = ({ data }) => {
   const mapRef = useRef(null);
   const [isNightMode, setIsNightMode] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [username, setUsername] = useState("Guest");
+  const [userID, setuserID] = useState("Guest");
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  const fetchUser = async () => {
+    const response = await fetch("/.auth/me");
+    const data = await response.json();
+    if (data.clientPrincipal != null) {
+      setuserID(data.clientPrincipal.userId);
+      setUsername(data.clientPrincipal.userDetails);
+    }
+  };
+
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
@@ -82,16 +100,23 @@ const CrimeMap = ({ data }) => {
 
   return (
     <>
-      <div className={sidebarOpen ? classes.mapContainer : classes.mapContainerClosed}>
+      <div
+        className={
+          sidebarOpen ? classes.mapContainer : classes.mapContainerClosed
+        }
+      >
         <button className={classes.hamburgerButton} onClick={toggleSidebar}>
           <FaBars />
         </button>
         <div className={sidebarOpen ? classes.sideBar : classes.sideBarClosed}>
           <div className={classes.profile}>
             <img src="Kluver_Daniel_1.jpg"></img>
-            <h2>Username</h2>
+            <h2>{username}</h2>
           </div>
-          <Link to="/locations" className={classes.savedLocations}> Saved Locations </Link>
+          <Link to="/locations" className={classes.savedLocations}>
+            {" "}
+            Saved Locations{" "}
+          </Link>
           <button
             className={classes.toggleButton}
             onClick={toggleNightMode}
