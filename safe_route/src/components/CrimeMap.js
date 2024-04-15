@@ -1,6 +1,6 @@
 /* global google */
 import React, { useState, useRef, useEffect } from "react";
-import { FaBars } from "react-icons/fa";
+// import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import {
   GoogleMap,
@@ -61,6 +61,16 @@ const CrimeMap = ({ data }) => {
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+  };
+
+  const getMarkerColor = (severityScore) => {
+    if (severityScore < 50) {
+      return "yellow";
+    } else if (severityScore >= 50 && severityScore <= 75) {
+      return "orange";
+    } else {
+      return "red";
+    }
   };
 
   // Get user's current location
@@ -167,6 +177,14 @@ const CrimeMap = ({ data }) => {
                 key={`${crime.Latitude}-${crime.Longitude}`}
                 position={{ lat: crime.Latitude, lng: crime.Longitude }}
                 onClick={() => setSelectedCrime(crime)}
+                icon={{
+                  path: google.maps.SymbolPath.CIRCLE,
+                  fillColor: getMarkerColor(crime["Total Severity Score"]),
+                  fillOpacity: 0.85,
+                  scale: 9,
+                  strokeColor: "black",
+                  strokeWeight: 1,
+                }}
               />
             ))}
 
