@@ -1,0 +1,143 @@
+/* body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  background-color: rgb(100, 12, 12);
+  align-items: center;
+} */
+
+.outerContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  background-color: rgb(100, 12, 12);
+  align-items: center;
+}
+
+.mainContainer {
+  justify-content: center;
+  background-color: rgb(233, 209, 71);
+  padding: 20px;
+  width: 30vw;
+  margin: 50px;
+  height: 40vh;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.savedLocations,
+.createLocation {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.editTitle {
+  margin-bottom: 3vh;
+}
+
+.editWidgets {
+  margin-top: 5vh;
+}
+
+.saveWidget {
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  background-color: rgb(74, 145, 74);
+  border-radius: 5px;
+  color: black;
+  padding: 5px;
+}
+
+.saveWidget:hover {
+  background-color: green;
+}
+
+.deleteWidget {
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: rgb(228, 84, 84);
+  border-radius: 5px;
+  color: black;
+  padding: 5px;
+}
+
+.deleteWidget:hover {
+  background-color: rgb(170, 63, 63);
+}
+
+.cancelWidget {
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  color: black;
+  padding: 5px;
+}
+
+.cancelWidget:hover {
+  background-color: gray;
+}
+input,
+textarea {
+  border-radius: 5px;
+  width: 45%;
+}
+
+textarea {
+  height: 20%;
+}
+.savedLocations h2 {
+  text-align: center;
+}
+
+.createLocation {
+  text-align: center;
+}
+
+.locationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.locationName {
+  flex: 1;
+}
+
+.icons {
+  display: flex;
+}
+
+.editIcon,
+.deleteIcon {
+  margin-left: 10px;
+}
+
+button {
+  background-color: rgb(100, 12, 12);
+  border-radius: 5px;
+  border-width: 0;
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: rgb(63, 10, 10);
+}

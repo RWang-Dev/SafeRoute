@@ -4,6 +4,7 @@ import CrimeMap from "./components/CrimeMap";
 import Home from "./routes/Home";
 import ErrorPage from "./routes/ErrorPage";
 import Locations from "./components/Locations";
+import LocationEdit from "./components/LocationEdit";
 
 function App() {
   const [data, setData] = useState([]);
@@ -41,7 +42,8 @@ function App() {
           path="/map"
           element={<CrimeMap data={data} loading={loading} />}
         />
-        <Route path="/locations" element={<Locations />} />
+        <Route path="/locations/:loc_id" element={<LocationEdit />}></Route>
+        <Route path="/locations" element={<Locations />}></Route>
         <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
     </div>

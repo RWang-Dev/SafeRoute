@@ -29,6 +29,37 @@ app.http("checkDbConnection", {
   },
 });
 
+app.http("getLocation", {
+  methods: ["GET"],
+  authLevel: "anonymous",
+  route: "getLocation",
+  handler: async (request, context) => {
+    const client = new MongoClient(MONGO_URI);
+    try {
+      await client.connect();
+      const database = client.db("SafeRoute");
+      const locations = database.collection("saved_locations");
+
+      const loc_id = request.query.get("loc_id");
+      // Fetch all todo items
+      const location = await locations.find({ _id: loc_id }).toArray();
+
+      return {
+        jsonBody: location.reverse(),
+        status: 200,
+      };
+    } catch (error) {
+      console.error("Failed to retrieve todos:", error);
+      return {
+        jsonBody: { error: "Failed to retrieve todos" },
+        status: 500,
+      };
+    } finally {
+      await client.close();
+    }
+  },
+});
+
 app.http("getLocations", {
   methods: ["GET"],
   authLevel: "anonymous",
