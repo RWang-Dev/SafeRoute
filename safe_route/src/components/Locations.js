@@ -86,7 +86,9 @@ function Locations() {
               >
                 <div className={classes.locationName}>{loc.location_name}</div>
                 <div className={classes.icons}>
-                  <FaEdit className={classes.editIcon} />
+                  <Link to={"/locations/" + loc._id}>
+                    <FaEdit className={classes.editIcon} />
+                  </Link>
                   <FaTrash
                     onClick={() => deleteLocation(loc._id)}
                     className={classes.deleteIcon}
