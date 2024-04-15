@@ -8,11 +8,6 @@ function Locations() {
   const [locations, setLocations] = useState([]);
   const [username, setUsername] = useState("Guest");
   const [userID, setuserID] = useState("Guest");
-  let navigate = useNavigate();
-
-  function handleBack() {
-    navigate(-1);
-  }
 
   useEffect(() => {
     fetchUser();
@@ -113,8 +108,14 @@ function Locations() {
           <br />
           <br />
           <button onClick={() => addLocation()}>Save Location</button>
-
-          <button onClick={handleBack}>Back</button>
+          <div>
+            <Link to="/">
+              <button className={classes.backButtons}>Home</button>
+            </Link>
+            <Link to="/map">
+              <button className={classes.backButtons}>Map</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

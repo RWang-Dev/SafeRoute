@@ -66,6 +66,10 @@
   margin-left: 10px;
 }
 
+.backButtons {
+  display: inline;
+  margin: 5px;
+}
 button {
   background-color: rgb(100, 12, 12);
   border-radius: 5px;
