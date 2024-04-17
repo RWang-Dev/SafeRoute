@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 function Home() {
   const [username, setUsername] = useState("Guest");
-  const [userID, setuserID] = useState("Guest");
+  const [userID, setUserID] = useState("Guest");
 
   useEffect(() => {
     fetchUser();
@@ -15,7 +15,7 @@ function Home() {
     const response = await fetch("/.auth/me");
     const data = await response.json();
     if (data.clientPrincipal != null) {
-      setuserID(data.clientPrincipal.userId);
+      setUserID(data.clientPrincipal.userId);
       setUsername(data.clientPrincipal.userDetails);
     }
   };

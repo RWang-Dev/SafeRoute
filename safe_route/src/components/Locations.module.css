@@ -66,10 +66,29 @@
   margin-left: 10px;
 }
 
+.editIcon:hover,
+.deleteIcon:hover {
+  cursor: pointer;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.saveLocationBtn:hover {
+  cursor: pointer;
+}
+
 .backButtons {
   display: inline;
-  margin: 5px;
+  margin: 15px;
 }
+
+.backButtons:hover {
+  cursor: pointer;
+}
+
 button {
   background-color: rgb(100, 12, 12);
   border-radius: 5px;

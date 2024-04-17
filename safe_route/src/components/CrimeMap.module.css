@@ -56,12 +56,29 @@ body {
   border-radius: 50px;
 }
 
-.toggleButton {
+.toggleButtonDay {
+  background-color: rgb(157, 102, 0);
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 3vh;
   margin-top: auto;
+}
+
+.toggleButtonNight {
   background-color: darkblue;
   border-radius: 10px;
   color: white;
   margin-bottom: 3vh;
+  margin-top: auto;
+}
+
+/* so color of button stays the same when you click it (overlaying css style issue) */
+.toggleButtonDay:focus {
+  background-color: rgb(157, 102, 0);
+}
+
+.toggleButtonNight:focus {
+  background-color: darkblue;
 }
 
 .savedLocations {

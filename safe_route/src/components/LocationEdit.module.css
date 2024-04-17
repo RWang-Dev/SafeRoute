@@ -49,45 +49,58 @@
 }
 
 .saveWidget {
+  background-color: rgb(1, 150, 53);
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  transition: color 100ms;
   margin-left: 5px;
   margin-right: 5px;
   text-decoration: none;
-  background-color: rgb(74, 145, 74);
-  border-radius: 5px;
-  color: black;
-  padding: 5px;
 }
 
+
 .saveWidget:hover {
-  background-color: green;
+  background-color: rgb(95, 187, 95)
 }
 
 .deleteWidget {
-  text-decoration: none;
+  background-color: rgb(145, 1, 1);
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  transition: color 100ms;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: rgb(228, 84, 84);
-  border-radius: 5px;
-  color: black;
-  padding: 5px;
+  text-decoration: none;
 }
 
 .deleteWidget:hover {
-  background-color: rgb(170, 63, 63);
+  background-color: rgb(207, 52, 52);
 }
 
 .cancelWidget {
-  text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border: none;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  transition: color 100ms;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  color: black;
-  padding: 5px;
+  text-decoration: none;
 }
 
 .cancelWidget:hover {
-  background-color: gray;
+  background-color: rgb(212, 212, 212);
 }
 input,
 textarea {
@@ -124,20 +137,4 @@ textarea {
 .editIcon,
 .deleteIcon {
   margin-left: 10px;
-}
-
-button {
-  background-color: rgb(100, 12, 12);
-  border-radius: 5px;
-  border-width: 0;
-  color: white;
-  padding: 5px;
-  margin-bottom: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-button:hover {
-  background-color: rgb(63, 10, 10);
 }

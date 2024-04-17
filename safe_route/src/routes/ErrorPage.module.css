@@ -1,0 +1,19 @@
+.mainContainer {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 60%;
+    text-align: center;
+    background-color: #fdfdfd;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-shadow: rgb(198, 230, 255) 1px 0 10px;
+    text-decoration: underline;
+}
