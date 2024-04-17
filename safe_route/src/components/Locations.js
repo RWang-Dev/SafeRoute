@@ -16,14 +16,14 @@ function Locations() {
   const fetchUser = async () => {
     const response = await fetch("/.auth/me");
     const data = await response.json();
-    if (data.clientPrincipal != null) {
+    if (data.clientPrincipal !== null) {
       setuserID(data.clientPrincipal.userId);
       setUsername(data.clientPrincipal.userDetails);
     }
   };
 
   useEffect(() => {
-    if (userID != "Guest") {
+    if (userID !== "Guest") {
       fetchLocations();
     }
   }, [userID]);
@@ -50,6 +50,9 @@ function Locations() {
     });
 
     if (response.ok) {
+      //clear input fields after Save Location is pressed
+      document.getElementById("location-name").value = "";
+      document.getElementById("location-address").value = "";
       fetchLocations();
     } else {
       console.log("ERROR adding location");
@@ -57,14 +60,17 @@ function Locations() {
   }
 
   async function deleteLocation(loc_id) {
-    const response = await fetch("/api/deleteLocation/?loc_id=" + loc_id, {
-      method: "DELETE",
-    });
-
-    if (response.ok) {
-      fetchLocations();
-    } else {
-      console.log("ERROR deleting location");
+    const confirmDelete = window.confirm("Are you sure you want to delete this location?");
+    if (confirmDelete) {
+      const response = await fetch("/api/deleteLocation/?loc_id=" + loc_id, {
+        method: "DELETE",
+      });
+  
+      if (response.ok) {
+        fetchLocations();
+      } else {
+        console.log("ERROR deleting location");
+      }
     }
   }
   return (
@@ -107,16 +113,16 @@ function Locations() {
           <input id="location-name" type="text" placeholder="Add Custom Name" />
           <br />
           <br />
-          <button onClick={() => addLocation()}>Save Location</button>
-          <div>
+          <button  className={classes.saveLocationBtn} onClick={() => addLocation()}>Save Location</button>
+        </div>
+        <div className={classes.buttonDiv}>
             <Link to="/">
-              <button className={classes.backButtons}>Home</button>
+              <button className={classes.backButtons}>Go to Home Page</button>
             </Link>
             <Link to="/map">
-              <button className={classes.backButtons}>Map</button>
+              <button className={classes.backButtons}>Go to Map Page</button>
             </Link>
           </div>
-        </div>
       </div>
     </div>
   );

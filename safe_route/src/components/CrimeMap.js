@@ -1,6 +1,5 @@
 /* global google */
 import React, { useState, useRef, useEffect } from "react";
-// import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import {
   GoogleMap,
@@ -11,10 +10,6 @@ import {
 
 import nightMode from "../map-styles/NightMode";
 import classes from "./CrimeMap.module.css";
-
-{
-  /* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */
-}
 
 const containerStyle = {
   width: "100%",
@@ -42,9 +37,12 @@ const CrimeMap = ({ data }) => {
   const [currentUserLocation, setCurrentUserLocation] = useState(null);
   const mapRef = useRef(null);
   const [isNightMode, setIsNightMode] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [username, setUsername] = useState("Guest");
   const [userID, setuserID] = useState("Guest");
+
+  const handleLoad = (map) => {
+    mapRef.current = map;
+  };
 
   useEffect(() => {
     fetchUser();
@@ -57,10 +55,6 @@ const CrimeMap = ({ data }) => {
       setuserID(data.clientPrincipal.userId);
       setUsername(data.clientPrincipal.userDetails);
     }
-  };
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
   };
 
   const getMarkerColor = (severityScore) => {
@@ -107,18 +101,13 @@ const CrimeMap = ({ data }) => {
   }, []);
 
   const toggleNightMode = () => setIsNightMode(!isNightMode);
+  const buttonClass = isNightMode ? "toggleButtonNight" : "toggleButtonDay";
+  const buttonText = isNightMode ? "Turn Night Mode Off" : "Turn Night Mode On";
 
   return (
     <>
-      <div
-        className={
-          sidebarOpen ? classes.mapContainer : classes.mapContainerClosed
-        }
-      >
-        {/* <button className={classes.hamburgerButton} onClick={toggleSidebar}>
-          <FaBars />
-        </button> */}
-        <div className={sidebarOpen ? classes.sideBar : classes.sideBarClosed}>
+      <div className={classes.mapContainer}>
+        <div className={classes.sideBar}>
           <div className={classes.navigationBar}>
             <Link className={classes.navWidget} to="/">
               Home
@@ -128,7 +117,7 @@ const CrimeMap = ({ data }) => {
             </a>
           </div>
           <div className={classes.profile}>
-            <img src="user_icon.png"></img>
+            <img src="user_icon.png" alt="user icon"></img>
             <h2>{username}</h2>
           </div>
           {userID !== "Guest" ? (
@@ -144,7 +133,7 @@ const CrimeMap = ({ data }) => {
           )}
 
           <button
-            className={classes.toggleButton}
+            className={`${classes[buttonClass]}`}
             onClick={toggleNightMode}
             style={{
               top: "10px",
@@ -152,11 +141,12 @@ const CrimeMap = ({ data }) => {
               zIndex: 1000,
             }}
           >
-            Toggle Night Mode
+            {buttonText}
           </button>
         </div>
         <LoadScript
           googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+          onLoad={handleLoad}
         >
           <GoogleMap
             mapContainerStyle={containerStyle}

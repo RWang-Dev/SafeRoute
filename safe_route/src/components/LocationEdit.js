@@ -38,9 +38,12 @@ function LocationEdit() {
   };
 
   async function deleteLocation() {
-    const response = await fetch("/api/deleteLocation/?loc_id=" + loc_id, {
-      method: "DELETE",
-    });
+    const confirmDelete = window.confirm("Are you sure you want to delete this location?");
+    if (confirmDelete) {
+      const response = await fetch("/api/deleteLocation/?loc_id=" + loc_id, {
+        method: "DELETE",
+      });
+    }
   }
 
   async function editLocation() {
@@ -70,14 +73,14 @@ function LocationEdit() {
     <div className={classes.outerContainer}>
       <div className={classes.mainContainer}>
         <h1 className={classes.editTitle}> Edit Location</h1>
-        <label for="edit-location-name">Location name</label>
+        <label htmlFor="edit-location-name">Location name</label>
         <input
           id="edit-location-name"
           value={loc_name}
           onChange={handleLocChange}
         ></input>
 
-        <label for="edit-address">Address</label>
+        <label htmlFor="edit-address">Address</label>
         <textarea
           id="edit-address"
           value={loc_addr}
