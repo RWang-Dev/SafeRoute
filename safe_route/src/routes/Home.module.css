@@ -1,4 +1,23 @@
-/* Navigation Bar Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.safeRouteContainer {
+    text-align: center;
+    max-width: 500px;
+    margin: 20vh auto;
+    padding: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    opacity: 0.85;
+}
+
+.heading {
+    text-align: center;
+}
+
 .navbar {
     background-color: rgb(100, 12, 12);
     overflow: hidden;
@@ -29,12 +48,29 @@
 }
 
 .contentContainer {
-    margin-left: 20px;
-    margin-right: 20px;
+    background-image: url("../../public/placeholder.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 55px;
 }
 
 .container {
     margin: 20px;
+}
+
+.crimeHeading {
+    color: white;
+    text-align: center;
+}
+
+.crimeContainer {
+    background-color: white;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 250px;
+    background-color: rgb(100, 12, 12);
 }
 
 /* Recent Incidents Section Styles */

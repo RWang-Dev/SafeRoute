@@ -6,6 +6,12 @@
   background-color: rgb(100, 12, 12);
   align-items: center;
 } */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+
 
 .outerContainer {
   display: flex;

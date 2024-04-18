@@ -1,5 +1,8 @@
 body {
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 
 .mapContainer {
@@ -7,23 +10,6 @@ body {
   height: 100%;
   display: flex;
   flex-direction: row;
-}
-
-.hamburgerButton {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 1000;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.hamburgerButton svg {
-  width: 22px;
-  height: 22px;
-  color: #000;
 }
 
 .sideBar {
@@ -73,18 +59,22 @@ body {
 }
 
 /* so color of button stays the same when you click it (overlaying css style issue) */
-.toggleButtonDay:focus {
+.toggleButtonDay:focus,
+.toggleButtonDay:hover {
   background-color: rgb(157, 102, 0);
+  cursor: pointer;
 }
 
-.toggleButtonNight:focus {
+.toggleButtonNight:focus,
+.toggleButtonNight:hover {
   background-color: darkblue;
+  cursor: pointer;
 }
 
 .savedLocations {
   margin-top: 5vh;
   color: rgb(0, 132, 255);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .savedLocations:hover {
@@ -103,7 +93,7 @@ body {
 .navigationBar {
   display: flex;
   width: 100%;
-  height: 3vh;
+  height: 5vh;
   align-items: center;
   justify-content: center;
   vertical-align: center;

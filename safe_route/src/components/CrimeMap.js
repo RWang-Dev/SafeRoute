@@ -124,7 +124,7 @@ const CrimeMap = ({ data }) => {
           {userID !== "Guest" ? (
             <Link to="/locations" className={classes.savedLocations}>
               {" "}
-              Saved Locations{" "}
+              My Saved Locations{" "}
             </Link>
           ) : (
             <a href="/.auth/login/github" className={classes.savedLocations}>
