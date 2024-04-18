@@ -39,6 +39,7 @@ const CrimeMap = ({ data }) => {
   const [isNightMode, setIsNightMode] = useState(false);
   const [username, setUsername] = useState("Guest");
   const [userID, setuserID] = useState("Guest");
+  const [mapLoaded, setMapLoaded] = useState(false); /// Add state to track map loaded status
 
   const handleLoad = (map) => {
     mapRef.current = map;
@@ -146,70 +147,71 @@ const CrimeMap = ({ data }) => {
         </div>
         <LoadScript
           googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-          onLoad={handleLoad}
+          onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
         >
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={currentUserLocation || center}
-            zoom={defaultZoom}
-            options={{
-              restriction: {
-                latLngBounds: bounds,
-                strictBounds: true,
-              },
-              minZoom: defaultZoom, // This ensures users cannot zoom out further than defaultZoom
-              styles: isNightMode ? nightMode : [],
-            }}
-            onLoad={(mapInstance) => (mapRef.current = mapInstance)}
-          >
-            {data.map((crime) => (
-              <Marker
-                key={`${crime.Latitude}-${crime.Longitude}`}
-                position={{ lat: crime.Latitude, lng: crime.Longitude }}
-                onClick={() => setSelectedCrime(crime)}
-                icon={{
-                  path: google.maps.SymbolPath.CIRCLE,
-                  fillColor: getMarkerColor(crime["Total Severity Score"]),
-                  fillOpacity: 0.85,
-                  scale: 9,
-                  strokeColor: "black",
-                  strokeWeight: 1,
-                }}
-              />
-            ))}
+          {mapLoaded && ( /// Only render the GoogleMap component if the API script has loaded
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={currentUserLocation || center}
+              zoom={defaultZoom}
+              options={{
+                restriction: {
+                  latLngBounds: bounds,
+                  strictBounds: true,
+                },
+                minZoom: defaultZoom,
+                styles: isNightMode ? nightMode : [],
+              }}
+              onLoad={(mapInstance) => (mapRef.current = mapInstance)}
+            >
+              {data.map((crime) => (
+                <Marker
+                  key={`${crime.Latitude}-${crime.Longitude}`}
+                  position={{ lat: crime.Latitude, lng: crime.Longitude }}
+                  onClick={() => setSelectedCrime(crime)}
+                  icon={{
+                    path: google.maps.SymbolPath.CIRCLE,
+                    fillColor: getMarkerColor(crime["Total Severity Score"]),
+                    fillOpacity: 0.55,
+                    scale: 20,
+                    strokeColor: "black",
+                    strokeWeight: 1,
+                  }}
+                />
+              ))}
 
-            {selectedCrime && (
-              <InfoWindow
-                position={{
-                  lat: selectedCrime.Latitude,
-                  lng: selectedCrime.Longitude,
-                }}
-                onCloseClick={() => setSelectedCrime(null)}
-              >
-                <div>
-                  {/* <h2>Incident Location: {selectedCrime["Incident Location"]}</h2> */}
-                  <h2>
-                    Severity Score: {selectedCrime["Total Severity Score"]}
-                  </h2>
-                  <h2>Crime Count: {selectedCrime["Crime Count"]}</h2>
-                </div>
-              </InfoWindow>
-            )}
+              {selectedCrime && (
+                <InfoWindow
+                  position={{
+                    lat: selectedCrime.Latitude,
+                    lng: selectedCrime.Longitude,
+                  }}
+                  onCloseClick={() => setSelectedCrime(null)}
+                >
+                  <div>
+                    <h2>
+                      Severity Score: {selectedCrime["Total Severity Score"]}
+                    </h2>
+                    <h2>Crime Count: {selectedCrime["Crime Count"]}</h2>
+                  </div>
+                </InfoWindow>
+              )}
 
-            {currentUserLocation && (
-              <Marker
-                position={currentUserLocation}
-                icon={{
-                  path: google.maps.SymbolPath.CIRCLE,
-                  fillColor: "green",
-                  fillOpacity: 1,
-                  scale: 6,
-                  strokeColor: "blue",
-                  strokeWeight: 2,
-                }}
-              />
-            )}
-          </GoogleMap>
+              {currentUserLocation && (
+                <Marker
+                  position={currentUserLocation}
+                  icon={{
+                    path: google.maps.SymbolPath.CIRCLE,
+                    fillColor: "green",
+                    fillOpacity: 1,
+                    scale: 6,
+                    strokeColor: "blue",
+                    strokeWeight: 2,
+                  }}
+                />
+              )}
+            </GoogleMap>
+          )}
         </LoadScript>
       </div>
     </>
