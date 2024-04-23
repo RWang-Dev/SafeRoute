@@ -1,11 +1,12 @@
 /* global google */
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   GoogleMap,
   Marker,
   InfoWindow,
   LoadScript,
+  Autocomplete,
 } from "@react-google-maps/api";
 
 import nightMode from "../map-styles/NightMode";
@@ -40,9 +41,29 @@ const CrimeMap = ({ data }) => {
   const [username, setUsername] = useState("Guest");
   const [userID, setuserID] = useState("Guest");
   const [mapLoaded, setMapLoaded] = useState(false); /// Add state to track map loaded status
+  const [favorites, setFavorites] = useState([]);
 
-  const handleLoad = (map) => {
-    mapRef.current = map;
+  const autocompleteRef = useRef(null);
+
+  // This function is called when the Autocomplete component has loaded
+  const handleOnLoad = (autoc) => {
+    autocompleteRef.current = autoc;
+  };
+
+  // This function is called when the user selects a place from the Autocomplete dropdown
+  const handlePlaceChanged = () => {
+    if (autocompleteRef.current) {
+      const place = autocompleteRef.current.getPlace();
+      if (place.geometry) {
+        setCurrentUserLocation({
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng(),
+        });
+        addFavorite(place); // Assuming addFavorite is a function that adds the place to a list of favorites
+      } else {
+        console.log("No geometry found for the place, try a different input.");
+      }
+    }
   };
 
   useEffect(() => {
@@ -65,6 +86,20 @@ const CrimeMap = ({ data }) => {
       return "orange";
     } else {
       return "red";
+    }
+  };
+
+  const addFavorite = (place) => {
+    if (place.geometry && place.geometry.location) {
+      const newFavorite = {
+        id: place.place_id, // unique identifier for the place
+        name: place.name,
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      };
+      setFavorites((prevFavorites) => [...prevFavorites, newFavorite]);
+    } else {
+      alert("Selected place does not have a location.");
     }
   };
 
@@ -147,8 +182,19 @@ const CrimeMap = ({ data }) => {
         </div>
         <LoadScript
           googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+          libraries={["places"]}
           onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
         >
+          <Autocomplete
+            onLoad={handleOnLoad}
+            onPlaceChanged={handlePlaceChanged}
+          >
+            <input
+              type="text"
+              placeholder="Search for a place"
+              style={{ width: "300px", maxWidth: "80%", margin: "0 auto" }}
+            />
+          </Autocomplete>
           {mapLoaded && ( /// Only render the GoogleMap component if the API script has loaded
             <GoogleMap
               mapContainerStyle={containerStyle}
@@ -179,6 +225,24 @@ const CrimeMap = ({ data }) => {
                   }}
                 />
               ))}
+              {favorites.map(
+                (
+                  favorite /// Render markers for favorite places
+                ) => (
+                  <Marker
+                    key={favorite.id}
+                    position={{ lat: favorite.lat, lng: favorite.lng }}
+                    onClick={() =>
+                      setSelectedCrime({
+                        Latitude: favorite.lat,
+                        Longitude: favorite.lng,
+                        "Total Severity Score": "N/A",
+                        "Crime Count": "N/A",
+                      })
+                    }
+                  />
+                )
+              )}
 
               {selectedCrime && (
                 <InfoWindow
