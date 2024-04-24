@@ -140,6 +140,8 @@ const CrimeMap = ({ data }) => {
   const buttonClass = isNightMode ? "toggleButtonNight" : "toggleButtonDay";
   const buttonText = isNightMode ? "Turn Night Mode Off" : "Turn Night Mode On";
 
+  const libraries = ["places"];
+
   return (
     <>
       <div className={classes.mapContainer}>
@@ -182,19 +184,21 @@ const CrimeMap = ({ data }) => {
         </div>
         <LoadScript
           googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-          libraries={["places"]}
+          libraries={libraries}
           onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
         >
-          <Autocomplete
-            onLoad={handleOnLoad}
-            onPlaceChanged={handlePlaceChanged}
-          >
-            <input
-              type="text"
-              placeholder="Search for a place"
-              style={{ width: "300px", maxWidth: "80%", margin: "0 auto" }}
-            />
-          </Autocomplete>
+          <div className={classes.searchInputContainer}>
+            <Autocomplete
+              onLoad={handleOnLoad}
+              onPlaceChanged={handlePlaceChanged}
+            >
+              <input
+                type="text"
+                placeholder="Search for a place"
+                style={{ width: "300px", maxWidth: "80%" }} // You might need to adjust the inline styles as well
+              />
+            </Autocomplete>
+          </div>
           {mapLoaded && ( /// Only render the GoogleMap component if the API script has loaded
             <GoogleMap
               mapContainerStyle={containerStyle}

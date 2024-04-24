@@ -59,18 +59,34 @@ function Home() {
         </ul>
       </nav>
       <div className={classes.contentContainer}>
+        <video
+          autoPlay
+          muted
+          loop
+          id="myVideo"
+          className={classes.backgroundVideo}
+        >
+          <source src="/videos/drone.mp4" type="video/mp4" />
+          console.log("Hello");
+        </video>
         <div className={classes.safeRouteContainer}>
           <h1 className={classes.heading}>SafeRoute</h1>
-          <p>Welcome to SafeRoute - your trusted companion for campus safety. With SafeRoute, 
-            we've engineered a solution to prioritize students' safety by providing real-time tracking and 
-            visualizing crime-heavy areas on campus. SafeRoute alerts users 
-            when they approach danger-prone zones, enabling proactive route planning for safer journeys. </p>
+          <p>
+            Welcome to SafeRoute - your trusted companion for campus safety.
+            With SafeRoute, we've engineered a solution to prioritize students'
+            safety by providing real-time tracking and visualizing crime-heavy
+            areas on campus. SafeRoute alerts users when they approach
+            danger-prone zones, enabling proactive route planning for safer
+            journeys.{" "}
+          </p>
         </div>
 
         {/* Recent Crime Incidents Section */}
         <div className={classes.crimeContainer}>
           <div className={classes.recentIncidents}>
-            <h2 className={classes.crimeHeading}>Most Recent Crime Incidents</h2>
+            <h2 className={classes.crimeHeading}>
+              Most Recent Crime Incidents
+            </h2>
             <ul className={classes.incidentsList}>
               {recentCrimeIncidents.map((incident) => (
                 <li key={incident.id} className={classes.incidentItem}>
