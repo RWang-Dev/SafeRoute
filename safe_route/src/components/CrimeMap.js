@@ -158,6 +158,19 @@ const CrimeMap = ({ data }) => {
             <img src="user_icon.png" alt="user icon"></img>
             <h2>{username}</h2>
           </div>
+          <div>
+            {/* <Autocomplete
+              onLoad={handleOnLoad}
+              onPlaceChanged={handlePlaceChanged}
+              className={classes.searchInputContainer}
+            >
+              <input
+                type="text"
+                placeholder="Search for a place"
+                style={{ width: "300px", maxWidth: "80%" }} // You might need to adjust the inline styles as well
+              />
+            </Autocomplete> */}
+          </div>
           {userID !== "Guest" ? (
             <Link to="/locations" className={classes.savedLocations}>
               {" "}
@@ -187,18 +200,6 @@ const CrimeMap = ({ data }) => {
           libraries={libraries}
           onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
         >
-          <div className={classes.searchInputContainer}>
-            <Autocomplete
-              onLoad={handleOnLoad}
-              onPlaceChanged={handlePlaceChanged}
-            >
-              <input
-                type="text"
-                placeholder="Search for a place"
-                style={{ width: "300px", maxWidth: "80%" }} // You might need to adjust the inline styles as well
-              />
-            </Autocomplete>
-          </div>
           {mapLoaded && ( /// Only render the GoogleMap component if the API script has loaded
             <GoogleMap
               mapContainerStyle={containerStyle}
