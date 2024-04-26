@@ -52,20 +52,26 @@ body {
 .toggleButtonDay {
   background-color: rgb(157, 102, 0);
   border-radius: 10px;
+  border-width: 2px;
+  border-color: rgb(157, 102, 0);
+  border-style: solid;
   color: white;
-  margin-bottom: 3vh;
-  margin-top: auto;
+  width: 12vw;
 }
 
 .toggleButtonNight {
   background-color: darkblue;
+  border-width: 2px;
+  border-color: darkblue;
+  border-style: solid;
   border-radius: 10px;
   color: white;
-  margin-bottom: 3vh;
-  margin-top: auto;
+  width: 12vw;
 }
 
 /* so color of button stays the same when you click it (overlaying css style issue) */
+.showLocations:focus,
+.showLocations:hover,
 .toggleButtonDay:focus,
 .toggleButtonDay:hover {
   background-color: rgb(157, 102, 0);
@@ -75,6 +81,12 @@ body {
 .toggleButtonNight:focus,
 .toggleButtonNight:hover {
   background-color: darkblue;
+  cursor: pointer;
+}
+
+.hideLocations:focus,
+.hideLocations:hover {
+  background-color: white;
   cursor: pointer;
 }
 
@@ -123,4 +135,28 @@ body {
 .navigationBar .navWidget:hover {
   background-color: rgb(233, 209, 71);
   color: black;
+}
+
+.showLocations {
+  background-color: rgb(157, 102, 0);
+  border-width: 2px;
+  border-color: rgb(157, 102, 0);
+  border-style: solid;
+  border-radius: 10px;
+  color: white;
+  width: 12vw;
+}
+
+.hideLocations {
+  background-color: white;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: rgb(157, 102, 0);
+  border-style: solid;
+  color: black;
+  width: 12vw;
+}
+
+.toggleButtons {
+  margin-top: auto;
 }

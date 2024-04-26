@@ -114,8 +114,14 @@ app.http("addLocation", {
       const database = client.db("SafeRoute");
       const locations = database.collection("saved_locations");
 
-      const { userID, location_name, location_address } = await request.json();
-      await locations.insertOne({ userID, location_name, location_address });
+      const { userID, location_name, location_address, place_id } =
+        await request.json();
+      await locations.insertOne({
+        userID,
+        location_name,
+        location_address,
+        place_id,
+      });
 
       responseMessage = "location added successfully" + request.body;
     } catch (error) {
