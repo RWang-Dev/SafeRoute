@@ -1,18 +1,23 @@
 import React from "react";
 import { FaEdit, FaTrash, FaSearch } from "react-icons/fa";
 import classes from "./Locations.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { LoadScript, Autocomplete } from "@react-google-maps/api";
 
 function Locations() {
   const [locations, setLocations] = useState([]);
   const [username, setUsername] = useState("Guest");
   const [userID, setuserID] = useState("Guest");
+  const autocompleteRef = useRef(null);
 
   useEffect(() => {
     fetchUser();
   }, []);
 
+  const handleOnLoad = (autoc) => {
+    autocompleteRef.current = autoc;
+  };
   const fetchUser = async () => {
     const response = await fetch("/.auth/me");
     const data = await response.json();
@@ -38,6 +43,7 @@ function Locations() {
   async function addLocation() {
     const location_name = document.getElementById("location-name").value;
     const location_address = document.getElementById("location-address").value;
+    const place_id = autocompleteRef.current.getPlace().place_id;
 
     const response = await fetch("/api/addLocation", {
       method: "POST",
@@ -46,6 +52,7 @@ function Locations() {
         userID: userID,
         location_name: location_name,
         location_address: location_address,
+        place_id: place_id,
       }),
     });
 
@@ -60,12 +67,14 @@ function Locations() {
   }
 
   async function deleteLocation(loc_id) {
-    const confirmDelete = window.confirm("Are you sure you want to delete this location?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this location?"
+    );
     if (confirmDelete) {
       const response = await fetch("/api/deleteLocation/?loc_id=" + loc_id, {
         method: "DELETE",
       });
-  
+
       if (response.ok) {
         fetchLocations();
       } else {
@@ -103,26 +112,39 @@ function Locations() {
         </div>
         <div className={classes.createLocation}>
           <h2>Create New Location</h2>
-          <input
-            id="location-address"
-            type="text"
-            placeholder="Type in address"
-          />
-          <br />
+
+          <LoadScript
+            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} /// Set mapLoaded to true when the API script has loaded
+            libraries={["places"]}
+          >
+            <Autocomplete onLoad={handleOnLoad}>
+              <input
+                id="location-address"
+                type="text"
+                placeholder="Type in address"
+              />
+            </Autocomplete>
+          </LoadScript>
+
           <br />
           <input id="location-name" type="text" placeholder="Add Custom Name" />
           <br />
           <br />
-          <button  className={classes.saveLocationBtn} onClick={() => addLocation()}>Save Location</button>
+          <button
+            className={classes.saveLocationBtn}
+            onClick={() => addLocation()}
+          >
+            Save Location
+          </button>
         </div>
         <div className={classes.buttonDiv}>
-            <Link to="/">
-              <button className={classes.backButtons}>Go to Home Page</button>
-            </Link>
-            <Link to="/map">
-              <button className={classes.backButtons}>Go to Map Page</button>
-            </Link>
-          </div>
+          <Link to="/">
+            <button className={classes.backButtons}>Go to Home Page</button>
+          </Link>
+          <Link to="/map">
+            <button className={classes.backButtons}>Go to Map Page</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

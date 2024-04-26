@@ -34,13 +34,13 @@ function Home() {
         <ul className={classes.navbarList}>
           <li>
             <Link to="/map" className={classes.link}>
-              Go to map page
+              Map page
             </Link>
           </li>
           <li>
             {userID === "Guest" ? null : (
               <Link to="/locations" className={classes.link}>
-                Go to saved Locations
+                Saved Locations
               </Link>
             )}
           </li>

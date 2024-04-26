@@ -38,10 +38,13 @@ const CrimeMap = ({ data }) => {
   const [currentUserLocation, setCurrentUserLocation] = useState(null);
   const mapRef = useRef(null);
   const [isNightMode, setIsNightMode] = useState(false);
+  const [showLocations, setShowLocations] = useState(false);
   const [username, setUsername] = useState("Guest");
   const [userID, setuserID] = useState("Guest");
   const [mapLoaded, setMapLoaded] = useState(false); /// Add state to track map loaded status
   const [favorites, setFavorites] = useState([]);
+  const [locations, setLocations] = useState([]);
+  const [savedLocations, setSavedLocations] = useState([]);
 
   const autocompleteRef = useRef(null);
 
@@ -55,10 +58,10 @@ const CrimeMap = ({ data }) => {
     if (autocompleteRef.current) {
       const place = autocompleteRef.current.getPlace();
       if (place.geometry) {
-        setCurrentUserLocation({
-          lat: place.geometry.location.lat(),
-          lng: place.geometry.location.lng(),
-        });
+        // setCurrentUserLocation({
+        //   lat: place.geometry.location.lat(),
+        //   lng: place.geometry.location.lng(),
+        // });
         addFavorite(place); // Assuming addFavorite is a function that adds the place to a list of favorites
       } else {
         console.log("No geometry found for the place, try a different input.");
@@ -66,9 +69,30 @@ const CrimeMap = ({ data }) => {
     }
   };
 
+  const handleSavedLocations = async (location_address, place_id) => {
+    const location_data = await getCoordinatesFromPlaceId(place_id);
+    if (location_data) {
+      addSavedLocations(location_address, place_id, location_data); // Assuming addFavorite is a function that adds the place to a list of favorites
+    } else {
+      console.log("No geometry found for the place, try a different input.");
+    }
+  };
+
   useEffect(() => {
     fetchUser();
   }, []);
+
+  useEffect(() => {
+    if (userID != "Guest") {
+      getSavedLocations();
+    }
+  }, [userID]);
+
+  useEffect(() => {
+    locations.forEach((location) => {
+      handleSavedLocations(location.location_address, location.place_id);
+    });
+  }, [locations]);
 
   const fetchUser = async () => {
     const response = await fetch("/.auth/me");
@@ -79,6 +103,35 @@ const CrimeMap = ({ data }) => {
     }
   };
 
+  async function getCoordinatesFromPlaceId(placeId) {
+    const service = new google.maps.places.PlacesService(
+      document.createElement("div")
+    );
+
+    try {
+      const response = await new Promise((resolve, reject) => {
+        service.getDetails({ placeId: placeId }, (place, status) => {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            resolve(place);
+          } else {
+            reject("PlacesService failed due to: " + status);
+          }
+        });
+      });
+
+      if (response.geometry) {
+        const lat = response.geometry.location.lat();
+        const lng = response.geometry.location.lng();
+        return { lat, lng }; // Return an object with latitude and longitude
+      } else {
+        console.log("No geometry found for the place.");
+        return null;
+      }
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
   const getMarkerColor = (severityScore) => {
     if (severityScore < 50) {
       return "yellow";
@@ -103,6 +156,27 @@ const CrimeMap = ({ data }) => {
     }
   };
 
+  const addSavedLocations = (location_address, place_id, location_data) => {
+    if (location_data) {
+      const newSaved = {
+        id: place_id,
+        name: location_address,
+        lat: location_data.lat,
+        lng: location_data.lng,
+      };
+      setSavedLocations((prevSaved) => [...prevSaved, newSaved]);
+    } else {
+      alert("Selected place does not have a location.");
+    }
+  };
+
+  async function getSavedLocations() {
+    const response = await fetch("/api/getLocations/?userID=" + userID);
+    const data = await response.json();
+
+    setLocations(data);
+    console.log(data);
+  }
   // Get user's current location
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -137,8 +211,14 @@ const CrimeMap = ({ data }) => {
   }, []);
 
   const toggleNightMode = () => setIsNightMode(!isNightMode);
+  const toggleLocations = () => setShowLocations(!showLocations);
   const buttonClass = isNightMode ? "toggleButtonNight" : "toggleButtonDay";
   const buttonText = isNightMode ? "Turn Night Mode Off" : "Turn Night Mode On";
+
+  const locationClass =
+    showLocations == false ? "showLocations" : "hideLocations";
+  const locationText =
+    showLocations == false ? "Show Saved Locations" : "Hide Saved Locations";
 
   const libraries = ["places"];
 
@@ -159,17 +239,23 @@ const CrimeMap = ({ data }) => {
             <h2>{username}</h2>
           </div>
           <div>
-            {/* <Autocomplete
-              onLoad={handleOnLoad}
-              onPlaceChanged={handlePlaceChanged}
-              className={classes.searchInputContainer}
+            <LoadScript
+              googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+              libraries={libraries}
+              onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
             >
-              <input
-                type="text"
-                placeholder="Search for a place"
-                style={{ width: "300px", maxWidth: "80%" }} // You might need to adjust the inline styles as well
-              />
-            </Autocomplete> */}
+              <Autocomplete
+                onLoad={handleOnLoad}
+                onPlaceChanged={handlePlaceChanged}
+                className={classes.searchInputContainer}
+              >
+                <input
+                  type="text"
+                  placeholder="Search for a place"
+                  style={{ width: "300px", maxWidth: "80%" }} // You might need to adjust the inline styles as well
+                />
+              </Autocomplete>
+            </LoadScript>
           </div>
           {userID !== "Guest" ? (
             <Link to="/locations" className={classes.savedLocations}>
@@ -183,17 +269,25 @@ const CrimeMap = ({ data }) => {
             </a>
           )}
 
-          <button
-            className={`${classes[buttonClass]}`}
-            onClick={toggleNightMode}
-            style={{
-              top: "10px",
-              left: "10px",
-              zIndex: 1000,
-            }}
-          >
-            {buttonText}
-          </button>
+          <div className={classes.toggleButtons}>
+            <button
+              className={`${classes[locationClass]}`}
+              onClick={toggleLocations}
+            >
+              {locationText}
+            </button>
+            <button
+              className={`${classes[buttonClass]}`}
+              onClick={toggleNightMode}
+              style={{
+                top: "10px",
+                left: "10px",
+                zIndex: 1000,
+              }}
+            >
+              {buttonText}
+            </button>
+          </div>
         </div>
         <LoadScript
           googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
@@ -248,6 +342,26 @@ const CrimeMap = ({ data }) => {
                   />
                 )
               )}
+              {showLocations == true
+                ? savedLocations.map(
+                    (
+                      location /// Render markers for favorite places
+                    ) => (
+                      <Marker
+                        key={location.id}
+                        position={{ lat: location.lat, lng: location.lng }}
+                        onClick={() =>
+                          setSelectedCrime({
+                            Latitude: location.lat,
+                            Longitude: location.lng,
+                            "Total Severity Score": "N/A",
+                            "Crime Count": "N/A",
+                          })
+                        }
+                      />
+                    )
+                  )
+                : null}
 
               {selectedCrime && (
                 <InfoWindow
