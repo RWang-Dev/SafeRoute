@@ -91,11 +91,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* This should take the full height of the viewport */
-  width: 100%; /* Ensure the container takes full width */
-  position: relative; /* Positioning context for children */
-  padding: 0; /* No padding to interfere with inner spacing */
-  margin: 0; /* No margin to ensure it uses the full available space */
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
 
 
