@@ -2,17 +2,47 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
+
+/* General styles outside media query, for larger screens */
 .safeRouteContainer {
   text-align: center;
+  width: 90%;
   max-width: 500px;
-  margin: 20vh auto;
   padding: 50px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
-  opacity: 0.85;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
 }
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .safeRouteContainer {
+    padding: 30px;
+    width: 95%;
+    min-height: 250px;
+  }
+}
+
+/* Media queries for even smaller screens */
+@media (max-width: 480px) {
+  .safeRouteContainer {
+    padding: 20px;
+    width: calc(100% - 30px);
+    margin: 15px;
+    min-height: 200px;
+  }
+}
+
 
 .heading {
   text-align: center;
@@ -58,13 +88,16 @@ body {
 }
 
 .contentContainer {
-  /* background-image: url("../../public/placeholder.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-  padding-top: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
+
 
 .container {
   margin: 20px;

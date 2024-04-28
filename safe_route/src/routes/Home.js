@@ -81,7 +81,7 @@ function Home() {
           </p>
         </div>
 
-        {/* Recent Crime Incidents Section */}
+        {/* Recent Crime Incidents Section
         <div className={classes.crimeContainer}>
           <div className={classes.recentIncidents}>
             <h2 className={classes.crimeHeading}>
@@ -97,7 +97,7 @@ function Home() {
               ))}
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
