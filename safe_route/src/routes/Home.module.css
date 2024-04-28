@@ -48,6 +48,26 @@ body {
   color: black;
 }
 
+.notificationsButton {
+  float: right;
+  margin: 0;
+  margin-left: auto;
+  color: white;
+  background-color: rgb(100, 12, 12);
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: small;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+}
+
+.notificationsButton:hover {
+  background-color: rgb(233, 209, 71);
+  color: black;
+}
+
 .backgroundVideo {
   position: fixed;
   right: 0;
