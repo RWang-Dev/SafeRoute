@@ -3,12 +3,14 @@
     {
       "route": "/locations",
       "allowedRoles": ["authenticated"]
-
     },
     {
       "route": "/map",
       "allowedRoles": ["anonymous", "authenticated"]
-
+    },
+    {
+      "route": "/admin",
+      "allowedRoles": ["admin"]
     }
   ],
 
