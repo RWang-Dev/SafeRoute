@@ -77,6 +77,10 @@ body {
   cursor: pointer;
 }
 
+.deleteIcon {
+  color: red;
+}
+
 .buttonDiv {
   display: flex;
   justify-content: space-between;
