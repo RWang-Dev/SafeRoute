@@ -2,6 +2,8 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow, LoadScript, Autocomplete } from "@react-google-maps/api";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import nightMode from "../map-styles/NightMode";
 import classes from "./CrimeMap.module.css";
@@ -238,7 +240,7 @@ const CrimeMap = ({ data }) => {
 						</a>
 						{isSidebarOpen && (
 							<button className={classes.closeWidget} onClick={toggleSidebar}>
-								&lt;&lt;
+								<FontAwesomeIcon icon={faArrowLeft} />
 							</button>
 						)}
 					</div>
