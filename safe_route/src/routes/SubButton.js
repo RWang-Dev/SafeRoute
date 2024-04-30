@@ -82,7 +82,7 @@ export default function SubButton({ className }) {
 
   return (
     <button className={className} onClick={click}>
-      Enable <FaBell />
+      Enable Notifications <FaBell />
     </button>
   );
 }
