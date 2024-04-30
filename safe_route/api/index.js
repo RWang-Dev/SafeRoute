@@ -1,6 +1,7 @@
 const { app } = require("@azure/functions");
 const { ObjectId } = require("mongodb");
 const MongoClient = require("mongodb").MongoClient;
+const webpush = require("web-push");
 
 const MONGO_URI = process.env.AZURE_MONGO_DB;
 
@@ -202,5 +203,36 @@ app.http("editLocation", {
     } finally {
       await client.close();
     }
+  },
+});
+
+app.http("beepbeep", {
+  methods: ["GET"],
+  authLevel: "anonymous",
+  route: "beepbeep",
+  handler: async (request, context) => {
+    // const p256dh_key = request.query.get("p256dh_key")
+    const data = request.query.get("data");
+    const decoded_data = decodeURIComponent(data);
+    const json_data = JSON.parse(decoded_data);
+
+    webpush.setVapidDetails(
+      "mailto:rwang.ep@gmail.com",
+      process.env.VAPID_PUB,
+      process.env.VAPID_PRIVATE
+    );
+    webpush.sendNotification(
+      {
+        endpoint:
+          "https://fcm.googleapis.com/fcm/send/ejAvsO3riTs:APA91bHJuXwEa5smqPSwvqpvebnftlHUCkENDXbLEjf7OiKKlW83A_XYWRJM-kK308uLqSc_eTA_hELKu3hnTEWscJ0l0kwJYfPlR32paKzDV9fdKrVy9rJ6HKWXf8_UE5un2-ZzKzym",
+        expirationTime: null,
+        keys: json_data["keys"],
+      },
+      JSON.stringify({ msg: "what's up?", color: "red" })
+    );
+
+    return {
+      jsonBody: { status: "ok" },
+    };
   },
 });

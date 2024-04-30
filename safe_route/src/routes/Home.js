@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./Home.module.css";
 import { useState, useEffect } from "react";
+import SubButton from "./SubButton";
 
 function Home() {
   const [username, setUsername] = useState("Guest");
@@ -55,7 +56,9 @@ function Home() {
               </a>
             )}
           </li>
-          {/* Add more navigation links here*/}
+          {userID !== "Guest" ? (
+            <SubButton className={classes.notificationsButton} />
+          ) : null}
         </ul>
       </nav>
       <div className={classes.contentContainer}>
