@@ -162,6 +162,7 @@ body {
 .navigationBar .closeWidget:hover {
   background-color: rgb(233, 209, 71);
   color: black;
+  cursor: pointer;
 }
 
 .showLocations {
