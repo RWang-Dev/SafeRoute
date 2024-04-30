@@ -253,9 +253,9 @@ const CrimeMap = ({ data }) => {
 						<LoadScript
 							googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
 							libraries={libraries}
-							onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
+							// onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
 						>
-							<Autocomplete onLoad={handleOnLoad} onPlaceChanged={handlePlaceChanged} className={classes.searchInputContainer}>
+							<Autocomplete onLoad={handleOnLoad} onPlaceChanged={handlePlaceChanged} className={classes.searchInputContainer} >
 								<input
 									type="text"
 									placeholder="Search for a place"
@@ -367,7 +367,6 @@ const CrimeMap = ({ data }) => {
 														"Crime Count": "N/A",
 													})
 												}
-												title={location.name}
 											/>
 										)
 								  )
