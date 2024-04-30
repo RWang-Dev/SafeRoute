@@ -19,7 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "web": "npx @azure/static-web-apps-cli start http://localhost:3000 --run \"npm start\" --api-location ./api"
+    "web": "npx @azure/static-web-apps-cli start http://localhost:3000 --run \"npm start\" --api-location ./api",
+    "serve": "npx serve -s build",
+    "all": "npx @azure/static-web-apps-cli start http://localhost:3000 --run \"npx serve -s build\" --api-location ./api"
   },
   "eslintConfig": {
     "extends": [
