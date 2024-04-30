@@ -4,13 +4,13 @@ body {
 }
 
 .map {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    transition: margin-left 0.3s ease, width 0.3s ease;
-    z-index: 1030;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  z-index: 0;
 }
 
 .searchInputContainer {
@@ -22,19 +22,19 @@ body {
 }
 
 .sideBar {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    color: rgb(233, 209, 71);
-    justify-content: top;
-    align-items: center;
-    transition: width 0.3s ease;
-    position: absolute;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1040;
-    width: 20%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  color: rgb(233, 209, 71);
+  justify-content: top;
+  align-items: center;
+  transition: width 0.3s ease;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1040;
+  width: 20%;
 }
 
 .sideBarClosed {

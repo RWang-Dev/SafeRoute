@@ -244,170 +244,157 @@ const CrimeMap = ({ data }) => {
         );
     };
 
-    return (
-        <>
-            <div className={classes.container}>
-                {!isSidebarOpen && (
-                    <button className={classes.hamburger} onClick={toggleSidebar}>
-                        <span className={classes.bar}></span>
-                        <span className={classes.bar}></span>
-                        <span className={classes.bar}></span>
-                    </button>
-                )}
-                <div className={`${classes.sideBar} ${!isSidebarOpen ? classes.sideBarClosed : ""}`}>
-                    <div className={classes.navigationBar}>
-                        <Link className={classes.navWidget} to="/">
-                            Home
-                        </Link>
-                        <a className={classes.navWidget} href="/.auth/logout">
-                            Logout
-                        </a>
-                        {isSidebarOpen && (
-                            <button className={classes.closeWidget} onClick={toggleSidebar}>
-                                <FontAwesomeIcon icon={faArrowLeft} />
-                            </button>
-                        )}
-                    </div>
-                    <div className={classes.profile}>
-                        <img src="user_icon.png" alt="user icon"></img>
-                        <h2>{username}</h2>
-                    </div>
-                    <div>
-                        <LoadScript
-                            googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-                            libraries={libraries}
-                            onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
-                        >
-                            <Autocomplete onLoad={handleOnLoad} onPlaceChanged={handlePlaceChanged} className={classes.searchInputContainer}>
-                                <input type="text" placeholder="Search for a place" />
-                            </Autocomplete>
-                        </LoadScript>
-                    </div>
-                    {userID !== "Guest" ? (
-                        <Link to="/locations" className={classes.savedLocations}>
-                            {" "}
-                            My Saved Locations{" "}
-                        </Link>
-                    ) : (
-                        <a href="/.auth/login/github" className={classes.savedLocations}>
-                            {" "}
-                            Login to Save Locations
-                        </a>
-                    )}
-                    <div className={classes.severityFilter}>
-                        <h3>Filter by Severity Score:</h3>
-                        <div>
-                            <label>Min Severity: {severityRange.min}</label>
-                            <input type="range" min={0} max={100} value={severityRange.min} onChange={(e) => handleSeverityChange(parseInt(e.target.value), severityRange.max)} />
-                        </div>
-                        <div>
-                            <label>Max Severity: {severityRange.max}</label>
-                            <input type="range" min={0} max={100} value={severityRange.max} onChange={(e) => handleSeverityChange(severityRange.min, parseInt(e.target.value))} />
-                        </div>
-                    </div>
+	return (
+		<>
+			<div className={classes.container}>
+				{!isSidebarOpen && ( 
+					<button className={classes.hamburger} onClick={toggleSidebar}>
+						<span className={classes.bar}></span>
+						<span className={classes.bar}></span>
+						<span className={classes.bar}></span>
+					</button>
+				)}
+				<div className={`${classes.sideBar} ${!isSidebarOpen ? classes.sideBarClosed : ""}`}>
+					<div className={classes.navigationBar}>
+						<Link className={classes.navWidget} to="/">
+							Home
+						</Link>
+						<a className={classes.navWidget} href="/.auth/logout">
+							Logout
+						</a>
+						{isSidebarOpen && (
+							<button className={classes.closeWidget} onClick={toggleSidebar}>
+								<FontAwesomeIcon icon={faArrowLeft} />
+							</button>
+						)}
+					</div>
+					<div className={classes.profile}>
+						<img src="user_icon.png" alt="user icon"></img>
+						<h2>{username}</h2>
+					</div>
+					<div>
+						<LoadScript
+							googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+							libraries={libraries}
+							// onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
+						>
+							<Autocomplete onLoad={handleOnLoad} onPlaceChanged={handlePlaceChanged} className={classes.searchInputContainer} >
+								<input
+									type="text"
+									placeholder="Search for a place"
+								/>
+							</Autocomplete>
+						</LoadScript>
+					</div>
+					{userID !== "Guest" ? (
+						<Link to="/locations" className={classes.savedLocations}>
+							{" "}
+							My Saved Locations{" "}
+						</Link>
+					) : (
+						<a href="/.auth/login/github" className={classes.savedLocations}>
+							{" "}
+							Login to Save Locations
+						</a>
+					)}
 
-                    <div className={classes.toggleButtons}>
-                        <button className={`${classes[locationClass]}`} onClick={toggleLocations} title="Represented by red location pins">
-                            {locationText}
-                        </button>
-                        <button
-                            className={`${classes[buttonClass]}`}
-                            onClick={toggleNightMode}
-                            style={{
-                                top: "10px",
-                                left: "10px",
-                                zIndex: 1000,
-                            }}
-                        >
-                            {buttonText}
-                        </button>
-                    </div>
-                </div>
-                <div className={`${classes.map}`}>
-                    <LoadScript
-                        googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-                        libraries={libraries}
-                        onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
-                    >
-                        {mapLoaded && ( /// Only render the GoogleMap component if the API script has loaded
-                            <GoogleMap
-                                mapContainerStyle={containerStyle}
-                                center={currentUserLocation || center}
-                                zoom={defaultZoom}
-                                options={{
-                                    restriction: {
-                                        latLngBounds: bounds,
-                                        strictBounds: true,
-                                    },
-                                    minZoom: defaultZoom,
-                                    styles: isNightMode ? nightMode : [],
-                                    mapTypeControlOptions: {
-                                        position: google.maps.ControlPosition.TOP_CENTER,
-                                    },
-                                }}
-                                onLoad={(mapInstance) => (mapRef.current = mapInstance)}
-                            >
-                                {data.map((crime) => {
-                                    if (crime["Total Severity Score"] >= severityRange.min && crime["Total Severity Score"] <= severityRange.max) {
-                                        return (
-                                            <Marker
-                                                key={`${crime.Latitude}-${crime.Longitude}`}
-                                                position={{ lat: crime.Latitude, lng: crime.Longitude }}
-                                                onClick={() => setSelectedCrime(crime)}
-                                                icon={{
-                                                    path: google.maps.SymbolPath.CIRCLE,
-                                                    fillColor: getMarkerColor(crime["Total Severity Score"]),
-                                                    fillOpacity: 0.55,
-                                                    scale: 20,
-                                                    strokeColor: "black",
-                                                    strokeWeight: 1,
-                                                }}
-                                            />
-                                        );
-                                    } else {
-                                        return null;
-                                    }
-                                })}
-
-                                {favorites.map(
-                                    (
-                                        favorite /// Render markers for favorite places
-                                    ) => (
-                                        <Marker
-                                            key={favorite.id}
-                                            position={{ lat: favorite.lat, lng: favorite.lng }}
-                                            onClick={() =>
-                                                setSelectedCrime({
-                                                    Latitude: favorite.lat,
-                                                    Longitude: favorite.lng,
-                                                    "Total Severity Score": "N/A",
-                                                    "Crime Count": "N/A",
-                                                })
-                                            }
-                                        />
-                                    )
-                                )}
-                                {showLocations == true
-                                    ? savedLocations.map(
-                                          (
-                                              location /// Render markers for favorite places
-                                          ) => (
-                                              <Marker
-                                                  key={location.id}
-                                                  position={{ lat: location.lat, lng: location.lng }}
-                                                  onClick={() =>
-                                                      setSelectedCrime({
-                                                          Latitude: location.lat,
-                                                          Longitude: location.lng,
-                                                          "Total Severity Score": "N/A",
-                                                          "Crime Count": "N/A",
-                                                      })
-                                                  }
-                                                  title={location.name}
-                                              />
-                                          )
-                                      )
-                                    : null}
+					<div className={classes.toggleButtons}>
+						<button className={`${classes[locationClass]}`} 
+						onClick={toggleLocations} 
+						title="Represented by red location pins">
+							{locationText}
+						</button>
+						<button
+							className={`${classes[buttonClass]}`}
+							onClick={toggleNightMode}
+							style={{
+								top: "10px",
+								left: "10px",
+								zIndex: 1000,
+							}}
+						>
+							{buttonText}
+						</button>
+					</div>
+				</div>
+			<div className={`${classes.map}`}>
+				<LoadScript
+					googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+					libraries={libraries}
+					onLoad={() => setMapLoaded(true)} /// Set mapLoaded to true when the API script has loaded
+				>
+					{mapLoaded && ( /// Only render the GoogleMap component if the API script has loaded
+						<GoogleMap
+							mapContainerStyle={containerStyle}
+							center={currentUserLocation || center}
+							zoom={defaultZoom}
+							options={{
+								restriction: {
+									latLngBounds: bounds,
+									strictBounds: true,
+								},
+								minZoom: defaultZoom,
+								styles: isNightMode ? nightMode : [],
+								mapTypeControlOptions: {
+									position: google.maps.ControlPosition.TOP_CENTER, 
+								},
+							}}
+							onLoad={(mapInstance) => (mapRef.current = mapInstance)}
+						>
+							{data.map((crime) => (
+								<Marker
+									key={`${crime.Latitude}-${crime.Longitude}`}
+									position={{ lat: crime.Latitude, lng: crime.Longitude }}
+									onClick={() => setSelectedCrime(crime)}
+									icon={{
+										path: google.maps.SymbolPath.CIRCLE,
+										fillColor: getMarkerColor(crime["Total Severity Score"]),
+										fillOpacity: 0.55,
+										scale: 20,
+										strokeColor: "black",
+										strokeWeight: 1,
+									}}
+								/>
+							))}
+							{favorites.map(
+								(
+									favorite /// Render markers for favorite places
+								) => (
+									<Marker
+										key={favorite.id}
+										position={{ lat: favorite.lat, lng: favorite.lng }}
+										onClick={() =>
+											setSelectedCrime({
+												Latitude: favorite.lat,
+												Longitude: favorite.lng,
+												"Total Severity Score": "N/A",
+												"Crime Count": "N/A",
+											})
+										}
+									/>
+								)
+							)}
+							{showLocations == true
+								? savedLocations.map(
+										(
+											location /// Render markers for favorite places
+										) => (
+											<Marker
+												key={location.id}
+												position={{ lat: location.lat, lng: location.lng }}
+												onClick={() =>
+													setSelectedCrime({
+														Latitude: location.lat,
+														Longitude: location.lng,
+														"Total Severity Score": "N/A",
+														"Crime Count": "N/A",
+													})
+												}
+												title={location.name}
+											/>
+										)
+								  )
+								: null}
 
                                 {selectedCrime && (
                                     <InfoWindow
