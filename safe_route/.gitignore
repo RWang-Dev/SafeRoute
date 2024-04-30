@@ -1,4 +1,4 @@
-local.settings.json
+./api/local.settings.json
 .env
 # dependencies
 node_modules
