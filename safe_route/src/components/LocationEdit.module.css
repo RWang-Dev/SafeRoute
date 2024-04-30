@@ -8,133 +8,132 @@
 } */
 
 .outerContainer {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  background-color: rgb(100, 12, 12);
-  align-items: center;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    background-color: rgb(100, 12, 12);
+    align-items: center;
 }
 
 .mainContainer {
-  justify-content: center;
-  background-color: rgb(233, 209, 71);
-  padding: 20px;
-  width: 30vw;
-  margin: 50px;
-  height: 40vh;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    justify-content: center;
+    background-color: rgb(233, 209, 71);
+    padding: 20px;
+    width: 30vw;
+    margin: 50px;
+    height: 40vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .savedLocations,
 .createLocation {
-  background-color: white;
-  padding: 20px;
-  margin: 10px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .editTitle {
-  margin-bottom: 3vh;
+    margin-bottom: 3vh;
 }
 
 .editWidgets {
-  margin-top: 5vh;
+    margin-top: 5vh;
 }
 
 .saveWidget {
-  background-color: rgb(1, 150, 53);
-  border-radius: 8px;
-  border: none;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 6px 16px;
-  transition: color 100ms;
-  margin-left: 5px;
-  margin-right: 5px;
-  text-decoration: none;
+    background-color: rgb(1, 150, 53);
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 16px;
+    transition: color 100ms;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: none;
 }
 
-
 .saveWidget:hover {
-  background-color: rgb(95, 187, 95)
+    background-color: rgb(95, 187, 95);
 }
 
 .deleteWidget {
-  background-color: rgb(145, 1, 1);
-  border-radius: 8px;
-  border: none;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 6px 16px;
-  transition: color 100ms;
-  margin-left: 5px;
-  margin-right: 5px;
-  text-decoration: none;
+    background-color: rgb(145, 1, 1);
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 16px;
+    transition: color 100ms;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: none;
 }
 
 .deleteWidget:hover {
-  background-color: rgb(207, 52, 52);
+    background-color: rgb(207, 52, 52);
 }
 
 .cancelWidget {
-  background-color: rgb(255, 255, 255);
-  border-radius: 8px;
-  border: none;
-  color: #000000;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 6px 16px;
-  transition: color 100ms;
-  margin-left: 5px;
-  margin-right: 5px;
-  text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: none;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 16px;
+    transition: color 100ms;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: none;
 }
 
 .cancelWidget:hover {
-  background-color: rgb(212, 212, 212);
+    background-color: rgb(212, 212, 212);
 }
 input,
 textarea {
-  border-radius: 5px;
-  width: 45%;
+    border-radius: 5px;
+    width: 45%;
 }
 
 textarea {
-  height: 20%;
+    height: 20%;
 }
 .savedLocations h2 {
-  text-align: center;
+    text-align: center;
 }
 
 .createLocation {
-  text-align: center;
+    text-align: center;
 }
 
 .locationItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .locationName {
-  flex: 1;
+    flex: 1;
 }
 
 .icons {
-  display: flex;
+    display: flex;
 }
 
 .editIcon,
 .deleteIcon {
-  margin-left: 10px;
+    margin-left: 10px;
 }

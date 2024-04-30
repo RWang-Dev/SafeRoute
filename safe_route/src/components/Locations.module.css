@@ -7,106 +7,103 @@
   align-items: center;
 } */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-
 .outerContainer {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  background-color: rgb(100, 12, 12);
-  align-items: center;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    background-color: rgb(100, 12, 12);
+    align-items: center;
 }
 
 .mainContainer {
-  justify-content: center;
-  background-color: rgb(233, 209, 71);
-  padding: 20px;
-  width: 50vw;
-  margin: 50px;
-  border-radius: 10px;
+    justify-content: center;
+    background-color: rgb(233, 209, 71);
+    padding: 20px;
+    width: 50vw;
+    margin: 50px;
+    border-radius: 10px;
 }
 
 .savedLocations,
 .createLocation {
-  background-color: white;
-  padding: 20px;
-  margin: 10px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .createLocation input {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 .savedLocations h2 {
-  text-align: center;
+    text-align: center;
 }
 
 .createLocation {
-  text-align: center;
+    text-align: center;
 }
 
 .locationItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .locationName {
-  flex: 1;
+    flex: 1;
 }
 
 .icons {
-  display: flex;
+    display: flex;
 }
 
 .editIcon,
 .deleteIcon {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .editIcon:hover,
 .deleteIcon:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .buttonDiv {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .saveLocationBtn:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .backButtons {
-  display: inline;
-  margin: 15px;
+    display: inline;
+    margin: 15px;
 }
 
 .backButtons:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 button {
-  background-color: rgb(100, 12, 12);
-  border-radius: 5px;
-  border-width: 0;
-  color: white;
-  padding: 5px;
-  margin-bottom: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    background-color: rgb(100, 12, 12);
+    border-radius: 5px;
+    border-width: 0;
+    color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button:hover {
-  background-color: rgb(63, 10, 10);
+    background-color: rgb(63, 10, 10);
 }
