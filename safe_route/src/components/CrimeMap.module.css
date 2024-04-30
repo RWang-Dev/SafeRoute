@@ -19,6 +19,8 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 3vh;
+  width: 400px;
+  max-width: 100%;
 }
 
 .sideBar {
@@ -142,6 +144,26 @@ body {
   color: black;
 }
 
+.navigationBar .closeWidget {
+  display: flex;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(61, 7, 7);
+  width: 15%;
+  height: 100%;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 100%;
+}
+
+.navigationBar .closeWidget:hover {
+  background-color: rgb(233, 209, 71);
+  color: black;
+}
+
 .showLocations {
   background-color: rgb(157, 102, 0);
   border-width: 2px;
@@ -188,4 +210,22 @@ body {
   width: 100%;
   background-color: white;
   border-radius: 2px;
+}
+
+@media (max-width: 1000px) {
+  .sideBar {
+    width: 80%; 
+  }
+
+  .toggleButtonDay,
+  .toggleButtonNight,
+  .showLocations,
+  .hideLocations {
+    width: 80%; 
+  }
+
+  .sideBar.sideBarClosed {
+    width: 0;
+    overflow: hidden;
+  }
 }

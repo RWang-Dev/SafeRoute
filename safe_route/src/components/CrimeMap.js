@@ -2,6 +2,8 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow, LoadScript, Autocomplete } from "@react-google-maps/api";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import nightMode from "../map-styles/NightMode";
 import classes from "./CrimeMap.module.css";
@@ -221,11 +223,13 @@ const CrimeMap = ({ data }) => {
 	return (
 		<>
 			<div className={classes.container}>
-				<button className={classes.hamburger} onClick={toggleSidebar}>
-					<span className={classes.bar}></span>
-					<span className={classes.bar}></span>
-					<span className={classes.bar}></span>
-				</button>
+				{!isSidebarOpen && ( 
+					<button className={classes.hamburger} onClick={toggleSidebar}>
+						<span className={classes.bar}></span>
+						<span className={classes.bar}></span>
+						<span className={classes.bar}></span>
+					</button>
+				)}
 				<div className={`${classes.sideBar} ${!isSidebarOpen ? classes.sideBarClosed : ""}`}>
 					<div className={classes.navigationBar}>
 						<Link className={classes.navWidget} to="/">
@@ -234,6 +238,11 @@ const CrimeMap = ({ data }) => {
 						<a className={classes.navWidget} href="/.auth/logout">
 							Logout
 						</a>
+						{isSidebarOpen && (
+							<button className={classes.closeWidget} onClick={toggleSidebar}>
+								<FontAwesomeIcon icon={faTimes} />
+							</button>
+						)}
 					</div>
 					<div className={classes.profile}>
 						<img src="user_icon.png" alt="user icon"></img>
@@ -249,7 +258,6 @@ const CrimeMap = ({ data }) => {
 								<input
 									type="text"
 									placeholder="Search for a place"
-									style={{ width: "300px", maxWidth: "80%" }} // You might need to adjust the inline styles as well
 								/>
 							</Autocomplete>
 						</LoadScript>
@@ -301,6 +309,9 @@ const CrimeMap = ({ data }) => {
 								},
 								minZoom: defaultZoom,
 								styles: isNightMode ? nightMode : [],
+								mapTypeControlOptions: {
+									position: google.maps.ControlPosition.TOP_CENTER, 
+								},
 							}}
 							onLoad={(mapInstance) => (mapRef.current = mapInstance)}
 						>
