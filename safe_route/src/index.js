@@ -9,9 +9,9 @@ const container = document.getElementById("root");
 const root = createRoot(container); // Create a root.
 
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
 );
 
 serviceWorkerRegistration.register();
