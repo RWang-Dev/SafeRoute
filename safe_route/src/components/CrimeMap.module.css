@@ -14,9 +14,9 @@ body {
 }
 
 .searchInputContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
 }
 
 .sideBar {
@@ -26,19 +26,20 @@ body {
     color: rgb(233, 209, 71);
     justify-content: top;
     align-items: center;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, left 0.3s ease;
     position: absolute;
     height: 100%;
     left: 0;
     top: 0;
     z-index: 1040;
-    width: 20%;
+    width: 20%; /* Default width for large screens */
 }
 
 .sideBarClosed {
     width: 0;
+    left: -100%;
     overflow: hidden;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, left 0.3s ease;
 }
 
 .profile {
@@ -207,4 +208,58 @@ body {
     width: 100%;
     background-color: white;
     border-radius: 2px;
+}
+
+/* Adjust the sidebar width and display for different screen sizes */
+@media (max-width: 768px) {
+    .sideBar {
+        width: 75%;
+    }
+
+    .sideBarClosed {
+        left: -75%;
+    }
+
+    .showLocations {
+        height: 5vh;
+        width: 20vw;
+    }
+
+    .hideLocations {
+        width: 20vw;
+    }
+
+    .toggleButtonDay {
+        width: 20vw;
+    }
+
+    .toggleButtonNight {
+        width: 20vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .sideBar {
+        width: 90%;
+    }
+
+    .sideBarClosed {
+        left: -90%;
+    }
+
+    .showLocations {
+        width: 30vw;
+    }
+
+    .hideLocations {
+        width: 30vw;
+    }
+
+    .toggleButtonDay {
+        width: 30vw;
+    }
+
+    .toggleButtonNight {
+        width: 30vw;
+    }
 }
