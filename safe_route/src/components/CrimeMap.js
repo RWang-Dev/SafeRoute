@@ -7,6 +7,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import nightMode from "../map-styles/NightMode";
 import classes from "./CrimeMap.module.css";
+import personIcon from "../images/person.png";
 
 const containerStyle = {
 	width: "100%",
@@ -275,7 +276,9 @@ const CrimeMap = ({ data }) => {
 					)}
 
 					<div className={classes.toggleButtons}>
-						<button className={`${classes[locationClass]}`} onClick={toggleLocations}>
+						<button className={`${classes[locationClass]}`} 
+						onClick={toggleLocations} 
+						title="Represented by red location pins">
 							{locationText}
 						</button>
 						<button
@@ -364,6 +367,7 @@ const CrimeMap = ({ data }) => {
 														"Crime Count": "N/A",
 													})
 												}
+												title={location.name}
 											/>
 										)
 								  )
@@ -388,12 +392,14 @@ const CrimeMap = ({ data }) => {
 								<Marker
 									position={currentUserLocation}
 									icon={{
-										path: google.maps.SymbolPath.CIRCLE,
-										fillColor: "green",
-										fillOpacity: 1,
-										scale: 6,
-										strokeColor: "blue",
-										strokeWeight: 2,
+										url: personIcon,
+										scaledSize: new google.maps.Size(17, 35),
+										// path: google.maps.SymbolPath.CIRCLE,
+										// fillColor: "green",
+										// fillOpacity: 1,
+										// scale: 6,
+										// strokeColor: "blue",
+										// strokeWeight: 2,
 									}}
 								/>
 							)}
