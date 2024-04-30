@@ -74,6 +74,7 @@ function Home() {
         </video>
         <div className={classes.safeRouteContainer}>
           <h1 className={classes.heading}>SafeRoute</h1>
+          <br/>
           <p>
             Welcome to SafeRoute - your trusted companion for campus safety.
             With SafeRoute, we've engineered a solution to prioritize student
