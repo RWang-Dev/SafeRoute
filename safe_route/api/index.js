@@ -211,12 +211,7 @@ app.http("beepbeep", {
       process.env.VAPID_PRIVATE
     );
     webpush.sendNotification(
-      {
-        endpoint:
-          "https://fcm.googleapis.com/fcm/send/ejAvsO3riTs:APA91bHJuXwEa5smqPSwvqpvebnftlHUCkENDXbLEjf7OiKKlW83A_XYWRJM-kK308uLqSc_eTA_hELKu3hnTEWscJ0l0kwJYfPlR32paKzDV9fdKrVy9rJ6HKWXf8_UE5un2-ZzKzym",
-        expirationTime: null,
-        keys: json_data["keys"],
-      },
+      json_data,
       JSON.stringify({ msg: "what's up?", color: "red" })
     );
 

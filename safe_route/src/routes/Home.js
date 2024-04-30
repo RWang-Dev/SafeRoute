@@ -35,7 +35,7 @@ function Home() {
         <ul className={classes.navbarList}>
           <li>
             <Link to="/map" className={classes.link}>
-              Map page
+              Map Page
             </Link>
           </li>
           <li>

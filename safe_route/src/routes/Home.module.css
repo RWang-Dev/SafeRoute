@@ -7,42 +7,42 @@ body {
 
 /* General styles outside media query, for larger screens */
 .safeRouteContainer {
-    text-align: center;
-    width: 90%;
-    max-width: 500px;
-    padding: 50px;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 300px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
 }
 
 /* Media queries for smaller screens */
 @media (max-width: 768px) {
-    .safeRouteContainer {
-        padding: 30px;
-        width: 95%;
-        min-height: 250px;
-    }
+  .safeRouteContainer {
+    padding: 30px;
+    width: 95%;
+    min-height: 250px;
+  }
 }
 
 /* Media queries for even smaller screens */
 @media (max-width: 480px) {
-    .safeRouteContainer {
-        padding: 20px;
-        width: calc(100% - 30px);
-        margin: 15px;
-        min-height: 200px;
-    }
+  .safeRouteContainer {
+    padding: 20px;
+    width: calc(100% - 30px);
+    margin: 15px;
+    min-height: 200px;
+  }
 }
 
 .heading {
-    text-align: center;
-    color: rgb(100, 12, 12);
+  text-align: center;
+  color: rgb(100, 12, 12);
 }
 
 .navbar {
@@ -61,12 +61,12 @@ body {
 }
 
 .navbarList li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .navbarList li a:hover {
@@ -82,11 +82,12 @@ body {
   background-color: rgb(100, 12, 12);
   padding-top: 17px;
   padding-bottom: 17px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 16px;
+  padding-left: 16px;
   font-size: small;
   border-radius: 0;
   transition: background-color 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .notificationsButton:hover {
@@ -182,4 +183,31 @@ body {
     display: block;
     margin-top: 10px;
     color: rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+  .navbar {
+    background-color: rgb(100, 12, 12);
+    overflow: hidden;
+  }
+
+  .navbarList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbarList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }

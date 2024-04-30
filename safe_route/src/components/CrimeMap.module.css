@@ -14,9 +14,9 @@ body {
 }
 
 .searchInputContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
 }
 
 .sideBar {
@@ -138,6 +138,26 @@ body {
 .navigationBar .navWidget:hover {
     background-color: rgb(233, 209, 71);
     color: black;
+}
+
+.navigationBar .closeWidget {
+  display: flex;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(61, 7, 7);
+  width: 15%;
+  height: 100%;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 100%;
+}
+
+.navigationBar .closeWidget:hover {
+  background-color: rgb(233, 209, 71);
+  color: black;
 }
 
 .showLocations {

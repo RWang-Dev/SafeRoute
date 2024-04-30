@@ -1,5 +1,6 @@
 // Author: Daniel Kluver
 import classes from "./SubButton.module.css";
+import { FaBell } from "react-icons/fa";
 // generate a public, private key pair here: https://web-push-codelab.glitch.me/ copy the public below, save the private for later.
 const VALID_PUBLIC_KEY =
   "BLoUEjtfjw0s52j4vll9wnzc7sWe5JJ6xjuJ6qQUNIQgETZD3-GlEbUPSFZ6Lrd7jgvig-uC2iFXxuTqmg-YrRw";
@@ -56,6 +57,8 @@ export default function SubButton({ className }) {
       })
       .then(async function (pushSubscription) {
         // we'll want to do something different here -- like phone home.
+        console.log("subscribing");
+        console.log(pushSubscription);
         const jsonString = JSON.stringify(pushSubscription);
         const encodedJsonString = encodeURIComponent(jsonString);
 
@@ -79,7 +82,7 @@ export default function SubButton({ className }) {
 
   return (
     <button className={className} onClick={click}>
-      Enable Push Notifications
+      Enable <FaBell />
     </button>
   );
 }
