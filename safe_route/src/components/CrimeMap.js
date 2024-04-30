@@ -22,10 +22,10 @@ const center = {
 const defaultZoom = 10; // Default zoom level
 
 const bounds = {
-    north: 44.989,
+    north: 44.9931,
     south: 44.965,
     east: -93.21, //bounds for campus
-    west: -93.25,
+    west: -93.252,
 };
 
 const CrimeMap = ({ data }) => {
@@ -221,10 +221,28 @@ const CrimeMap = ({ data }) => {
         setIsSidebarOpen((prev) => !prev);
     };
 
-	const handleSeverityChange = (min, max) => {
-		setSeverityRange({ min, max });
-	  };
-	  
+    const handleSeverityChange = (min, max) => {
+        setSeverityRange({ min, max });
+    };
+
+    const Legend = () => {
+        return (
+            <div className={classes.legend}>
+                <h3>Severity Legend</h3>
+                <ul>
+                    <li>
+                        <span className={classes.yellow}></span> Low (0-49)
+                    </li>
+                    <li>
+                        <span className={classes.orange}></span> Medium (50-75)
+                    </li>
+                    <li>
+                        <span className={classes.red}></span> High (76-100)
+                    </li>
+                </ul>
+            </div>
+        );
+    };
 
     return (
         <>
@@ -423,6 +441,7 @@ const CrimeMap = ({ data }) => {
                                 )}
                             </GoogleMap>
                         )}
+                        <Legend />
                     </LoadScript>
                 </div>
             </div>
