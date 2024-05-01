@@ -29,4 +29,4 @@ if ('serviceWorker' in navigator) {
 
 // reportWebVitals();
 serviceWorkerRegistration.register();
-main
+// main
