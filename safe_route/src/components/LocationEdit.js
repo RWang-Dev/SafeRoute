@@ -9,8 +9,8 @@ function LocationEdit() {
     const [locations, setLocations] = useState([]);
     const [username, setUsername] = useState("Guest");
     const [userID, setuserID] = useState("Guest");
-    const [loc_name, setLocName] = useState("Loc");
-    const [loc_addr, setAddr] = useState("Loc");
+    const [loc_name, setLocName] = useState("Loading...");
+    const [loc_addr, setAddr] = useState("Loading...");
     let navigate = useNavigate();
 
     function handleBack() {
@@ -70,6 +70,14 @@ function LocationEdit() {
     };
     return (
         <div className={classes.outerContainer}>
+            <div className={classes.navigationBar}>
+                <Link className={classes.navWidget} to="/">
+                    Home Page
+                </Link>
+                <Link className={classes.navWidget} to="/map">
+                    Map Page
+                </Link>
+            </div>
             <div className={classes.mainContainer}>
                 <h1 className={classes.editTitle}> Edit Location</h1>
                 <label htmlFor="edit-location-name">Location name</label>

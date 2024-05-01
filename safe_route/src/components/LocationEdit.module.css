@@ -17,6 +17,7 @@
 }
 
 .mainContainer {
+    margin-top: 5vh; 
     justify-content: center;
     background-color: rgb(233, 209, 71);
     padding: 20px;
@@ -136,4 +137,37 @@ textarea {
 .editIcon,
 .deleteIcon {
     margin-left: 10px;
+}
+
+.navigationBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(61, 7, 7);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    z-index: 999; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navigationBar .navWidget {
+    display: flex;
+    color: rgb(255, 255, 255);
+    background-color: rgb(61, 7, 7);
+    height: 100%;
+    border-radius: 0;
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px; 
+}
+
+.navigationBar .navWidget:hover {
+    background-color: rgb(233, 209, 71);
+    color: black;
 }
