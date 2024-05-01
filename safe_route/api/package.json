@@ -4,13 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "@azure/functions": "^4.3.0",
-      "mongodb": "^6.5.0"
+        "@azure/functions": "^4.3.0",
+        "@fortawesome/free-solid-svg-icons": "^6.5.2",
+        "mongodb": "^6.5.0",
+        "web-push": "^3.6.7"
     }
-  }
-  
+}

@@ -2,30 +2,31 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./Home.module.css";
 import { useState, useEffect } from "react";
+import SubButton from "./SubButton";
 
 function Home() {
-  const [username, setUsername] = useState("Guest");
-  const [userID, setUserID] = useState("Guest");
+    const [username, setUsername] = useState("Guest");
+    const [userID, setUserID] = useState("Guest");
 
-  useEffect(() => {
-    fetchUser();
-  }, []);
+    useEffect(() => {
+        fetchUser();
+    }, []);
 
-  const fetchUser = async () => {
-    const response = await fetch("/.auth/me");
-    const data = await response.json();
-    if (data.clientPrincipal != null) {
-      setUserID(data.clientPrincipal.userId);
-      setUsername(data.clientPrincipal.userDetails);
-    }
-  };
+    const fetchUser = async () => {
+        const response = await fetch("/.auth/me");
+        const data = await response.json();
+        if (data.clientPrincipal != null) {
+            setUserID(data.clientPrincipal.userId);
+            setUsername(data.clientPrincipal.userDetails);
+        }
+    };
 
-  // Dummy data for recent crime incidents
-  const recentCrimeIncidents = [
-    { id: 1, location: "Location 1", description: "Description 1" },
-    { id: 2, location: "Location 2", description: "Description 2" },
-    { id: 3, location: "Location 3", description: "Description 3" },
-  ];
+    // Dummy data for recent crime incidents
+    const recentCrimeIncidents = [
+        { id: 1, location: "Location 1", description: "Description 1" },
+        { id: 2, location: "Location 2", description: "Description 2" },
+        { id: 3, location: "Location 3", description: "Description 3" },
+    ];
 
   console.log(userID, username);
   return (
@@ -34,7 +35,7 @@ function Home() {
         <ul className={classes.navbarList}>
           <li>
             <Link to="/map" className={classes.link}>
-              Map page
+              Map Page
             </Link>
           </li>
           <li>
@@ -55,7 +56,9 @@ function Home() {
               </a>
             )}
           </li>
-          {/* Add more navigation links here*/}
+          {userID !== "Guest" ? (
+            <SubButton className={classes.notificationsButton} />
+          ) : null}
         </ul>
       </nav>
       <div className={classes.contentContainer}>
@@ -71,9 +74,10 @@ function Home() {
         </video>
         <div className={classes.safeRouteContainer}>
           <h1 className={classes.heading}>SafeRoute</h1>
+          <br/>
           <p>
             Welcome to SafeRoute - your trusted companion for campus safety.
-            With SafeRoute, we've engineered a solution to prioritize students'
+            With SafeRoute, we've engineered a solution to prioritize student
             safety by providing real-time tracking and visualizing crime-heavy
             areas on campus. SafeRoute alerts users when they approach
             danger-prone zones, enabling proactive route planning for safer
@@ -81,7 +85,7 @@ function Home() {
           </p>
         </div>
 
-        {/* Recent Crime Incidents Section
+                {/* Recent Crime Incidents Section
         <div className={classes.crimeContainer}>
           <div className={classes.recentIncidents}>
             <h2 className={classes.crimeHeading}>
@@ -98,9 +102,9 @@ function Home() {
             </ul>
           </div>
         </div> */}
-      </div>
-    </div>
-  );
+            </div>
+        </div>
+    );
 }
 
 export default Home;
