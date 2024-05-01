@@ -82,21 +82,36 @@ function Locations() {
     }
     return (
         <div className={classes.outerContainer}>
+            <div className={classes.navigationBar}>
+                <Link className={classes.navWidget} to="/">
+                    Home Page
+                </Link>
+                <Link className={classes.navWidget} to="/map">
+                    Map Page
+                </Link>
+                <a href="/.auth/logout" className={classes.navWidget}>
+                    Logout
+                </a>
+            </div>
             <div className={classes.mainContainer}>
                 <div className={classes.savedLocations}>
                     <h2>Saved Locations</h2>
                     {locations.length > 0 ? (
-                        locations.map((loc, index) => (
-                            <div loc_id={loc._id} key={index} className={classes.locationItem}>
-                                <div className={classes.locationName}>{loc.location_name}</div>
-                                <div className={classes.icons}>
-                                    <Link to={"/locations/" + loc._id}>
-                                        <FaEdit className={classes.editIcon} />
-                                    </Link>
-                                    <FaTrash onClick={() => deleteLocation(loc._id)} className={classes.deleteIcon} />
-                                </div>
-                            </div>
-                        ))
+                        <ol> 
+                            {locations.map((loc, index) => (
+                                <li key={index}> 
+                                    <div loc_id={loc._id} className={classes.locationItem}>
+                                        <div className={classes.locationName}>{loc.location_name}</div>
+                                        <div className={classes.icons}>
+                                            <Link to={"/locations/" + loc._id}>
+                                                <FaEdit className={classes.editIcon} />
+                                            </Link>
+                                            <FaTrash onClick={() => deleteLocation(loc._id)} className={classes.deleteIcon} />
+                                        </div>
+                                    </div>
+                                </li>
+                            ))}
+                        </ol> 
                     ) : (
                         <span>No Locations Saved</span>
                     )}
@@ -120,14 +135,6 @@ function Locations() {
                     <button className={classes.saveLocationBtn} onClick={() => addLocation()}>
                         Save Location
                     </button>
-                </div>
-                <div className={classes.buttonDiv}>
-                    <Link to="/">
-                        <button className={classes.backButtons}>Go to Home Page</button>
-                    </Link>
-                    <Link to="/map">
-                        <button className={classes.backButtons}>Go to Map Page</button>
-                    </Link>
                 </div>
             </div>
         </div>
