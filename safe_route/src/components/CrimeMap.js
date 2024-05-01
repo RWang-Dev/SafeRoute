@@ -44,6 +44,7 @@ const CrimeMap = ({ data }) => {
     const [savedLocations, setSavedLocations] = useState([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [severityRange, setSeverityRange] = useState({ min: 0, max: 100 });
+	const [mapZoom, setMapZoom] = useState(defaultZoom);
 
     const autocompleteRef = useRef(null);
 
@@ -54,19 +55,20 @@ const CrimeMap = ({ data }) => {
 
     // This function is called when the user selects a place from the Autocomplete dropdown
     const handlePlaceChanged = () => {
-        if (autocompleteRef.current) {
-            const place = autocompleteRef.current.getPlace();
-            if (place.geometry) {
-                // setCurrentUserLocation({
-                //   lat: place.geometry.location.lat(),
-                //   lng: place.geometry.location.lng(),
-                // });
-                addFavorite(place); // Assuming addFavorite is a function that adds the place to a list of favorites
-            } else {
-                console.log("No geometry found for the place, try a different input.");
-            }
-        }
-    };
+		if (autocompleteRef.current) {
+			const place = autocompleteRef.current.getPlace();
+			if (place.geometry) {
+				const location = {
+					lat: place.geometry.location.lat(),
+					lng: place.geometry.location.lng(),
+				};
+				mapRef.current.panTo(location);
+				setMapZoom(15); 
+			} else {
+				console.log("No geometry found.");
+			}
+		}
+	};
 
     const handleSavedLocations = async (location_address, place_id) => {
         const location_data = await getCoordinatesFromPlaceId(place_id);
@@ -327,7 +329,7 @@ const CrimeMap = ({ data }) => {
 						<GoogleMap
 							mapContainerStyle={containerStyle}
 							center={currentUserLocation || center}
-							zoom={defaultZoom}
+							zoom={mapZoom}
 							options={{
 								restriction: {
 									latLngBounds: bounds,
