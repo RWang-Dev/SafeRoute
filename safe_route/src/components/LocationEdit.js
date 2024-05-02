@@ -79,12 +79,13 @@ function LocationEdit() {
                 </Link>
             </div>
             <div className={classes.mainContainer}>
-                <h1 className={classes.editTitle}> Edit Location</h1>
-                <label htmlFor="edit-location-name">Location name</label>
-                <input id="edit-location-name" value={loc_name} onChange={handleLocChange}></input>
+                <h2 className={classes.editTitle}> Edit Location</h2>
+                <label htmlFor="edit-location-name">Change location name</label>
+                <input id="edit-location-name" value={loc_name} onChange={handleLocChange} className={classes.searchInput}></input>
 
-                <label htmlFor="edit-address">Address</label>
-                <textarea id="edit-address" value={loc_addr} onChange={handleAddrChange}></textarea>
+                <br/>
+                <label htmlFor="edit-address">Change address</label>
+                <textarea id="edit-address" value={loc_addr} onChange={handleAddrChange} className={classes.searchInput}></textarea>
                 <div className={classes.editWidgets}>
                     <Link to="/locations" onClick={() => editLocation()} className={classes.saveWidget}>
                         Save

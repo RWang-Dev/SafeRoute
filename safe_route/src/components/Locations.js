@@ -95,7 +95,7 @@ function Locations() {
             </div>
             <div className={classes.mainContainer}>
                 <div className={classes.savedLocations}>
-                    <h2>Saved Locations</h2>
+                    <h2 className={classes.header}>Saved Locations</h2>
                     {locations.length > 0 ? (
                         <ol> 
                             {locations.map((loc, index) => (
@@ -104,9 +104,9 @@ function Locations() {
                                         <div className={classes.locationName}>{loc.location_name}</div>
                                         <div className={classes.icons}>
                                             <Link to={"/locations/" + loc._id}>
-                                                <FaEdit className={classes.editIcon} />
+                                                <FaEdit className={classes.editIcon} title="Edit"/>
                                             </Link>
-                                            <FaTrash onClick={() => deleteLocation(loc._id)} className={classes.deleteIcon} />
+                                            <FaTrash onClick={() => deleteLocation(loc._id)} className={classes.deleteIcon} title="Delete"/>
                                         </div>
                                     </div>
                                 </li>
@@ -117,19 +117,19 @@ function Locations() {
                     )}
                 </div>
                 <div className={classes.createLocation}>
-                    <h2>Create New Location</h2>
+                    <h2 className={classes.header}>Create New Location</h2>
 
                     <LoadScript
                         googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} /// Set mapLoaded to true when the API script has loaded
                         libraries={["places"]}
                     >
                         <Autocomplete onLoad={handleOnLoad}>
-                            <input id="location-address" type="text" placeholder="Type in address" />
+                            <input id="location-address" type="text" placeholder="Search for an address" className={classes.searchInput}/>
                         </Autocomplete>
                     </LoadScript>
 
                     <br />
-                    <input id="location-name" type="text" placeholder="Add Custom Name" />
+                    <input id="location-name" type="text" placeholder="Add Custom Name" className={classes.searchInput}/>
                     <br />
                     <br />
                     <button className={classes.saveLocationBtn} onClick={() => addLocation()}>
