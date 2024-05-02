@@ -89,6 +89,9 @@ function Locations() {
                 <Link className={classes.navWidget} to="/map">
                     Map Page
                 </Link>
+                <Link to="/locations" className={classes.curLoc}>
+                    Saved Locations
+                </Link>
                 <a href="/.auth/logout" className={classes.navWidget}>
                     Logout
                 </a>

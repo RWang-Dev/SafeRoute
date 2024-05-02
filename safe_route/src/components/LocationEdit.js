@@ -1,8 +1,9 @@
 import React from "react";
 import { FaEdit, FaTrash, FaSearch } from "react-icons/fa";
 import classes from "./LocationEdit.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { LoadScript, Autocomplete } from "@react-google-maps/api";
 
 function LocationEdit() {
     const { loc_id } = useParams();
@@ -11,6 +12,7 @@ function LocationEdit() {
     const [userID, setuserID] = useState("Guest");
     const [loc_name, setLocName] = useState("Loading...");
     const [loc_addr, setAddr] = useState("Loading...");
+    const autocompleteRef = useRef(null);
     let navigate = useNavigate();
 
     function handleBack() {
@@ -21,6 +23,10 @@ function LocationEdit() {
         fetchUser();
         fetchLocation();
     }, []);
+
+    const handleOnLoad = (autoc) => {
+        autocompleteRef.current = autoc;
+    };
 
     async function fetchLocation() {
         const response = await fetch("/api/getLocation/?loc_id=" + loc_id);
@@ -77,6 +83,12 @@ function LocationEdit() {
                 <Link className={classes.navWidget} to="/map">
                     Map Page
                 </Link>
+                <Link to="/locations" className={classes.navWidget}>
+                    Saved Locations
+                </Link>
+                <a href="/.auth/logout" className={classes.navWidget}>
+                    Logout
+                </a>
             </div>
             <div className={classes.mainContainer}>
                 <h2 className={classes.editTitle}> Edit Location</h2>
@@ -85,7 +97,21 @@ function LocationEdit() {
 
                 <br/>
                 <label htmlFor="edit-address">Change address</label>
-                <textarea id="edit-address" value={loc_addr} onChange={handleAddrChange} className={classes.searchInput}></textarea>
+                <LoadScript
+                    googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+                    libraries={["places"]}
+                >
+                    <Autocomplete onLoad={handleOnLoad}>
+                        <input
+                            id="edit-address"
+                            value={loc_addr}
+                            onChange={handleAddrChange}
+                            placeholder="Search for an address"
+                            className={classes.addressInput}
+                        />
+                    </Autocomplete>
+                </LoadScript>
+
                 <div className={classes.editWidgets}>
                     <Link to="/locations" onClick={() => editLocation()} className={classes.saveWidget}>
                         Save

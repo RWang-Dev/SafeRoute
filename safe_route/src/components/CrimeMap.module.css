@@ -71,6 +71,7 @@ body {
     border-style: solid;
     color: white;
     width: 12vw;
+    margin-top: 10px;
 }
 
 .toggleButtonNight {
@@ -81,6 +82,7 @@ body {
     border-radius: 10px;
     color: white;
     width: 12vw;
+    margin-top: 10px;
 }
 
 /* so color of button stays the same when you click it (overlaying css style issue) */
@@ -188,6 +190,10 @@ body {
 
 .toggleButtons {
     margin-top: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .hamburger {
