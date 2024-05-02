@@ -259,7 +259,7 @@ const CrimeMap = ({ data }) => {
 				<div className={`${classes.sideBar} ${!isSidebarOpen ? classes.sideBarClosed : ""}`}>
 					<div className={classes.navigationBar}>
 						<Link className={classes.navWidget} to="/">
-							Home
+							Home Page
 						</Link>
 						<a className={classes.navWidget} href="/.auth/logout">
 							Logout

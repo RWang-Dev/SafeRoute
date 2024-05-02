@@ -34,6 +34,11 @@ function Home() {
       <nav className={classes.navbar}>
         <ul className={classes.navbarList}>
           <li>
+            <Link to="/" className={classes.curLoc}>
+              Home Page
+            </Link>
+          </li>
+          <li>
             <Link to="/map" className={classes.link}>
               Map Page
             </Link>

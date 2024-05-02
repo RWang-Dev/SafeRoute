@@ -68,6 +68,7 @@ body {
 
 .navbarList li {
     float: left;
+    padding: 0 10px; 
 }
 
 .navbarList li a {
@@ -82,6 +83,11 @@ body {
 .navbarList li a:hover {
     background-color: rgb(233, 209, 71);
     color: black;
+}
+
+.navbarList li .curLoc {
+  background-color: rgb(235, 200, 0);
+  color: black;
 }
 
 .notificationsButton {
@@ -220,5 +226,10 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+
+  .navbarList li {
+    float: left;
+    padding: 0px;
   }
 }
