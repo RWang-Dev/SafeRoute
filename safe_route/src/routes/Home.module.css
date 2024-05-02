@@ -232,4 +232,10 @@ body {
     float: left;
     padding: 0px;
   }
+
+  .navbarList li a,
+  .notificationsButton {
+      padding: 14px 5px; 
+      font-size: 0.9rem;
+  }
 }

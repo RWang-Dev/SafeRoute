@@ -286,4 +286,8 @@ body {
         width: 0;
         overflow: hidden;
     }
+
+    .searchInputContainer {
+        width: 70vw;
+    }
 }
