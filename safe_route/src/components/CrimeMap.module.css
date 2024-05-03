@@ -85,12 +85,26 @@ body {
     margin-top: 10px;
 }
 
+.showMyLocationButton {
+    background-color: rgb(157, 102, 0);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(157, 102, 0);
+    border-style: solid;
+    color: white;
+    width: 12vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* so color of button stays the same when you click it (overlaying css style issue) */
 .showLocations:focus,
 .showLocations:hover,
 .toggleButtonDay:focus,
-.toggleButtonDay:hover {
-    background-color: rgb(157, 102, 0);
+.toggleButtonDay:hover,
+.showMyLocationButton:focus,
+.showMyLocationButton:hover {
+    background-color: rgb(192, 133, 23);
     cursor: pointer;
 }
 
@@ -270,7 +284,7 @@ body {
     background-color: red;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1434px) {
     .sideBar {
         width: 80%;
     }
@@ -278,7 +292,8 @@ body {
     .toggleButtonDay,
     .toggleButtonNight,
     .showLocations,
-    .hideLocations {
+    .hideLocations,
+    .showMyLocationButton {
         width: 80%;
     }
 
