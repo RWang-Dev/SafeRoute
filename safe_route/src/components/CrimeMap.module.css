@@ -369,7 +369,10 @@ body {
   }
 
   .toggleButtonDay,
-  .toggleButtonNight,
+  .toggleButtonNight {
+    width: 30px;
+    height: 30px;
+  }
   .showLocations,
   .hideLocations,
   .showMyLocationButton {
