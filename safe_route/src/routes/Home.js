@@ -28,7 +28,6 @@ function Home() {
     { id: 3, location: "Location 3", description: "Description 3" },
   ];
 
-  console.log(userID, username);
   return (
     <div className={classes.homeContainer}>
       <nav className={classes.navbar}>
@@ -75,7 +74,6 @@ function Home() {
           className={classes.backgroundVideo}
         >
           <source src="/videos/drone.mp4" type="video/mp4" />
-          console.log("Hello");
         </video>
         <div className={classes.safeRouteContainer}>
           <h1 className={classes.heading}>SafeRoute</h1>

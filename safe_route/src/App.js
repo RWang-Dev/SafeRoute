@@ -33,7 +33,7 @@ function App() {
         fetchData();
     }, []);
 
-    console.log("App component rendered.");
+    // console.log("App component rendered.");
 
     return (
         <div>
