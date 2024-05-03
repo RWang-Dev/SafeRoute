@@ -31,6 +31,7 @@ body {
 
 .outerContainer {
   display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   justify-content: center;
@@ -39,6 +40,7 @@ body {
   background-image: url("../images/campus2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  overflow-y: auto;
 }
 
 .mainContainer {
@@ -317,8 +319,8 @@ button:hover {
     padding-bottom: 50px;
     padding-top: 25px;
     width: 70vw;
+    max-height: 70vh;
     margin: 50px;
-    height: 50vh;
     border-radius: 10px;
     display: flex;
     justify-content: center;
