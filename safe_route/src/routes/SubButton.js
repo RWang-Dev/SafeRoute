@@ -61,24 +61,28 @@ export default function SubButton({ userID, className }) {
         console.log(pushSubscription);
         const jsonString = JSON.stringify(pushSubscription);
         const encodedJsonString = encodeURIComponent(jsonString);
-
-        const response = await fetch("/api/addSubscription", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            userID: userID,
-            subscription: pushSubscription,
-          }),
-        });
-
-        const data = await response.json();
-        console.log(
-          "Received PushSubscription: ",
-          "Response from the backend: ",
-          data
+        const checkSubExits = await fetch(
+          "/api/getSubscription/?userID=" + userID
         );
+        const subData = await checkSubExits.json();
+        if (subData.length == 0) {
+          const response = await fetch("/api/addSubscription", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              userID: userID,
+              subscription: pushSubscription,
+            }),
+          });
+          const data = await response.json();
+          console.log(
+            "Received PushSubscription: ",
+            "Response from the backend: ",
+            data
+          );
 
-        return pushSubscription;
+          return pushSubscription;
+        }
       });
   }
 
