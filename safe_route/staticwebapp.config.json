@@ -9,6 +9,10 @@
       "route": "/map",
       "allowedRoles": ["anonymous", "authenticated"]
 
+    },
+    {
+      "route": "/admin",
+      "allowedRoles": ["admin"]
     }
   ],
 
