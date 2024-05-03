@@ -1,254 +1,353 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 .outerContainer {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    background-color: rgb(100, 12, 12);
-    align-items: center;
-    background-image: url("../images/campus2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  background-color: rgb(100, 12, 12);
+  align-items: center;
+  background-image: url("../images/campus2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .mainContainer {
-    margin-top: 5vh; 
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    padding: 50px;
-    width: 30vw;
-    margin: 50px;
-    height: 40vh;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 25px rgb(233, 209, 71) solid;
+  margin-top: 5vh;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  width: 30vw;
+  margin: 50px;
+  height: 40vh;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 25px rgb(233, 209, 71) solid;
 }
 
 .savedLocations,
 .createLocation {
-    background-color: white;
-    padding: 20px;
-    margin: 10px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
-
 
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-  
+
 .editTitle {
-    position: relative;
-    overflow: hidden;
-    padding: 0.5rem 0;
-    opacity: 0; 
-    animation: fadeIn 0.2s ease forwards; 
-    margin-bottom: 3vh;
-    font-size: 25px;
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  opacity: 0;
+  animation: fadeIn 0.2s ease forwards;
+  margin-bottom: 3vh;
+  font-size: 25px;
 }
 
 .editWidgets {
-    margin-top: 5vh;
+  margin-top: 5vh;
 }
 
 .saveWidget {
-    background-color: rgb(1, 150, 53);
-    border-radius: 8px;
-    border: none;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 6px 16px;
-    transition: color 100ms;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-decoration: none;
+  background-color: rgb(1, 150, 53);
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  transition: color 100ms;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
 }
 
 .saveWidget:hover {
-    background-color: rgb(95, 187, 95);
+  background-color: rgb(95, 187, 95);
 }
 
 .deleteWidget {
-    background-color: rgb(145, 1, 1);
-    border-radius: 8px;
-    border: none;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 6px 16px;
-    transition: color 100ms;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-decoration: none;
+  background-color: rgb(145, 1, 1);
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  transition: color 100ms;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
 }
 
 .deleteWidget:hover {
-    background-color: rgb(207, 52, 52);
+  background-color: rgb(207, 52, 52);
 }
 
 .cancelWidget {
-    background-color: rgb(218, 218, 218);
-    border-radius: 8px;
-    border: none;
-    color: #000000;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 6px 16px;
-    transition: color 100ms;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-decoration: none;
+  background-color: rgb(218, 218, 218);
+  border-radius: 8px;
+  border: none;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  transition: color 100ms;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
 }
 
 .cancelWidget:hover {
-    background-color: rgb(178, 178, 178);
+  background-color: rgb(178, 178, 178);
 }
 
 .searchInput {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 13px;
-    border: none;
-    box-shadow: 2px 2px 2px rgb(201, 201, 201);
-    border: 1px gray solid;
-    width: 65%;
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 13px;
+  border: none;
+  box-shadow: 2px 2px 2px rgb(201, 201, 201);
+  border: 1px gray solid;
+  width: 65%;
 }
 
 .addressInput {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 13px;
-    border: none;
-    box-shadow: 2px 2px 2px rgb(201, 201, 201);
-    border: 1px gray solid;
-    width: 20vw;
-    word-wrap: break-word; 
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 13px;
+  border: none;
+  box-shadow: 2px 2px 2px rgb(201, 201, 201);
+  border: 1px gray solid;
+  width: 20vw;
+  word-wrap: break-word;
 }
 
 input[type="text"],
 textarea {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    border-radius: 5px;
-    width: 65%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  border-radius: 5px;
+  width: 65%;
 }
 
 textarea {
-    height: 20%;
+  height: 20%;
 }
 
 .savedLocations h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .createLocation {
-    text-align: center;
+  text-align: center;
 }
 
 .locationItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .locationName {
-    flex: 1;
+  flex: 1;
 }
 
 .icons {
-    display: flex;
+  display: flex;
 }
 
 .editIcon,
 .deleteIcon {
-    margin-left: 10px;
+  margin-left: 10px;
 }
-
+/* 
 .navigationBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5vh;
-    background-color: rgb(100, 12, 12);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-    z-index: 999; 
-    padding-top: 8px;
-    padding-bottom: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: rgb(100, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 999;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .navigationBar .navWidget {
-    display: flex;
-    color: rgb(255, 255, 255);
-    background-color: rgb(100, 12, 12);
-    height: 100%;
-    border-radius: 0;
-    text-align: center;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    margin: 0 10px; 
-    padding: 0 20px; 
+  display: flex;
+  color: rgb(255, 255, 255);
+  background-color: rgb(100, 12, 12);
+  height: 100%;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  padding: 0 20px;
 }
 
 .navigationBar .navWidget:hover {
-    background-color: rgb(233, 209, 71);
-    color: black;
+  background-color: rgb(233, 209, 71);
+  color: black;
+} */
+
+.navbar {
+  background-color: rgb(100, 12, 12);
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+.navbarList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: rgb(100, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 999;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.navbarList li {
+  float: left;
+  padding: 0 10px;
+}
+
+.navbarList li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.navbarList li a:hover {
+  background-color: rgb(233, 209, 71);
+  color: black;
+}
+
+.navbarList li .curLoc {
+  background-color: rgb(159, 51, 51);
+  color: rgb(255, 255, 255);
+}
+
+.notificationsButton {
+  float: right;
+  margin: 0;
+  margin-left: auto;
+  color: white;
+  background-color: rgb(100, 12, 12);
+  padding-top: 14px;
+  padding-bottom: 15px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: 4px;
+  font-size: small;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.notificationsButton:hover {
+  background-color: rgb(233, 209, 71);
+  color: black;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
-    .mainContainer {
-        width: 60vw;
-    }
+  .mainContainer {
+    width: 60vw;
+  }
 
-    input[type="text"],
-    textarea {
-        width: 90%; 
-    }
+  input[type="text"],
+  textarea {
+    width: 90%;
+  }
 
-    .addressInput {
-        width: 90%;
-    }
+  .addressInput {
+    width: 90%;
+  }
 }
 
-@media (max-width: 767px) {
-    .navbar {
-      background-color: rgb(100, 12, 12);
-      overflow: hidden;
-    }
-  
-    .navbarList {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .navbarList li {
-      float: left;
-      padding: 0px;
-    }
-
-    .mainContainer {
-      width: 80vw;
-    }
+@media (max-width: 900px) {
+  .navbar {
+    background-color: rgb(100, 12, 12);
+    overflow: hidden;
   }
+
+  .navbarList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+
+  .navbarList li {
+    float: none;
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .navbarList li a {
+    padding: 14px 5px;
+    font-size: 0.9rem;
+  }
+  .notificationsButton {
+    font-size: 0.85rem;
+    margin-left: 0;
+  }
+
+  .mainContainer {
+    padding: 20px;
+    padding-top: 0;
+    width: 90vw;
+    margin: 20px;
+  }
+
+  .searchInput {
+    width: 70%;
+  }
+
+  .addressInput {
+    width: 100%;
+    margin-left: -5px;
+  }
+}

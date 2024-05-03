@@ -1,6 +1,8 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 .map {
@@ -14,12 +16,12 @@ body {
 }
 
 .searchInputContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 3vh;
-    width: 400px;
-    max-width: 100%;
-    margin-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+  width: 400px;
+  max-width: 100%;
+  margin-bottom: 5vh;
 }
 
 .sideBar {
@@ -39,13 +41,12 @@ body {
 }
 
 .sideBarClosed {
-    width: 0;
-    overflow: hidden;
-    transition: width 0.3s ease;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
 }
 
 .profile {
-    /* background-color: rgb(100, 12, 12); */
     background: linear-gradient(45deg,  rgb(139, 40, 40),   rgb(100, 12, 12), rgb(118, 48, 48));
     padding-bottom: 20px;
     padding-top: 25px;
@@ -57,20 +58,21 @@ body {
 }
 
 .profile img {
-    background-color: rgb(100, 12, 12);
-    width: 100px;
-    height: 100px;
-    margin-right: 3vw;
-    border-radius: 50px;
+  background-color: rgb(100, 12, 12);
+  width: 100px;
+  height: 100px;
+  margin-right: 3vw;
+  border-radius: 50px;
 }
 
 .profile h2 {
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
-    max-width: calc(100% - 40px); 
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: calc(100% - 40px);
 }
+
 
 /* toggleButtonDay {
     background-color: rgb(157, 102, 0);
@@ -139,15 +141,15 @@ body {
 }
 
 .showMyLocationButton {
-    background-color: rgb(157, 102, 0);
-    border-radius: 10px;
-    border-width: 2px;
-    border-color: rgb(157, 102, 0);
-    border-style: solid;
-    color: white;
-    width: 12vw;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  background-color: rgb(157, 102, 0);
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: rgb(157, 102, 0);
+  border-style: solid;
+  color: white;
+  width: 12vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* so color of button stays the same when you click it (overlaying css style issue) */
@@ -155,228 +157,231 @@ body {
 .showLocations:hover,
 .showMyLocationButton:focus,
 .showMyLocationButton:hover {
-    background-color: rgb(192, 133, 23);
-    cursor: pointer;
+  background-color: rgb(192, 133, 23);
+  cursor: pointer;
 }
+
 
 .hideLocations:focus,
 .hideLocations:hover {
-    background-color: white;
-    cursor: pointer;
+  background-color: white;
+  cursor: pointer;
 }
 
 .sidebarLinks {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
 }
 
 .savedLocations,
 .home {
-    display: flex;
-    align-items: center;
-    color: rgb(0, 132, 255);
-    text-decoration: none;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  color: rgb(0, 132, 255);
+  text-decoration: none;
+  margin-bottom: 20px;
 }
 
 .savedLocations:hover,
 .home:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .homeIcon,
 .heartIcon {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .logoutIcon {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .navigationBar {
-    display: flex;
-    width: 100%;
-    height: 3vh;
-    align-items: center;
-    justify-content: center;
-    vertical-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: rgb(61, 7, 7);
+  display: flex;
+  width: 100%;
+  height: 1vh;
+  align-items: center;
+  justify-content: center;
+  vertical-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgb(61, 7, 7);
 }
 
 .navigationBar .navWidget {
-    display: flex;
-    margin: 0;
-    color: rgb(255, 255, 255);
-    background-color: rgb(61, 7, 7);
-    width: 50%;
-    height: 100%;
-    border-radius: 0;
-    text-align: center;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(61, 7, 7);
+  width: 50%;
+  height: 100%;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .navigationBar .navWidget:hover {
-    background-color: rgb(233, 209, 71);
-    color: black;
+  background-color: rgb(233, 209, 71);
+  color: black;
 }
 
 .navigationBar .closeWidget {
-    display: flex;
-    margin: 0;
-    color: rgb(255, 255, 255);
-    background-color: rgb(61, 7, 7);
-    width: 15%;
-    height: 100%;
-    border-radius: 0;
-    text-align: center;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    font-size: 100%;
+  display: flex;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(61, 7, 7);
+  width: 15%;
+  height: 100%;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 100%;
 }
 
 .navigationBar .closeWidget:hover {
-    background-color: rgb(233, 209, 71);
-    color: black;
-    cursor: pointer;
+  background-color: rgb(233, 209, 71);
+  color: black;
+  cursor: pointer;
 }
 
 .showLocations {
-    background-color: rgb(157, 102, 0);
-    border-width: 2px;
-    border-color: rgb(157, 102, 0);
-    border-style: solid;
-    border-radius: 10px;
-    color: white;
-    width: 12vw;
+  background-color: rgb(157, 102, 0);
+  border-width: 2px;
+  border-color: rgb(157, 102, 0);
+  border-style: solid;
+  border-radius: 10px;
+  color: white;
+  width: 12vw;
 }
 
 .hideLocations {
-    background-color: white;
-    border-radius: 10px;
-    border-width: 2px;
-    border-color: rgb(157, 102, 0);
-    border-style: solid;
-    color: black;
-    width: 12vw;
+  background-color: white;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: rgb(157, 102, 0);
+  border-style: solid;
+  color: black;
+  width: 12vw;
 }
 
 .toggleButtons {
-    margin-top: auto;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 50px;
+  margin-top: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .hamburger {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2000;
-    background-color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    box-sizing: border-box;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  box-sizing: border-box;
 }
 
 .bar {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 2px;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
 }
 
 .severityFilter h3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .severityFilter label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .severityFilter input[type="range"] {
-    width: 100%;
+  width: 100%;
 }
 
 .legend {
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
 }
 
 .legend h3 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .legend ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .legend li span {
-    height: 10px;
-    width: 10px;
-    display: inline-block;
-    margin-right: 5px;
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .legend .yellow {
-    background-color: yellow;
+  background-color: yellow;
 }
 .legend .orange {
-    background-color: orange;
+  background-color: orange;
 }
 .legend .red {
-    background-color: red;
+  background-color: red;
 }
 
 .logoutLink {
+
     text-decoration: none;
     margin-bottom: 15px;
     margin-right: 15px;
     align-self: flex-end;
     color: rgb(0, 132, 255);
     margin-left: 60px;
+
 }
 
 @media (max-width: 1434px) {
-    .sideBar {
-        width: 80%;
-    }
+  .sideBar {
+    width: 80%;
+  }
 
-    .toggleButtonDay,
-    .toggleButtonNight,
-    .showLocations,
-    .hideLocations,
-    .showMyLocationButton {
-        width: 80%;
-    }
+  .toggleButtonDay,
+  .toggleButtonNight,
+  .showLocations,
+  .hideLocations,
+  .showMyLocationButton {
+    width: 80%;
+  }
 
-    .sideBar.sideBarClosed {
-        width: 0;
-        overflow: hidden;
-    }
+  .sideBar.sideBarClosed {
+    width: 0;
+    overflow: hidden;
+  }
 
-    .searchInputContainer {
-        width: 70vw;
-    }
+  .searchInputContainer {
+    width: 70vw;
+  }
 }
