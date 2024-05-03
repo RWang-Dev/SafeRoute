@@ -7,6 +7,10 @@
     {
       "route": "/map",
       "allowedRoles": ["anonymous", "authenticated"]
+<<<<<<< HEAD
+=======
+
+>>>>>>> ea87d1f44219f064d656605273070ed09343c156
     },
     {
       "route": "/admin",
