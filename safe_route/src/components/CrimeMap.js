@@ -323,7 +323,7 @@ const CrimeMap = ({ data }) => {
 
 					<div className={classes.toggleButtons}>
                         <button className={classes.showMyLocationButton} onClick={handleShowMyLocation}>
-                            Show My Location
+                            Go to My Location
                         </button>
 						<button className={`${classes[locationClass]}`} 
 						onClick={toggleLocations} 
