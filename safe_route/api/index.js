@@ -258,7 +258,7 @@ app.http("getSubscription", {
       const database = client.db("SafeRoute");
       const locations = database.collection("push_subscriptions");
 
-      const { userID } = await request.json();
+      const userID = await request.query.get("userID");
       let push_subscription = await locations
         .find({ userID: userID })
         .toArray();
