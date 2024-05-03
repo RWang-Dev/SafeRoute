@@ -62,7 +62,10 @@ function Home() {
             )}
           </li>
           {userID !== "Guest" ? (
-            <SubButton className={classes.notificationsButton} />
+            <SubButton
+              userID={userID}
+              className={classes.notificationsButton}
+            />
           ) : null}
         </ul>
       </nav>

@@ -5,7 +5,7 @@ import { FaBell } from "react-icons/fa";
 const VALID_PUBLIC_KEY =
   "BLoUEjtfjw0s52j4vll9wnzc7sWe5JJ6xjuJ6qQUNIQgETZD3-GlEbUPSFZ6Lrd7jgvig-uC2iFXxuTqmg-YrRw";
 
-export default function SubButton({ className }) {
+export default function SubButton({ userID, className }) {
   //https://github.com/GoogleChromeLabs/web-push-codelab/blob/master/app/scripts/main.js
   function urlB64ToUint8Array(base64String) {
     const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
@@ -62,8 +62,15 @@ export default function SubButton({ className }) {
         const jsonString = JSON.stringify(pushSubscription);
         const encodedJsonString = encodeURIComponent(jsonString);
 
-        const url = `/api/beepbeep/?data=${encodedJsonString}`;
-        const response = await fetch(url);
+        const response = await fetch("/api/addSubscription", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userID: userID,
+            subscription: pushSubscription,
+          }),
+        });
+
         const data = await response.json();
         console.log(
           "Received PushSubscription: ",
