@@ -22,8 +22,18 @@ function LocationEdit() {
 
   useEffect(() => {
     fetchUser();
-    fetchLocation();
-  }, []);
+  
+    // Need a delay to ensure that userID is set before the if statement begins
+    const timer = setTimeout(() => {
+      if (userID !== "Guest") {
+        fetchLocation();
+      } else {
+        navigate("/404");
+      }
+    }, 500);
+  
+    return () => clearTimeout(timer);
+  }, [userID]);
 
   const handleOnLoad = (autoc) => {
     autocompleteRef.current = autoc;
@@ -35,6 +45,7 @@ function LocationEdit() {
     setLocName(data[0].location_name);
     setAddr(data[0].location_address);
   }
+
   const fetchUser = async () => {
     const response = await fetch("/.auth/me");
     const data = await response.json();
