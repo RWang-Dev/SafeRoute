@@ -183,15 +183,16 @@ button:hover {
     padding: 0 20px; 
 }
 
-.navigationBar .navWidget:hover {
+.navigationBar .navWidget:hover,
+.navigationBar .curLoc:hover {
     background-color: rgb(233, 209, 71);
     color: black;
 }
 
 .navigationBar .curLoc {
     display: flex;
-    background-color: rgb(235, 200, 0);
-    color: black;
+    background-color: rgb(159, 51, 51);
+    color: rgb(255, 255, 255);
     height: 100%;
     border-radius: 0;
     text-align: center;
@@ -202,3 +203,24 @@ button:hover {
     padding: 0 20px; 
 }
   
+@media (max-width: 767px) {
+    .navbar {
+      background-color: rgb(100, 12, 12);
+      overflow: hidden;
+    }
+  
+    .navbarList {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .navbarList li {
+      float: left;
+      padding: 0px;
+    }
+  }

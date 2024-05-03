@@ -203,7 +203,8 @@ textarea {
     text-decoration: none;
     justify-content: center;
     align-items: center;
-    padding: 0 30px; 
+    margin: 0 10px; 
+    padding: 0 20px; 
 }
 
 .navigationBar .navWidget:hover {
@@ -225,3 +226,29 @@ textarea {
         width: 90%;
     }
 }
+
+@media (max-width: 767px) {
+    .navbar {
+      background-color: rgb(100, 12, 12);
+      overflow: hidden;
+    }
+  
+    .navbarList {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .navbarList li {
+      float: left;
+      padding: 0px;
+    }
+
+    .mainContainer {
+      width: 80vw;
+    }
+  }

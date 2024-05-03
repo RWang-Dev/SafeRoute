@@ -59,8 +59,15 @@ body {
     width: 100px;
     height: 100px;
     margin-right: 3vw;
-
     border-radius: 50px;
+}
+
+.profile h2 {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    max-width: calc(100% - 40px); 
 }
 
 .toggleButtonDay {
