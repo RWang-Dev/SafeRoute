@@ -147,6 +147,24 @@ const CrimeMap = ({ data }) => {
     });
   }, [locations]);
 
+  useEffect(() => {
+    
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setCurrentUserLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+        setMapZoom(defaultZoom); // Update zoom level if needed
+        // console.log("Current Latitude:", position.coords.latitude);
+        // console.log("Current Longitude:", position.coords.longitude);
+      },
+      (error) => {
+        console.log("Error getting current location: ", error);
+      }
+    );
+  }, []);
+
   const fetchUser = async () => {
     const response = await fetch("/.auth/me");
     const data = await response.json();
@@ -230,20 +248,6 @@ const CrimeMap = ({ data }) => {
     setLocations(data);
     console.log(data);
   }
-  // Get user's current location
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setCurrentUserLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
-      },
-      (error) => {
-        console.log("Error getting current location: ", error);
-      }
-    );
-  }, []);
 
   // Attach the event listener after the map has loaded
   useEffect(() => {
@@ -368,12 +372,7 @@ const CrimeMap = ({ data }) => {
                 />{" "}
                 My Saved Locations{" "}
               </Link>
-            ) : (
-              <a href="/.auth/login/github" className={classes.savedLocations}>
-                {" "}
-                Login to Save Locations
-              </a>
-            )}
+            ) : null}
           </div>
 
           <div className={classes.toggleButtons}>
@@ -430,7 +429,14 @@ const CrimeMap = ({ data }) => {
                   className={classes.logoutIcon}
                 />
               </a>
-            ) : null}
+            ) : <a className={classes.logoutLink} href="/.auth/login/github">
+                    Login{" "}
+                    <FontAwesomeIcon
+                    icon={faSignOut}
+                    className={classes.logoutIcon}
+                    />
+                </a>
+            }
           </div>
         </div>
         <div className={`${classes.map}`}>
@@ -542,7 +548,7 @@ const CrimeMap = ({ data }) => {
 
                 {currentUserLocation && (
                   <Marker
-                    position={currentUserLocation}
+                    position={center}
                     icon={{
                       url: personIcon,
                       scaledSize: new google.maps.Size(17, 35),
