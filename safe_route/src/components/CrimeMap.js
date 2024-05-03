@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow, LoadScript, Autocomplete } from "@react-google-maps/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faHome, faHeart, faSignOut } from "@fortawesome/free-solid-svg-icons";
 
 import nightMode from "../map-styles/NightMode";
 import classes from "./CrimeMap.module.css";
@@ -297,16 +297,21 @@ const CrimeMap = ({ data }) => {
 				)}
 				<div className={`${classes.sideBar} ${!isSidebarOpen ? classes.sideBarClosed : ""}`}>
 					<div className={classes.navigationBar}>
-						<Link className={classes.navWidget} to="/">
-							Home Page
-						</Link>
+                        {/* <Link className={classes.navWidget} to="/">
+                            Home Page
+                        </Link>
 						<a className={classes.navWidget} href="/.auth/logout">
 							Logout
-						</a>
-						{isSidebarOpen && (
-							<button className={classes.closeWidget} onClick={toggleSidebar}>
-								<FontAwesomeIcon icon={faArrowLeft} />
-							</button>
+						</a> */}
+                        {isSidebarOpen && (
+                            // <button className={classes.navWidget} onClick={toggleSidebar}>
+                            //     <FontAwesomeIcon icon={faArrowLeft} />
+                            // </button>
+							<button className={classes.hamburger} onClick={toggleSidebar}>
+                                <span className={classes.bar}></span>
+                                <span className={classes.bar}></span>
+                                <span className={classes.bar}></span>
+                            </button>
 						)}
 					</div>
 					<div className={classes.profile}>
@@ -327,18 +332,23 @@ const CrimeMap = ({ data }) => {
 							</Autocomplete>
 						</LoadScript>
 					</div>
-					{userID !== "Guest" ? (
-						<Link to="/locations" className={classes.savedLocations}>
-							{" "}
-							My Saved Locations{" "}
-						</Link>
-					) : (
-						<a href="/.auth/login/github" className={classes.savedLocations}>
-							{" "}
-							Login to Save Locations
-						</a>
-					)}
-
+                    <div className={classes.sidebarLinks}>
+                        <Link className={classes.home} to="/">
+                            <FontAwesomeIcon icon={faHome} className={classes.homeIcon}/> Home Page
+                        </Link>
+                        {userID !== "Guest" ? (
+                            <Link to="/locations" className={classes.savedLocations}>
+                                {" "}
+                                <FontAwesomeIcon icon={faHeart} className={classes.heartIcon}/> My Saved Locations{" "}
+                            </Link>
+                        ) : (
+                            <a href="/.auth/login/github" className={classes.savedLocations}>
+                                {" "}
+                                Login to Save Locations
+                            </a>
+                        )}
+                    </div>
+                    
 					<div className={classes.toggleButtons}>
                         <button className={classes.showMyLocationButton} onClick={handleShowMyLocation}>
                             Go to My Location
@@ -359,7 +369,13 @@ const CrimeMap = ({ data }) => {
 						>
 							{buttonText}
 						</button>
+                        <br />
 					</div>
+                    {userID !== "Guest" ? (
+                        <a className={classes.logoutLink} href="/.auth/logout">
+                            Logout <FontAwesomeIcon icon={faSignOut} className={classes.logoutIcon}/>
+                        </a>
+                    ) : null}
 				</div>
 			<div className={`${classes.map}`}>
 				<LoadScript

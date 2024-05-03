@@ -19,6 +19,7 @@ body {
     margin-top: 3vh;
     width: 400px;
     max-width: 100%;
+    margin-bottom: 5vh;
 }
 
 .sideBar {
@@ -127,20 +128,40 @@ body {
     cursor: pointer;
 }
 
-.savedLocations {
-    margin-top: 5vh;
-    color: rgb(0, 132, 255);
-    text-decoration: none;
+.sidebarLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
 }
 
-.savedLocations:hover {
+.savedLocations,
+.home {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 132, 255);
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.savedLocations:hover,
+.home:hover {
     cursor: pointer;
+}
+
+.homeIcon,
+.heartIcon {
+    margin-right: 5px;
+}
+
+.logoutIcon {
+    margin-left: 5px;
 }
 
 .navigationBar {
     display: flex;
     width: 100%;
-    height: 5vh;
+    height: 3vh;
     align-items: center;
     justify-content: center;
     vertical-align: center;
@@ -214,7 +235,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .hamburger {
@@ -289,6 +310,14 @@ body {
 }
 .legend .red {
     background-color: red;
+}
+
+.logoutLink {
+    text-decoration: none;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    align-self: flex-end;
+    color: rgb(0, 132, 255);
 }
 
 @media (max-width: 1434px) {
