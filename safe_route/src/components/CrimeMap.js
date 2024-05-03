@@ -78,6 +78,27 @@ const CrimeMap = ({ data }) => {
             console.log("No geometry found for the place, try a different input.");
         }
     };
+    
+    const handleShowMyLocation = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    };
+                    setCurrentUserLocation(userLocation);
+                    setMapZoom(defaultZoom);
+                    mapRef.current.panTo(userLocation);
+                },
+                (error) => {
+                    console.error("Error getting current location:", error);
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    };
 
     useEffect(() => {
         fetchUser();
@@ -301,6 +322,9 @@ const CrimeMap = ({ data }) => {
 					)}
 
 					<div className={classes.toggleButtons}>
+                        <button className={classes.showMyLocationButton} onClick={handleShowMyLocation}>
+                            Show My Location
+                        </button>
 						<button className={`${classes[locationClass]}`} 
 						onClick={toggleLocations} 
 						title="Represented by red location pins">
