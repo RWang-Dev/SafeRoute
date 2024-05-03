@@ -59,7 +59,7 @@ https://app.moqups.com/abx4pEKNdH0metME5E7IDc1ecnt1kwx1/view/page/ad64222d5
 
 **Is there anything special we need to know in order to effectively test your app? (optional):**
 
-* N/A
+* When searching for a location on the map page, you won't see a marker/icon for that location unless it's within the predefined boundaries (on campus). The same goes for seeing your location and saved locations.
 
 
 
