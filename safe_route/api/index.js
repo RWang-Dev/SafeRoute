@@ -264,11 +264,17 @@ app.http("getSubscription", {
         .toArray();
 
       responseMessage = "got subscription" + request.body;
-
-      return {
-        jsonBody: push_subscription[0],
-        status: 200,
-      };
+      if (push_subscription.length > 0) {
+        return {
+          jsonBody: push_subscription[0],
+          status: 200,
+        };
+      } else {
+        return {
+          jsonBody: [],
+          status: 200,
+        };
+      }
     } catch (error) {
       console.error("Error adding:", error);
       responseMessage = "Failed to get";
