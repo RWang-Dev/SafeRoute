@@ -1,0 +1,29 @@
+{
+    "short_name": "Safe Route",
+    "name": "Safe Route React App",
+    "icons": [
+      {
+        "src": "saferoute.png",
+        "sizes": "64x64",
+        "type": "image/x-icon"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "umnlogo.jpeg",
+        "type": "image/jpeg",
+        "sizes": "1411x853",
+        "form_factor": "wide"
+      },
+      {
+        "src": "umnlogonarrow.png",
+        "type": "image/png",
+        "sizes": "1112x1112",
+        "form_factor": "narrow"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+  }
