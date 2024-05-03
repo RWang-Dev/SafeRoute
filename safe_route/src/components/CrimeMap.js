@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { GoogleMap, Marker, InfoWindow, LoadScript, Autocomplete } from "@react-google-maps/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faHome, faHeart, faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faHome, faHeart, faSignOut, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 import nightMode from "../map-styles/NightMode";
 import classes from "./CrimeMap.module.css";
@@ -358,7 +358,7 @@ const CrimeMap = ({ data }) => {
 						title="Represented by red location pins">
 							{locationText}
 						</button>
-						<button
+						{/* <button
 							className={`${classes[buttonClass]}`}
 							onClick={toggleNightMode}
 							style={{
@@ -368,14 +368,26 @@ const CrimeMap = ({ data }) => {
 							}}
 						>
 							{buttonText}
-						</button>
+						</button> */}
                         <br />
 					</div>
-                    {userID !== "Guest" ? (
-                        <a className={classes.logoutLink} href="/.auth/logout">
-                            Logout <FontAwesomeIcon icon={faSignOut} className={classes.logoutIcon}/>
-                        </a>
-                    ) : null}
+                    <div className={classes.bottomBar}>
+                        <button
+							className={`${classes[buttonClass]}`}
+							onClick={toggleNightMode}
+						>
+                            {isNightMode ? (
+                                <FontAwesomeIcon icon={faMoon} title="Dark Mode" className={classes.modeIcon}/>
+                            ) : (
+                                <FontAwesomeIcon icon={faSun} title="Light Mode" className={classes.modeIcon}/>
+                            )}
+						</button>
+                        {userID !== "Guest" ? (
+                            <a className={classes.logoutLink} href="/.auth/logout">
+                                Logout <FontAwesomeIcon icon={faSignOut} className={classes.logoutIcon}/>
+                            </a>
+                        ) : null}
+                    </div>
 				</div>
 			<div className={`${classes.map}`}>
 				<LoadScript

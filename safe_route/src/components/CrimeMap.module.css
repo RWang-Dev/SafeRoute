@@ -47,14 +47,14 @@ body {
 }
 
 .profile {
-  background-color: rgb(100, 12, 12);
-  padding-bottom: 20px;
-  padding-top: 25px;
-  width: 100%;
-  height: 15%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background: linear-gradient(45deg,  rgb(139, 40, 40),   rgb(100, 12, 12), rgb(118, 48, 48));
+    padding-bottom: 20px;
+    padding-top: 25px;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile img {
@@ -73,26 +73,71 @@ body {
   max-width: calc(100% - 40px);
 }
 
-.toggleButtonDay {
-  background-color: rgb(157, 102, 0);
-  border-radius: 10px;
-  border-width: 2px;
-  border-color: rgb(157, 102, 0);
-  border-style: solid;
-  color: white;
-  width: 12vw;
-  margin-top: 10px;
+
+/* toggleButtonDay {
+    background-color: rgb(157, 102, 0);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgb(157, 102, 0);
+    border-style: solid;
+    color: white;
+    width: 12vw;
+    margin-top: 10px;
 }
 
 .toggleButtonNight {
-  background-color: darkblue;
-  border-width: 2px;
-  border-color: darkblue;
-  border-style: solid;
-  border-radius: 10px;
-  color: white;
-  width: 12vw;
-  margin-top: 10px;
+    background-color: darkblue;
+    border-width: 2px;
+    border-color: darkblue;
+    border-style: solid;
+    border-radius: 10px;
+    color: white;
+    width: 12vw;
+    margin-top: 10px;
+}. */
+
+.bottomBar {
+    margin-bottom: 20px;
+    display: flex;
+    padding: 0 20px;
+}
+
+.toggleButtonDay {
+    border-radius: 50%; 
+    background-color: rgb(231, 193, 77);
+    margin-right: 60px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.toggleButtonNight {
+    border-radius: 50%; 
+    background-color: rgb(0, 0, 126);
+    margin-right: 60px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.toggleButtonDay:focus,
+.toggleButtonDay:hover {
+    background-color: rgb(255, 220, 47);
+    cursor: pointer;
+}
+
+.toggleButtonNight:focus,
+.toggleButtonNight:hover {
+    background-color: rgb(39, 41, 164);
+    cursor: pointer;
 }
 
 .showMyLocationButton {
@@ -110,19 +155,12 @@ body {
 /* so color of button stays the same when you click it (overlaying css style issue) */
 .showLocations:focus,
 .showLocations:hover,
-.toggleButtonDay:focus,
-.toggleButtonDay:hover,
 .showMyLocationButton:focus,
 .showMyLocationButton:hover {
   background-color: rgb(192, 133, 23);
   cursor: pointer;
 }
 
-.toggleButtonNight:focus,
-.toggleButtonNight:hover {
-  background-color: darkblue;
-  cursor: pointer;
-}
 
 .hideLocations:focus,
 .hideLocations:hover {
@@ -315,11 +353,14 @@ body {
 }
 
 .logoutLink {
-  text-decoration: none;
-  margin-bottom: 15px;
-  margin-right: 15px;
-  align-self: flex-end;
-  color: rgb(0, 132, 255);
+
+    text-decoration: none;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    align-self: flex-end;
+    color: rgb(0, 132, 255);
+    margin-left: 60px;
+
 }
 
 @media (max-width: 1434px) {
