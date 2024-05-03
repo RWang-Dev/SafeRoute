@@ -382,13 +382,16 @@ const CrimeMap = ({ data }) => {
             >
               Go to My Location
             </button>
-            <button
-              className={`${classes[locationClass]}`}
-              onClick={toggleLocations}
-              title="Represented by red location pins"
-            >
-              {locationText}
-            </button>
+            {userID !== "Guest" ? (
+                <button
+                    className={`${classes[locationClass]}`}
+                    onClick={toggleLocations}
+                    title="Represented by red location pins"
+                    >
+                    {locationText}
+                </button>
+            ) : null}
+            
             {/* <button
 							className={`${classes[buttonClass]}`}
 							onClick={toggleNightMode}
@@ -548,7 +551,7 @@ const CrimeMap = ({ data }) => {
 
                 {currentUserLocation && (
                   <Marker
-                    position={center}
+                    position={currentUserLocation}
                     icon={{
                       url: personIcon,
                       scaledSize: new google.maps.Size(17, 35),
