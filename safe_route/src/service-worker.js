@@ -55,11 +55,12 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("push", async (event) => {
-  const data = event.data.json();
+  const data = await event.data.json();
   //https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification
-  self.registration.showNotification("Vibration Sample", {
-    body: data.msg,
-    data: { key: "value" },
+
+  self.registration.showNotification("Alert message from SafeRoute", {
+    body: `${data.msg}`,
+    data: "This is a test message",
   });
 });
 

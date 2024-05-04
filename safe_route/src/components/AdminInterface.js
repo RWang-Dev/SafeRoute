@@ -17,8 +17,8 @@ const AdminInterface = () => {
 
   const handleNotificationSubmit = async () => {
     console.log("Sending push notification:", notificationText);
-    for (const subscription of subscriptions) {
-      await sendPush(notificationText, subscription);
+    for (const user_subscription of subscriptions) {
+      await sendPush(notificationText, user_subscription.subscription);
     }
     setNotificationText("");
   };
@@ -27,7 +27,10 @@ const AdminInterface = () => {
     const response = await fetch("/api/sendNotification", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(subscription),
+      body: JSON.stringify({
+        subscription: subscription,
+        push_message: message,
+      }),
     });
   }
 
