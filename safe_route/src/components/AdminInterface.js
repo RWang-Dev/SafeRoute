@@ -24,14 +24,29 @@ const AdminInterface = () => {
   };
 
   async function sendPush(message, subscription) {
-    const response = await fetch("/api/sendNotification", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        subscription: subscription,
-        push_message: message,
-      }),
-    });
+    try {
+      const response = await fetch("/api/sendNotification", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subscription: subscription,
+          push_message: message,
+        }),
+      });
+
+      if (!response.ok) {
+        // Throw an error with the response status and possibly a custom error message
+        throw new Error(
+          `Failed to send push notification: ${response.status} ${response.statusText}`
+        );
+      }
+
+      // Optionally, you can consume and log the response body for further debugging
+      const responseData = await response.json();
+      console.log("Server response:", responseData);
+    } catch (error) {
+      console.error("Error sending push notification:", error);
+    }
   }
 
   return (
