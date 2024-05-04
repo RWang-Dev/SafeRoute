@@ -46,7 +46,10 @@ export default function SubButton({ userID, className }) {
   //https://web.dev/articles/push-notifications-subscribing-a-user again.
   function subscribeUserToPush() {
     return navigator.serviceWorker
-      .register("/service-worker.js")
+      .register("/service-worker.js", { scope: "./" })
+      .then(function (registration) {
+        return navigator.serviceWorker.ready;
+      })
       .then(function (registration) {
         const subscribeOptions = {
           userVisibleOnly: true,
