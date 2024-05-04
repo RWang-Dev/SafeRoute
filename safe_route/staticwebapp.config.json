@@ -14,7 +14,7 @@
     },
     {
       "route": "/admin",
-      "allowedRoles": ["admin"]
+      "allowedRoles": ["admin", "authenticated"]
     }
   ],
 
