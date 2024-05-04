@@ -333,19 +333,41 @@ app.http("sendNotification", {
   authLevel: "anonymous",
   route: "sendNotification",
   handler: async (request, context) => {
-    const { subscription, push_message } = await request.json();
-    webpush.setVapidDetails(
-      "mailto:rwang.ep@gmail.com",
-      process.env.VAPID_PUB,
-      process.env.VAPID_PRIVATE
-    );
-    webpush.sendNotification(
-      subscription,
-      JSON.stringify({ msg: push_message, color: "red" })
-    );
+    try {
+      const { subscription, push_message } = await request.json();
+      console.log("VAPID Public Key:", process.env.VAPID_PUB); // To check if environment variables are set correctly
+      console.log("VAPID Private Key:", process.env.VAPID_PRIVATE);
 
-    return {
-      jsonBody: { status: "ok" },
-    };
+      webpush.setVapidDetails(
+        "mailto:rwang.ep@gmail.com",
+        process.env.VAPID_PUB,
+        process.env.VAPID_PRIVATE
+      );
+
+      const response = await webpush.sendNotification(
+        subscription,
+        JSON.stringify({ msg: push_message, color: "red" })
+      );
+
+      // Log response from sending notification for debugging
+      console.log("Push notification sent successfully", response);
+
+      return {
+        status: 200, // HTTP status code
+        jsonBody: { status: "ok" },
+      };
+    } catch (error) {
+      console.error("Failed to send notification:", error);
+
+      // Return a server error response
+      return {
+        status: 500, // Indicate a server error
+        jsonBody: {
+          status: "error",
+          message: "Failed to send notification",
+          error: error.message,
+        },
+      };
+    }
   },
 });
