@@ -8,12 +8,12 @@ const urlsToCache = [
   "index.html",
   "offline.html",
   "favicon.ico",
-  "logo192.png",
+  // "logo192.png",
   "/",
-  "/src/App.css",
-  "/src/index.css",
-  "/src/App.js",
-  "/src/index.js",
+  // "/src/App.css",
+  // "/src/index.css",
+  // "/src/App.js",
+  // "/src/index.js",
 ];
 
 self.addEventListener("install", (event) => {
