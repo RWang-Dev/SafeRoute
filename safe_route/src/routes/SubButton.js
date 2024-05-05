@@ -1,12 +1,15 @@
 // Author: Daniel Kluver
 import classes from "./SubButton.module.css";
+
 import { FaBell, FaBellSlash } from "react-icons/fa";
 import { useEffect, useState } from "react";
+
 // generate a public, private key pair here: https://web-push-codelab.glitch.me/ copy the public below, save the private for later.
 const VALID_PUBLIC_KEY =
   "BLoUEjtfjw0s52j4vll9wnzc7sWe5JJ6xjuJ6qQUNIQgETZD3-GlEbUPSFZ6Lrd7jgvig-uC2iFXxuTqmg-YrRw";
 
 export default function SubButton({ userID, className }) {
+
   const [notifications, setNotifications] = useState(false);
 
   useEffect(() => {
@@ -114,6 +117,7 @@ export default function SubButton({ userID, className }) {
           console.log("Deleted Subscription", data);
           setNotifications(false);
           return "deleted sub";
+
         }
       });
   }
@@ -126,6 +130,7 @@ export default function SubButton({ userID, className }) {
   return (
     <button className={className} onClick={click}>
       Notifications {notifications ? <FaBellSlash /> : <FaBell />}
+
     </button>
   );
 }
