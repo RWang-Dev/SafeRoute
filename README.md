@@ -22,15 +22,16 @@ CSCI 5117, Spring 2024, [assignment description](https://canvas.umn.edu/courses/
 **Describe the most challenging features you implemented
 (one sentence per bullet, maximum 4 bullets):**
 
-* ...
+* The push notification feature was challenging since it involved setting up a service worker and maintaining a detailed flow of data between the front end, back end, and the service worker.
+* Graphing the information as the main part of the project was challenging because we had to learn a lot about the google maps API, as well as using other analysis methods to parse the data.
 
 Which (if any) device integration(s) does your app support?
 
-* ...
+* Location services integrated through Google Maps API is supported on both computers and mobile devices.
 
 Which (if any) progressive web app feature(s) does your app support?
 
-* ...
+* The app supports push notifications.
 
 
 
@@ -54,22 +55,30 @@ https://app.moqups.com/abx4pEKNdH0metME5E7IDc1ecnt1kwx1/view/page/ad64222d5
 
 
 
-
 ## Testing Notes
 
 **Is there anything special we need to know in order to effectively test your app? (optional):**
 
-* ...
-
+* When searching for a location on the map page, you won't see a marker/icon for that location unless it's within the predefined boundaries (on campus). The same goes for seeing your location and saved locations.
+* To enable notifications, press the notifications button at the top right corner of the screen.
 
 
 ## Screenshots of Site (complete)
 
-**[Add a screenshot of each key page](https://stackoverflow.com/questions/10189356/how-to-add-screenshot-to-readmes-in-github-repository)
-along with a very brief caption:**
+**Home Page:** Splash page with description of what SafeRoute is 
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/57eba8a8-6cad-41f4-b758-d5322f9e2696)
 
-![](https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif)
+**Map Page:** Map displaying crime-heavy areas, user location, saved locations with sidebar that allows user to search for and find locations
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/4010bf9a-d8ca-4fef-93be-ff15a30571d7)
 
+**Locations Page:** Allows user to create saved locations and view those saved locations
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/590a8ece-c2bc-4333-b408-f2cdb6b93ddf)
+
+**Edit Locations Page:** Allows user to update saved location's custom name and address, and to delete the saved location
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/7eb26984-0788-48b0-a71a-bbd620059baf)
+
+**Admin Interface Page:** Allows admin to send push notifications 
+![image](https://github.com/csci5117s24/project-2-forge/assets/96703864/bc220fdc-a16a-478f-b7fa-5dcb2b5e2090)
 
 
 ## External Dependencies

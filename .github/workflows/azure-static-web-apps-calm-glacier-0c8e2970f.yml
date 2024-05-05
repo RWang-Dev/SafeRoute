@@ -4,6 +4,9 @@ env:
   CI: false
   GOOGLE_GEOCODING_API_KEY: ${{ secrets.GOOGLE_GEOCODING_API_KEY }}
   REACT_APP_GOOGLE_MAPS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_MAPS_API_KEY }}
+  VAPID_PUB: ${{ secrets.VAPID_PUB }}
+  VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE}}
+  NODE_ENV: ${{ secrets.NODE_ENV}}
 
 on:
   push:
