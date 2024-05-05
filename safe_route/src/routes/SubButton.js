@@ -129,8 +129,8 @@ export default function SubButton({ userID, className }) {
 
   return (
     <button className={className} onClick={click}>
-      Notifications {notifications ? <FaBellSlash /> : <FaBell />}
-
+      {notifications ? "Disable Notifications" : "Enable Notifications"}{" "}
+      {notifications ? <FaBellSlash /> : <FaBell />}
     </button>
   );
 }

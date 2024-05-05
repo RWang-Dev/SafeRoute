@@ -65,7 +65,9 @@ function Home() {
                     <h1 className={classes.heading}>SafeRoute</h1>
                     <br />
                     <p>
-                        Welcome to SafeRoute - your trusted companion for campus safety. With SafeRoute, we've engineered a solution to prioritize student safety by providing real-time tracking and visualizing crime-heavy areas on campus. SafeRoute alerts users when they approach danger-prone zones,
+                        Welcome to SafeRoute - your trusted companion for campus safety. With SafeRoute, 
+                        we've engineered a solution to prioritize student safety by providing real-time tracking and 
+                        visualization of crime-heavy areas on campus. SafeRoute alerts users when they approach danger-prone zones,
                         enabling proactive route planning for safer journeys.{" "}
                     </p>
                 </div>
