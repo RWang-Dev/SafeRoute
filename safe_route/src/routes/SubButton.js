@@ -18,6 +18,7 @@ export default function SubButton({ userID, className }) {
         return outputArray;
     }
 
+    // Ask the user for permission to send notifications
     function askPermission() {
         return new Promise(function (resolve, reject) {
             if (Notification.permission === "denied") {
