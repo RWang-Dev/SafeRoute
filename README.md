@@ -22,7 +22,8 @@ CSCI 5117, Spring 2024, [assignment description](https://canvas.umn.edu/courses/
 **Describe the most challenging features you implemented
 (one sentence per bullet, maximum 4 bullets):**
 
-* ...
+* The push notification feature was challenging since it involved setting up a service worker and maintaining a detailed flow of data between the front end, back end, and the service worker.
+* Graphing the information as the main part of the project was challenging because we had to learn a lot about the google maps API, as well as using other analysis methods to parse the data.
 
 Which (if any) device integration(s) does your app support?
 
