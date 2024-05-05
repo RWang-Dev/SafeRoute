@@ -243,6 +243,42 @@ app.http("addSubscription", {
   },
 });
 
+app.http("deleteSubscription", {
+  methods: ["POST"],
+  authLevel: "anonymous",
+  route: "deleteSubscription",
+  handler: async (request, context) => {
+    let responseMessage;
+    let responseStatus = 200;
+
+    const client = new MongoClient(MONGO_URI);
+
+    try {
+      await client.connect();
+      const database = client.db("SafeRoute");
+      const locations = database.collection("push_subscriptions");
+
+      const { userID } = await request.json();
+      await locations.deleteOne({
+        userID: userID,
+      });
+
+      responseMessage = "subscription deleted successfully" + request.body;
+    } catch (error) {
+      console.error("Error deleting sub:", error);
+      responseMessage = "Failed to delete sub";
+      responseStatus = 500;
+    } finally {
+      await client.close();
+    }
+
+    return {
+      jsonBody: { message: responseMessage },
+      status: responseStatus,
+    };
+  },
+});
+
 app.http("getSubscription", {
   methods: ["GET"],
   authLevel: "anonymous",
