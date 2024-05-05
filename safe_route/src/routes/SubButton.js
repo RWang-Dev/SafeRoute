@@ -1,4 +1,4 @@
-// Author: Daniel Kluver
+import { useState, useEffect } from "react";
 import classes from "./SubButton.module.css";
 import { FaBell, FaBellSlash } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -30,18 +30,13 @@ export default function SubButton({ userID, className }) {
     const base64 = (base64String + padding)
       .replace(/\-/g, "+")
       .replace(/_/g, "/");
-
     const rawData = window.atob(base64);
     const outputArray = new Uint8Array(rawData.length);
-
     for (let i = 0; i < rawData.length; ++i) {
       outputArray[i] = rawData.charCodeAt(i);
     }
     return outputArray;
   }
-
-  //https://web.dev/articles/push-notifications-subscribing-a-user
-  // this handles both up-to-date browsers where requestPermission is async, and older browsers where it's callback
 
   function askPermission() {
     return new Promise(function (resolve, reject) {
@@ -61,7 +56,6 @@ export default function SubButton({ userID, className }) {
     });
   }
 
-  //https://web.dev/articles/push-notifications-subscribing-a-user again.
   function subscribeUserToPush() {
     return navigator.serviceWorker
       .register("/service-worker.js", { scope: "./" })
@@ -77,7 +71,6 @@ export default function SubButton({ userID, className }) {
         return registration.pushManager.subscribe(subscribeOptions);
       })
       .then(async function (pushSubscription) {
-        // we'll want to do something different here -- like phone home.
         console.log("subscribing");
         console.log(pushSubscription);
         const jsonString = JSON.stringify(pushSubscription);
@@ -118,10 +111,26 @@ export default function SubButton({ userID, className }) {
       });
   }
 
-  async function click() {
-    await askPermission();
-    await subscribeUserToPush();
+  async function handleSubscription() {
+    if (!isSubscribed) {
+      await askPermission();
+      await subscribeUserToPush();
+    } else {
+      unsubscribeUser();
+    }
   }
+
+  useEffect(() => {
+    navigator.serviceWorker.getRegistration().then(function (registration) {
+      if (registration) {
+        registration.pushManager
+          .getSubscription()
+          .then(function (subscription) {
+            setIsSubscribed(!!subscription);
+          });
+      }
+    });
+  }, []);
 
   return (
     <button className={className} onClick={click}>
