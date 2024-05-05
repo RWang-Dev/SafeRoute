@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import classes from "./SubButton.module.css";
 import { FaBell, FaBellSlash } from "react-icons/fa";
+
+const VALID_PUBLIC_KEY =
+  "BLoUEjtfjw0s52j4vll9wnzc7sWe5JJ6xjuJ6qQUNIQgETZD3-GlEbUPSFZ6Lrd7jgvig-uC2iFXxuTqmg-YrRw";
+import { FaBell, FaBellSlash } from "react-icons/fa";
 import { useEffect, useState } from "react";
 // generate a public, private key pair here: https://web-push-codelab.glitch.me/ copy the public below, save the private for later.
 const VALID_PUBLIC_KEY =
@@ -112,11 +116,16 @@ export default function SubButton({ userID, className }) {
   }
 
   async function handleSubscription() {
-    if (!isSubscribed) {
-      await askPermission();
-      await subscribeUserToPush();
-    } else {
-      unsubscribeUser();
+    try {
+      if (!isSubscribed) {
+        await askPermission();
+        await subscribeUserToPush();
+      } else {
+        unsubscribeUser();
+      }
+    } catch (error) {
+      console.error("Failed to subscribe or unsubscribe:", error.message);
+      alert("Failed to change notification settings: " + error.message);
     }
   }
 
@@ -133,8 +142,9 @@ export default function SubButton({ userID, className }) {
   }, []);
 
   return (
-    <button className={className} onClick={click}>
-      Notifications {notifications ? <FaBellSlash /> : <FaBell />}
+    <button className={className} onClick={handleSubscription}>
+      {isSubscribed ? "Disable Notifications" : "Enable Notifications"}{" "}
+      {isSubscribed ? <FaBell /> : <FaBellSlash />}
     </button>
   );
 }
