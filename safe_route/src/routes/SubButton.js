@@ -1,11 +1,29 @@
 // Author: Daniel Kluver
 import classes from "./SubButton.module.css";
-import { FaBell } from "react-icons/fa";
+import { FaBell, FaBellSlash } from "react-icons/fa";
+import { useEffect, useState } from "react";
 // generate a public, private key pair here: https://web-push-codelab.glitch.me/ copy the public below, save the private for later.
 const VALID_PUBLIC_KEY =
   "BLoUEjtfjw0s52j4vll9wnzc7sWe5JJ6xjuJ6qQUNIQgETZD3-GlEbUPSFZ6Lrd7jgvig-uC2iFXxuTqmg-YrRw";
 
 export default function SubButton({ userID, className }) {
+  const [notifications, setNotifications] = useState(false);
+
+  useEffect(() => {
+    checkSubExists();
+  }, []);
+
+  async function checkSubExists() {
+    const checkSubExits = await fetch("/api/getSubscription/?userID=" + userID);
+    const subData = await checkSubExits.json();
+    if (subData.length == 0) {
+      setNotifications(false);
+      return false;
+    } else {
+      setNotifications(true);
+      return true;
+    }
+  }
   //https://github.com/GoogleChromeLabs/web-push-codelab/blob/master/app/scripts/main.js
   function urlB64ToUint8Array(base64String) {
     const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
@@ -64,11 +82,9 @@ export default function SubButton({ userID, className }) {
         console.log(pushSubscription);
         const jsonString = JSON.stringify(pushSubscription);
         const encodedJsonString = encodeURIComponent(jsonString);
-        const checkSubExits = await fetch(
-          "/api/getSubscription/?userID=" + userID
-        );
-        const subData = await checkSubExits.json();
-        if (subData.length == 0) {
+
+        const subExists = await checkSubExists();
+        if (subExists == false) {
           const response = await fetch("/api/addSubscription", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -83,8 +99,21 @@ export default function SubButton({ userID, className }) {
             "Response from the backend: ",
             data
           );
+          setNotifications(true);
 
           return pushSubscription;
+        } else {
+          const response = await fetch("/api/deleteSubscription", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              userID: userID,
+            }),
+          });
+          const data = await response.json();
+          console.log("Deleted Subscription", data);
+          setNotifications(false);
+          return "deleted sub";
         }
       });
   }
@@ -96,7 +125,7 @@ export default function SubButton({ userID, className }) {
 
   return (
     <button className={className} onClick={click}>
-      Notifications <FaBell />
+      Notifications {notifications ? <FaBellSlash /> : <FaBell />}
     </button>
   );
 }
